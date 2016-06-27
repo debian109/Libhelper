@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:padding="8dip"
+        android:text="找好友"
+        android:textColor="#ff005092"
+        android:textSize="16sp" />
+
+</LinearLayout>

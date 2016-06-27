@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Basic Helper</string>
+    <string name="no_network_connection_toast">No network connection found</string>
+
+    <!-- Volley notify error -->
+    <string name="http_err_no_connection">Lỗi kết nối mạng, vui lòng kiểm tra!</string>
+    <string name="http_err_network_error">Lỗi kết nối máy chủ. Vui lòng thử lại!</string>
+    <string name="http_err_connection_timeout">Không kết nối được đến máy chủ, vui lòng thử lại!</string>
+    <string name="http_err_socket_timeout">Không nhận được phản hồi từ máy chủ.\nHãy cập nhật dữ liệu hoặc thử lại!</string>
+    <string name="http_err_server_error">Lỗi máy chủ, mã lỗi: </string>
+    <string name="http_err_resp_content_error">Lỗi máy chủ, mã lỗi: 888</string>
+    <string name="dialog_error_system">Lỗi hệ thống.</string>
+
+    <!-- SearchBox -->
+    <string name="speak_now">Speak now</string>
+</resources>

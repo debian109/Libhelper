@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Bottom Sheet menu -->
+    <color name="text_gray">#8C000000</color>
+    <color name="divider_gray">#AAe2e2e2</color>
+
+    <!-- Dialog Helper -->
+    <color name="card_shadow">#D4D4D4</color>
+    <color name="black_overlay">#60000000</color>
+    <color name="white_overlay">#40FFFFFF</color>
+</resources>

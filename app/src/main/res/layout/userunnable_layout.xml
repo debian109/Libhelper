@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#2d2d2d">
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/done"
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp" />
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:id="@+id/imageView2"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/stop"
+        android:layout_gravity="center_horizontal" />
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/deplay"
+        android:id="@+id/imageView3"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/linYellow"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
+            android:background="#f1c40f"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linBlue"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:background="#02ecc7"
+            android:layout_weight="1">
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linRed"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:background="#e74c3c"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/linefooter">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/linefooter">
+    </LinearLayout>
+</LinearLayout>
+
