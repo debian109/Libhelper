@@ -34,7 +34,8 @@
         <activity android:name=".RecycleViewQuickScroll"/>
         <activity android:name=".ScrollAnimationListviewAndRecyclerView"/>
         <activity android:name=".MaterialDesign"/>
-        <!-- Material Design -->
+
+        <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- Material Design -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-. -->
         <activity
             android:name=".MaterialActivity.FabHideActivity"
             android:configChanges="orientation|screenSize"
@@ -71,6 +72,21 @@
         <activity
             android:name=".MaterialActivity.PagerActivity"
             android:theme="@style/MyTheme.Detail" />
+        <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- -->
+
+        <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- Pull Zoom View -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-. -->
+        <activity android:name=".PullZoomActivity"/>
+        <activity
+            android:name=".Pull_Zoom_Activity.PullToZoomListActivity"
+            android:label="@string/title_pull_to_zoom_list_view" />
+
+        <activity
+            android:name=".Pull_Zoom_Activity.PullToZoomScrollActivity"
+            android:label="@string/title_pull_to_zoom_scroll_view" />
+        <activity
+            android:name=".Pull_Zoom_Activity.PullToZoomRecyclerActivity"
+            android:label="@string/title_pull_to_zoom_scroll_view" />
+        <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- -->
     </application>
 
 </manifest>

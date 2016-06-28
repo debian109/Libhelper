@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="vn.namtran.MainActivity">
+    tools:context=".MainActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -162,6 +162,17 @@
             android:textStyle="bold"
             android:layout_below="@+id/testScrollAnimationListviewandRecyclerView"
             android:id="@+id/testMaterialDesign"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:text="Pull To Zoom View"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/testMaterialDesign"
+            android:id="@+id/testPullZoomView"
             android:layout_marginBottom="5dp"/>
 
     </RelativeLayout>
