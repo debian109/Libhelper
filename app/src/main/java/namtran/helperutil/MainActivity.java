@@ -14,7 +14,7 @@ public class MainActivity extends BaseActivity {
             ,testTextViewAnimation,testSwipeListView,testGetImeiPhone,testUseRunnable
             ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
             ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
-            ,testMaterialDesign,testPullZoomView;
+            ,testMaterialDesign,testPullZoomView,testContextMenu,testFlowingDrawer;
 
 
     @Override
@@ -45,6 +45,8 @@ public class MainActivity extends BaseActivity {
         testScrollAnimationListviewandRecyclerView = (Button) findViewById(R.id.testScrollAnimationListviewandRecyclerView);
         testMaterialDesign = (Button) findViewById(R.id.testMaterialDesign);
         testPullZoomView = (Button) findViewById(R.id.testPullZoomView);
+        testContextMenu = (Button) findViewById(R.id.testContextMenu);
+        testFlowingDrawer = (Button) findViewById(R.id.testFlowingDrawer);
         testDisplayimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,6 +149,20 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,PullZoomActivity.class);
+                startActivity(intent);
+            }
+        });
+        testContextMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ContextMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+        testFlowingDrawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,FlowingDrawerActivity.class);
                 startActivity(intent);
             }
         });

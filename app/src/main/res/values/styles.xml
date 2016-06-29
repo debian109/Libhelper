@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/black_overlay</item>
     </style>
 
+    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+    </style>
+
     <!-- Material Design -->
     <style name="MyTheme" parent="Base.MyTheme"></style>
     <style name="Base.MyTheme" parent="Theme.AppCompat.Light.NoActionBar">

@@ -72,9 +72,9 @@ public class ScrollAnimationListviewAndRecyclerView extends BaseActivity impleme
         Toast.makeText(this, strEffect, Toast.LENGTH_SHORT).show();
         if (check){
         ScrollAnimationListViewFragment.setupJazzinessListView(ScrollAnimationListviewAndRecyclerView.mEffectMap.get(strEffect));
+        } else if (check1){
+        ScrollAnimationRecyclerViewFragment.setupJazzinessRecycle(ScrollAnimationListviewAndRecyclerView.mEffectMap.get(strEffect));
         }
-        else if (check1){
-        ScrollAnimationRecyclerViewFragment.setupJazzinessRecycle(ScrollAnimationListviewAndRecyclerView.mEffectMap.get(strEffect));}
         return true;
     }
 }
