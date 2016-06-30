@@ -197,5 +197,38 @@
             android:id="@+id/testFlowingDrawer"
             android:layout_marginBottom="5dp"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:text="Fancy Button"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/testFlowingDrawer"
+            android:id="@+id/testFancyButton"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:text="Ripple View (effect when click or touch or long click)"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/testFancyButton"
+            android:id="@+id/testRippleView"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:text="Switch Material"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/testRippleView"
+            android:id="@+id/testSwitchMaterial"
+            android:layout_marginBottom="5dp"/>
+
     </RelativeLayout>
 </ScrollView>

@@ -34,6 +34,8 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -52,6 +54,7 @@ import vn.namtran.basichelper.R;
  */
 public class MaterialEditText extends AppCompatEditText {
 
+  @Retention(RetentionPolicy.SOURCE)
   @IntDef({FLOATING_LABEL_NONE, FLOATING_LABEL_NORMAL, FLOATING_LABEL_HIGHLIGHT})
   public @interface FloatingLabelType {
   }
@@ -996,6 +999,7 @@ public class MaterialEditText extends AppCompatEditText {
         break;
     }
   }
+
 
   public void setFloatingLabel(@FloatingLabelType int mode) {
     setFloatingLabelInternal(mode);
