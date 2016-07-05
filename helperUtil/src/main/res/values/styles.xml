@@ -43,32 +43,4 @@
         <attr name="circle_color" format="color"/>
     </declare-styleable>
 
-    <!-- Context Menu Yalantis -->
-    <style name="MenuFragmentStyle" parent="AppTheme">
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:colorForeground">@android:color/transparent</item>
-        <item name="android:colorForegroundInverse">@android:color/transparent</item>
-        <item name="android:colorBackground">@android:color/transparent</item>
-        <item name="android:colorBackgroundCacheHint">@android:color/transparent</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-    </style>
-
-    <style name="TextView" />
-
-    <style name="TextView.DefaultStyle">
-    <item name="android:textColor">@android:color/white</item>
-    <item name="android:textSize">@dimen/menu_text_size</item>
-    </style>
-
-    <!-- Switch Material -->
-    <style name="SwitchButtonMD">
-        <item name="kswBackMeasureRatio">1.45</item>
-        <item name="kswThumbMarginLeft">-16dp</item>
-        <item name="kswThumbMarginTop">-14dp</item>
-        <item name="kswThumbMarginRight">-16dp</item>
-        <item name="kswThumbMarginBottom">-14dp</item>
-        <item name="kswThumbWidth">@dimen/ksw_md_thumb_ripple_size</item>
-        <item name="kswThumbHeight">@dimen/ksw_md_thumb_ripple_size</item>
-    </style>
-
 </resources>

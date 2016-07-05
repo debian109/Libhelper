@@ -4,16 +4,25 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import JavaHelper.Convert;
+import UIHelper.ListQuickScroll;
 import UIHelper.ScrollAnimation.JazzyHelper;
 import UIHelper.ScrollAnimation.JazzyListView;
 import namtran.helperutil.Adapter.AdapterBasic2;
 import namtran.helperutil.R;
+import namtran.helperutil.ScrollAnimationListviewAndRecyclerView;
+import namtran.helperutil.Util.UtilsScrollAnimation;
 
 /**
  * Created by NamTran on 4/3/2016.

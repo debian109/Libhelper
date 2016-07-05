@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context="vn.namtran.MainActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -162,72 +162,6 @@
             android:textStyle="bold"
             android:layout_below="@+id/testScrollAnimationListviewandRecyclerView"
             android:id="@+id/testMaterialDesign"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Pull To Zoom View"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testMaterialDesign"
-            android:id="@+id/testPullZoomView"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Context Menu"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testPullZoomView"
-            android:id="@+id/testContextMenu"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Flowing drawer"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testContextMenu"
-            android:id="@+id/testFlowingDrawer"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Fancy Button"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testFlowingDrawer"
-            android:id="@+id/testFancyButton"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Ripple View (effect when click or touch or long click)"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testFancyButton"
-            android:id="@+id/testRippleView"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Switch Material"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testRippleView"
-            android:id="@+id/testSwitchMaterial"
             android:layout_marginBottom="5dp"/>
 
     </RelativeLayout>

@@ -28,25 +28,4 @@
 
     <!-- Material Menu-->
     <dimen name="mm_up_arrow_margin">-16dp</dimen>
-
-    <!-- Context Menu Yalantis -->
-    <dimen name="menu_item_padding">2dp</dimen>
-    <dimen name="text_right_padding">28dp</dimen>
-    <dimen name="text_right_translation">8dp</dimen>
-    <dimen name="text_wrapper_right_margin">-8dp</dimen>
-    <dimen name="divider_height">1dp</dimen>
-    <dimen name="menu_text_size">15sp</dimen>
-
-    <!-- Switch Material -->
-    <dimen name="ksw_md_thumb_ripple_size">42dp</dimen>
-    <dimen name="ksw_md_thumb_solid_inset">11dp</dimen>
-    <dimen name="ksw_md_thumb_shadow_inset">11dp</dimen>
-    <dimen name="ksw_md_thumb_shadow_inset_top">11dp</dimen>
-    <dimen name="ksw_md_thumb_shadow_inset_bottom">10dp</dimen>
-
-    <dimen name="ksw_md_thumb_solid_size">20dp</dimen>
-    <dimen name="ksw_md_thumb_shadow_size">21dp</dimen>
-    <dimen name="ksw_md_thumb_shadow_offset">2dp</dimen>
-
-
 </resources>
