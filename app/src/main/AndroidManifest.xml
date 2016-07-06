@@ -77,6 +77,12 @@
         <activity android:name=".ActivityExample.GuillotineMenuActivity"/>
         <activity android:name=".ActivityExample.SlideMenuActivity"/>
         <activity android:name=".ActivityExample.FlowingDrawerActivity"/>
+
+        <!-- Fancy Button -->
+        <activity android:name=".ActivityExample.FancyButtonActivityExample.FancyButtonActivity"/>
+        <activity android:name=".ActivityExample.FancyButtonActivityExample.XmlButtons"/>
+        <activity android:name=".ActivityExample.FancyButtonActivityExample.ProgramButtons"/>
+        <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- -->
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import namtran.helperutil.ActivityExample.AutoScrollView;
 import namtran.helperutil.ActivityExample.ContextMenuActivity;
 import namtran.helperutil.ActivityExample.DisplayimageViewActivity;
 import namtran.helperutil.ActivityExample.EditTextMeterial;
+import namtran.helperutil.ActivityExample.FancyButtonActivityExample.FancyButtonActivity;
 import namtran.helperutil.ActivityExample.FlowingDrawerActivity;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
@@ -33,7 +34,7 @@ public class MainActivity extends BaseActivity {
             ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
             ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
             ,testMaterialDesign,testContextMenu,testGuillotine,testSlideMenu
-            ,testFlowingDrawer;
+            ,testFlowingDrawer,testFancyButton;
 
 
     @Override
@@ -67,6 +68,7 @@ public class MainActivity extends BaseActivity {
         testGuillotine = (Button) findViewById(R.id.testGuillotine);
         testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
         testFlowingDrawer = (Button) findViewById(R.id.testFlowingDrawer);
+        testFancyButton = (Button) findViewById(R.id.testFancyButton);
         testDisplayimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,6 +192,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,FlowingDrawerActivity.class);
+                startActivity(intent);
+            }
+        });
+        testFancyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,FancyButtonActivity.class);
                 startActivity(intent);
             }
         });
