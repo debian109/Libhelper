@@ -74,6 +74,7 @@
         <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- -->
 
         <activity android:name=".ActivityExample.ContextMenuActivity"/>
+        <activity android:name=".ActivityExample.GuillotineMenuActivity"/>
     </application>
 
 </manifest>

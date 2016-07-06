@@ -175,5 +175,16 @@
             android:id="@+id/testContextMenu"
             android:layout_marginBottom="5dp"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:text="Guillotine Menu"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/testContextMenu"
+            android:id="@+id/testGuillotine"
+            android:layout_marginBottom="5dp"/>
+
     </RelativeLayout>
 </ScrollView>

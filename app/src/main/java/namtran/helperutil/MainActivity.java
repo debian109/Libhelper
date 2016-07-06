@@ -11,6 +11,7 @@ import namtran.helperutil.ActivityExample.ContextMenuActivity;
 import namtran.helperutil.ActivityExample.DisplayimageViewActivity;
 import namtran.helperutil.ActivityExample.EditTextMeterial;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
+import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.ImageSelector;
 import namtran.helperutil.ActivityExample.LocationDemo;
 import namtran.helperutil.ActivityExample.MaterialDesign;
@@ -29,7 +30,7 @@ public class MainActivity extends BaseActivity {
             ,testTextViewAnimation,testSwipeListView,testGetImeiPhone,testUseRunnable
             ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
             ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
-            ,testMaterialDesign,testContextMenu;
+            ,testMaterialDesign,testContextMenu,testGuillotine;
 
 
     @Override
@@ -60,6 +61,7 @@ public class MainActivity extends BaseActivity {
         testScrollAnimationListviewandRecyclerView = (Button) findViewById(R.id.testScrollAnimationListviewandRecyclerView);
         testMaterialDesign = (Button) findViewById(R.id.testMaterialDesign);
         testContextMenu = (Button) findViewById(R.id.testContextMenu);
+        testGuillotine = (Button) findViewById(R.id.testGuillotine);
         testDisplayimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,6 +164,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ContextMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+        testGuillotine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,GuillotineMenuActivity.class);
                 startActivity(intent);
             }
         });
