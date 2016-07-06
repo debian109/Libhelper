@@ -197,5 +197,16 @@
             android:id="@+id/testSlideMenu"
             android:layout_marginBottom="5dp"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:text="Flowing Drawer"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/testSlideMenu"
+            android:id="@+id/testFlowingDrawer"
+            android:layout_marginBottom="5dp"/>
+
     </RelativeLayout>
 </ScrollView>

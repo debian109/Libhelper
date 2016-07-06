@@ -10,6 +10,7 @@ import namtran.helperutil.ActivityExample.AutoScrollView;
 import namtran.helperutil.ActivityExample.ContextMenuActivity;
 import namtran.helperutil.ActivityExample.DisplayimageViewActivity;
 import namtran.helperutil.ActivityExample.EditTextMeterial;
+import namtran.helperutil.ActivityExample.FlowingDrawerActivity;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.ImageSelector;
@@ -31,7 +32,8 @@ public class MainActivity extends BaseActivity {
             ,testTextViewAnimation,testSwipeListView,testGetImeiPhone,testUseRunnable
             ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
             ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
-            ,testMaterialDesign,testContextMenu,testGuillotine,testSlideMenu;
+            ,testMaterialDesign,testContextMenu,testGuillotine,testSlideMenu
+            ,testFlowingDrawer;
 
 
     @Override
@@ -64,6 +66,7 @@ public class MainActivity extends BaseActivity {
         testContextMenu = (Button) findViewById(R.id.testContextMenu);
         testGuillotine = (Button) findViewById(R.id.testGuillotine);
         testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
+        testFlowingDrawer = (Button) findViewById(R.id.testFlowingDrawer);
         testDisplayimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,6 +183,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SlideMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+        testFlowingDrawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,FlowingDrawerActivity.class);
                 startActivity(intent);
             }
         });

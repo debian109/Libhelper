@@ -76,6 +76,7 @@
         <activity android:name=".ActivityExample.ContextMenuActivity"/>
         <activity android:name=".ActivityExample.GuillotineMenuActivity"/>
         <activity android:name=".ActivityExample.SlideMenuActivity"/>
+        <activity android:name=".ActivityExample.FlowingDrawerActivity"/>
     </application>
 
 </manifest>

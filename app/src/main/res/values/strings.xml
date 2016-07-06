@@ -465,4 +465,7 @@
     <!-- Slide Menu -->
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+
+    <!-- Flowing Drawer -->
+    <string name="user_profile_photo">https://avatars1.githubusercontent.com/u/6947495?v=3&amp;s=460</string>
 </resources>
