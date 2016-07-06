@@ -6,6 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import namtran.helperutil.ActivityExample.AutoScrollView;
+import namtran.helperutil.ActivityExample.ContextMenuActivity;
+import namtran.helperutil.ActivityExample.DisplayimageViewActivity;
+import namtran.helperutil.ActivityExample.EditTextMeterial;
+import namtran.helperutil.ActivityExample.GetImeiPhone;
+import namtran.helperutil.ActivityExample.ImageSelector;
+import namtran.helperutil.ActivityExample.LocationDemo;
+import namtran.helperutil.ActivityExample.MaterialDesign;
+import namtran.helperutil.ActivityExample.NavigationTransparent;
+import namtran.helperutil.ActivityExample.RecycleViewQuickScroll;
+import namtran.helperutil.ActivityExample.ScrollAnimationListviewAndRecyclerView;
+import namtran.helperutil.ActivityExample.SwipeListView;
+import namtran.helperutil.ActivityExample.TextViewWithAnimation;
+import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
+import namtran.helperutil.ActivityExample.UseRunnable;
 import namtran.helperutil.BasicActivity.BaseActivity;
 
 public class MainActivity extends BaseActivity {
@@ -14,7 +29,7 @@ public class MainActivity extends BaseActivity {
             ,testTextViewAnimation,testSwipeListView,testGetImeiPhone,testUseRunnable
             ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
             ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
-            ,testMaterialDesign;
+            ,testMaterialDesign,testContextMenu;
 
 
     @Override
@@ -44,6 +59,7 @@ public class MainActivity extends BaseActivity {
         testRecycleViewQuickScroll = (Button) findViewById(R.id.testRecycleViewQuickScroll);
         testScrollAnimationListviewandRecyclerView = (Button) findViewById(R.id.testScrollAnimationListviewandRecyclerView);
         testMaterialDesign = (Button) findViewById(R.id.testMaterialDesign);
+        testContextMenu = (Button) findViewById(R.id.testContextMenu);
         testDisplayimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,6 +155,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,MaterialDesign.class);
+                startActivity(intent);
+            }
+        });
+        testContextMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ContextMenuActivity.class);
                 startActivity(intent);
             }
         });

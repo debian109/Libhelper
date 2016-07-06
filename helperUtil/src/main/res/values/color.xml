@@ -8,4 +8,9 @@
     <color name="card_shadow">#D4D4D4</color>
     <color name="black_overlay">#60000000</color>
     <color name="white_overlay">#40FFFFFF</color>
+
+    <!-- Context Menu -->
+    <color name="menu_fragment_background">#B3000000</color>
+    <color name="menu_item_background">#f2f2f2</color>
+    <color name="divider_color">#b5b5b5</color>
 </resources>

@@ -20,57 +20,60 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayimageViewActivity"/>
-        <activity android:name=".LocationDemo"/>
-        <activity android:name=".EditTextMeterial"/>
-        <activity android:name=".ImageSelector"/>
-        <activity android:name=".TextViewWithAnimation"/>
-        <activity android:name=".SwipeListView"/>
-        <activity android:name=".GetImeiPhone"/>
-        <activity android:name=".UseRunnable"/>
-        <activity android:name=".AutoScrollView"/>
-        <activity android:name=".TouchItemListVieAndGridView"/>
-        <activity android:name=".NavigationTransparent"/>
-        <activity android:name=".RecycleViewQuickScroll"/>
-        <activity android:name=".ScrollAnimationListviewAndRecyclerView"/>
-        <activity android:name=".MaterialDesign"/>
+        <activity android:name=".ActivityExample.DisplayimageViewActivity"/>
+        <activity android:name=".ActivityExample.LocationDemo"/>
+        <activity android:name=".ActivityExample.EditTextMeterial"/>
+        <activity android:name=".ActivityExample.ImageSelector"/>
+        <activity android:name=".ActivityExample.TextViewWithAnimation"/>
+        <activity android:name=".ActivityExample.SwipeListView"/>
+        <activity android:name=".ActivityExample.GetImeiPhone"/>
+        <activity android:name=".ActivityExample.UseRunnable"/>
+        <activity android:name=".ActivityExample.AutoScrollView"/>
+        <activity android:name=".ActivityExample.TouchItemListVieAndGridView"/>
+        <activity android:name=".ActivityExample.NavigationTransparent"/>
+        <activity android:name=".ActivityExample.RecycleViewQuickScroll"/>
+        <activity android:name=".ActivityExample.ScrollAnimationListviewAndRecyclerView"/>
+        <activity android:name=".ActivityExample.MaterialDesign"/>
         <!-- Material Design -->
         <activity
-            android:name=".MaterialActivity.FabHideActivity"
+            android:name=".ActivityExample.MaterialActivity.FabHideActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/title_fab_animations" />
         <activity
-            android:name=".MaterialActivity.ToolbarOverlayActivity"
+            android:name=".ActivityExample.MaterialActivity.ToolbarOverlayActivity"
             android:label="@string/title_activity_toolbar_test" />
         <activity
-            android:name=".MaterialActivity.NavDrawerActivity"
+            android:name=".ActivityExample.MaterialActivity.NavDrawerActivity"
             android:label="@string/title_activity_nav_drawer"
             android:theme="@style/MyTheme.Detail" />
         <activity
-            android:name=".MaterialActivity.AnimateToolbar"
+            android:name=".ActivityExample.MaterialActivity.AnimateToolbar"
             android:configChanges="orientation|screenSize"
             android:theme="@style/MyTheme.Detail" />
         <activity
-            android:name=".MaterialActivity.TabAnimationActivity"
+            android:name=".ActivityExample.MaterialActivity.TabAnimationActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_tab_animation" />
         <activity
-            android:name=".MaterialActivity.NestedToolbarActivity"
+            android:name=".ActivityExample.MaterialActivity.NestedToolbarActivity"
             android:label="@string/title_activity_nested_toolbar" />
         <activity
-            android:name=".MaterialActivity.QuickReturnActivity"
+            android:name=".ActivityExample.MaterialActivity.QuickReturnActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/title_quick_return" />
         <activity
-            android:name=".MaterialActivity.GmailStyleActivity"
+            android:name=".ActivityExample.MaterialActivity.GmailStyleActivity"
             android:label="@string/title_activity_gmail_style" />
         <activity
-            android:name=".MaterialActivity.TabsHeaderActivity"
+            android:name=".ActivityExample.MaterialActivity.TabsHeaderActivity"
             android:label="@string/title_activity_tabs_header"
             android:theme="@style/MyTheme.Detail" />
         <activity
-            android:name=".MaterialActivity.PagerActivity"
+            android:name=".ActivityExample.MaterialActivity.PagerActivity"
             android:theme="@style/MyTheme.Detail" />
+        <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- -->
+
+        <activity android:name=".ActivityExample.ContextMenuActivity"/>
     </application>
 
 </manifest>

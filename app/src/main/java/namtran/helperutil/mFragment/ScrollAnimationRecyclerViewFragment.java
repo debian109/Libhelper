@@ -6,21 +6,16 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.List;
 
 import JavaHelper.Convert;
 import UIHelper.ScrollAnimation.JazzyHelper;
-import UIHelper.ScrollAnimation.JazzyListView;
 import UIHelper.ScrollAnimation.JazzyRecyclerViewScrollListener;
-import namtran.helperutil.Adapter.AdapterBasic2;
 import namtran.helperutil.Adapter.ScrollAnimationRecyclerViewAdapter;
 import namtran.helperutil.R;
-import namtran.helperutil.ScrollAnimationListviewAndRecyclerView;
 
 /**
  * Created by NamTran on 4/3/2016.

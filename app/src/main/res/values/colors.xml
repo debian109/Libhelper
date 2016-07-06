@@ -62,4 +62,7 @@
     <color name="yellow">#FFEB3B</color>
     <color name="orange">#FF9800</color>
     <color name="deep_orange">#FF5722</color>
+
+    <!-- Context Menu -->
+    <color name="text_color">#222222</color>
 </resources>

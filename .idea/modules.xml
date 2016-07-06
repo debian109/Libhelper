@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LibHelper.iml" filepath="$PROJECT_DIR$/LibHelper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Libhelper.iml" filepath="$PROJECT_DIR$/Libhelper.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/helperUtil/helperUtil.iml" filepath="$PROJECT_DIR$/helperUtil/helperUtil.iml" />
     </modules>
