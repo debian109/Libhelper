@@ -18,6 +18,7 @@ import namtran.helperutil.ActivityExample.MaterialDesign;
 import namtran.helperutil.ActivityExample.NavigationTransparent;
 import namtran.helperutil.ActivityExample.RecycleViewQuickScroll;
 import namtran.helperutil.ActivityExample.ScrollAnimationListviewAndRecyclerView;
+import namtran.helperutil.ActivityExample.SlideMenuActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
 import namtran.helperutil.ActivityExample.TextViewWithAnimation;
 import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
@@ -30,7 +31,7 @@ public class MainActivity extends BaseActivity {
             ,testTextViewAnimation,testSwipeListView,testGetImeiPhone,testUseRunnable
             ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
             ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
-            ,testMaterialDesign,testContextMenu,testGuillotine;
+            ,testMaterialDesign,testContextMenu,testGuillotine,testSlideMenu;
 
 
     @Override
@@ -62,6 +63,7 @@ public class MainActivity extends BaseActivity {
         testMaterialDesign = (Button) findViewById(R.id.testMaterialDesign);
         testContextMenu = (Button) findViewById(R.id.testContextMenu);
         testGuillotine = (Button) findViewById(R.id.testGuillotine);
+        testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
         testDisplayimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,6 +173,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,GuillotineMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+        testSlideMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SlideMenuActivity.class);
                 startActivity(intent);
             }
         });
