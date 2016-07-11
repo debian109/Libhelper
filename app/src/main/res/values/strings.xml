@@ -507,4 +507,7 @@
     <string name="icon_creditcard">&#xf09d;</string>
     <string name="ghost_button_title">Ghost Button</string>
     <string name="icon_envelope"></string>
+
+    <!-- Sliding Menu -->
+    <string name="cover_hint">Sliding up to open</string>
 </resources>

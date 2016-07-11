@@ -21,6 +21,7 @@ import namtran.helperutil.ActivityExample.NavigationTransparent;
 import namtran.helperutil.ActivityExample.RecycleViewQuickScroll;
 import namtran.helperutil.ActivityExample.ScrollAnimationListviewAndRecyclerView;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
+import namtran.helperutil.ActivityExample.SlidingUpActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
 import namtran.helperutil.ActivityExample.TextViewWithAnimation;
 import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
@@ -34,7 +35,7 @@ public class MainActivity extends BaseActivity {
             ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
             ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
             ,testMaterialDesign,testContextMenu,testGuillotine,testSlideMenu
-            ,testFlowingDrawer,testFancyButton;
+            ,testFlowingDrawer,testFancyButton,testSlidingUp;
 
 
     @Override
@@ -69,6 +70,7 @@ public class MainActivity extends BaseActivity {
         testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
         testFlowingDrawer = (Button) findViewById(R.id.testFlowingDrawer);
         testFancyButton = (Button) findViewById(R.id.testFancyButton);
+        testSlidingUp = (Button) findViewById(R.id.testSlidingUp);
         testDisplayimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -199,6 +201,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,FancyButtonActivity.class);
+                startActivity(intent);
+            }
+        });
+        testSlidingUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SlidingUpActivity.class);
                 startActivity(intent);
             }
         });

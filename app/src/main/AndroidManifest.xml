@@ -83,6 +83,7 @@
         <activity android:name=".ActivityExample.FancyButtonActivityExample.XmlButtons"/>
         <activity android:name=".ActivityExample.FancyButtonActivityExample.ProgramButtons"/>
         <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- -->
+        <activity android:name=".ActivityExample.SlidingUpActivity"/>
     </application>
 
 </manifest>
