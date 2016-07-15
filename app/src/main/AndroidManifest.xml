@@ -84,6 +84,7 @@
         <activity android:name=".ActivityExample.FancyButtonActivityExample.ProgramButtons"/>
         <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- -->
         <activity android:name=".ActivityExample.SlidingUpActivity"/>
+        <activity android:name=".ActivityExample.FrameStrimmerActivity"/>
     </application>
 
 </manifest>

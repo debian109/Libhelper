@@ -12,6 +12,7 @@ import namtran.helperutil.ActivityExample.DisplayimageViewActivity;
 import namtran.helperutil.ActivityExample.EditTextMeterial;
 import namtran.helperutil.ActivityExample.FancyButtonActivityExample.FancyButtonActivity;
 import namtran.helperutil.ActivityExample.FlowingDrawerActivity;
+import namtran.helperutil.ActivityExample.FrameStrimmerActivity;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.ImageSelector;
@@ -35,7 +36,7 @@ public class MainActivity extends BaseActivity {
             ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
             ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
             ,testMaterialDesign,testContextMenu,testGuillotine,testSlideMenu
-            ,testFlowingDrawer,testFancyButton,testSlidingUp;
+            ,testFlowingDrawer,testFancyButton,testSlidingUp,testFramStremmer;
 
 
     @Override
@@ -71,6 +72,7 @@ public class MainActivity extends BaseActivity {
         testFlowingDrawer = (Button) findViewById(R.id.testFlowingDrawer);
         testFancyButton = (Button) findViewById(R.id.testFancyButton);
         testSlidingUp = (Button) findViewById(R.id.testSlidingUp);
+        testFramStremmer = (Button) findViewById(R.id.testFramStremmer);
         testDisplayimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -208,6 +210,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SlidingUpActivity.class);
+                startActivity(intent);
+            }
+        });
+        testFramStremmer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,FrameStrimmerActivity.class);
                 startActivity(intent);
             }
         });

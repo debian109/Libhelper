@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <UIHelper.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        shimmer:duration="1000">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/fb_logo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Facebook’s mission is to give people the power to share and make the world more open and connected."
+                style="@style/thin.white.large"/>
+        </LinearLayout>
+    </UIHelper.ShimmerFrameLayout>
+
+    <LinearLayout
+        android:id="@+id/settings_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/preset_button0"
+            android:text="1"
+            android:gravity="center"
+            style="@style/thin.white.small.button"
+            />
+
+        <Button
+            android:id="@+id/preset_button1"
+            android:text="2"
+            android:gravity="center"
+            style="@style/thin.white.small.button"
+            />
+
+        <Button
+            android:id="@+id/preset_button2"
+            android:text="3"
+            android:gravity="center"
+            style="@style/thin.white.small.button"
+            />
+
+        <Button
+            android:id="@+id/preset_button3"
+            android:text="4"
+            android:gravity="center"
+            style="@style/thin.white.small.button"
+            />
+
+        <Button
+            android:id="@+id/preset_button4"
+            android:text="5"
+            android:gravity="center"
+            style="@style/thin.white.small.button"
+            />
+        <Button
+            android:id="@+id/preset_button5"
+            android:text="6"
+            android:gravity="center"
+            style="@style/thin.white.small.button"
+            />
+    </LinearLayout>
+</FrameLayout>
