@@ -20,7 +20,7 @@ import Animation.TextViewAnimation.HTextViewType;
 import Animation.TextViewAnimation.TypeWriter;
 import Animation.ViewAnimation.AnimationHelper;
 import Animation.ViewAnimation.Techniques;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 
 /**
@@ -35,6 +35,11 @@ public class TextViewWithAnimation extends BaseActivity implements ViewSwitcher.
     @Override
     protected View initContentView() {
         return getView(R.layout.textviewwithanimation_layout);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
     }
 
     int a = 0;

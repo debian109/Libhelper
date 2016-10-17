@@ -1,8 +1,8 @@
 package namtran.helperutil.ActivityExample;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -11,20 +11,36 @@ import android.view.View;
 import UIHelper.FlowingDrawer.FlowingView;
 import UIHelper.FlowingDrawer.LeftDrawerLayout;
 import namtran.helperutil.Adapter.FlowingDrawerFeedAdapter;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 import namtran.helperutil.mFragment.FlowingDrawerMyMenuFragment;
 
 
-public class FlowingDrawerActivity extends AppCompatActivity {
+public class FlowingDrawerActivity extends BaseActivity {
 
     private RecyclerView rvFeed;
     private LeftDrawerLayout mLeftDrawerLayout;
 
     @Override
+    protected Fragment initFragment() {
+        return null;
+    }
+
+    @Override
+    protected View initContentView() {
+        return getView(R.layout.activity_flowing_drawer);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flowing_drawer);
         setupToolbar();
+        hideToolbar();
 
         mLeftDrawerLayout = (LeftDrawerLayout) findViewById(R.id.id_drawerlayout);
         rvFeed = (RecyclerView) findViewById(R.id.rvFeed);

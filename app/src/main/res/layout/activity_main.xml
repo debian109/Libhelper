@@ -7,30 +7,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="vn.namtran.MainActivity">
+    tools:context="namtran.helperutil.MainActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Display ImageView"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:id="@+id/testDisplayimageView"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Location"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testDisplayimageView"
-            android:id="@+id/testLocation"
-            android:layout_marginBottom="5dp"/>
 
         <Button
             android:layout_width="match_parent"
@@ -39,7 +19,6 @@
             android:text="Edittext Meterial"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:layout_below="@+id/testLocation"
             android:id="@+id/testEdittext"
             android:layout_marginBottom="5dp"/>
 
@@ -124,43 +103,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/amber"
-            android:text="Navigation Transparent"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testTouchItemListVieAndGridView"
-            android:id="@+id/testNavigationTransparent"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="RecycleView Quick Scroll"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testNavigationTransparent"
-            android:id="@+id/testRecycleViewQuickScroll"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Scroll Animation Listview and RecyclerView"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testRecycleViewQuickScroll"
-            android:id="@+id/testScrollAnimationListviewandRecyclerView"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
             android:text="Material Design with ToolBar"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:layout_below="@+id/testScrollAnimationListviewandRecyclerView"
+            android:layout_below="@+id/testTouchItemListVieAndGridView"
             android:id="@+id/testMaterialDesign"
             android:layout_marginBottom="5dp"/>
 
@@ -212,32 +158,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/amber"
-            android:text="Fancy Button"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testFlowingDrawer"
-            android:id="@+id/testFancyButton"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Sliding Up"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testFancyButton"
-            android:id="@+id/testSlidingUp"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
             android:text="Frame Stremmer"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:layout_below="@+id/testSlidingUp"
+            android:layout_below="@+id/testFlowingDrawer"
             android:id="@+id/testFramStremmer"
             android:layout_marginBottom="5dp"/>
 

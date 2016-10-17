@@ -16,7 +16,7 @@ import UIHelper.SwipeMenuListView.SwipeMenuCreator;
 import UIHelper.SwipeMenuListView.SwipeMenuItem;
 import UIHelper.SwipeMenuListView.SwipeMenuListView;
 import namtran.helperutil.Adapter.AdapterBasic2;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 
 /**
@@ -32,10 +32,17 @@ public class SwipeListView extends BaseActivity {
     protected View initContentView() {
         return getView(R.layout.swipelistview_layout);
     }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
+    }
+
     AdapterBasic2 adapter;
     SwipeMenuListView swipelistview;
     List<String> values = new ArrayList<>();
     int vitri = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -6,14 +6,12 @@ import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import UIHelper.ShimmerFrameLayout;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 
 /**
@@ -29,6 +27,11 @@ public class FrameStrimmerActivity extends BaseActivity {
     @Override
     protected View initContentView() {
         return getView(R.layout.activity_frame_shimmer);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
     }
 
     private ShimmerFrameLayout mShimmerViewContainer;

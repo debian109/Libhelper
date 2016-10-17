@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
 
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 import namtran.helperutil.mFragment.GridViewTouchItemFragment;
 import namtran.helperutil.mFragment.ListViewTouchItemFragment;
@@ -23,6 +23,11 @@ public class TouchItemListVieAndGridView extends BaseActivity implements View.On
     @Override
     protected View initContentView() {
         return getView(R.layout.touchitemlistviewandgridview_layout);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
     }
 
     Button lvListView,gvGridView;

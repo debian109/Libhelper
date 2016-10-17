@@ -326,7 +326,7 @@ public class ViewPagerCompat extends ViewGroup {
      * Used internally to monitor when adapters are switched.
      */
     interface OnAdapterChangeListener {
-        public void onAdapterChanged(PagerAdapter oldAdapter, PagerAdapter newAdapter);
+        void onAdapterChanged(PagerAdapter oldAdapter, PagerAdapter newAdapter);
     }
 
     /**

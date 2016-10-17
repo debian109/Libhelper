@@ -3,6 +3,7 @@ package namtran.helperutil.ActivityExample;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -12,8 +13,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import UIHelper.Indicator.CircleIndicator;
 import UIHelper.ScrollViewAuto.ZoomOutPageTransformer;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.Model.AutoScrollViewModel;
 import namtran.helperutil.Adapter.AutoScrollViewHelper;
 import namtran.helperutil.R;
@@ -28,6 +30,7 @@ public class AutoScrollView extends BaseActivity {
     private RadioButton rabNoAnimation;
     private RadioGroup rag;
     private List<AutoScrollViewModel> mListModel = new ArrayList<>();
+    private CircleIndicator indicator;
 
     @Override
     protected Fragment initFragment() {
@@ -40,17 +43,24 @@ public class AutoScrollView extends BaseActivity {
     }
 
     @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPosterView = (AutoScrollViewHelper) findViewById(R.id.viewPager);
+        indicator = (CircleIndicator) findViewById(R.id.indicator);
         rabAnimation = (RadioButton) findViewById(R.id.rabAnimation);
         rabNoAnimation = (RadioButton) findViewById(R.id.rabNoAnimation);
         rag = (RadioGroup) findViewById(R.id.rag);
         initData();
-        // mPosterView.setDisplayImageOptions(displayImageOptions);
+        //mPosterView.setDisplayImageOptions(displayImageOptions);
         mPosterView.setScaleType(ImageView.ScaleType.FIT_XY);
         mPosterView.addItems(mListModel);
         mPosterView.startAutoScroll(2 * 1000);
+        indicator.setViewPager(mPosterView);
 
         mPosterView.setOnItemViewClickListener(new AutoScrollViewHelper.OnItemViewClickListener() {
 

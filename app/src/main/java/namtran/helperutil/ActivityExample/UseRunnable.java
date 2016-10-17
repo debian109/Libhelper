@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 
 /**
@@ -23,6 +23,12 @@ public class UseRunnable extends BaseActivity {
     protected View initContentView() {
         return getView(R.layout.userunnable_layout);
     }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
+    }
+
     LinearLayout linYellow;
     LinearLayout linBlue;
     LinearLayout linRed;

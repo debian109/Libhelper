@@ -23,7 +23,7 @@ import UIHelper.SlideMenu.interfaces.Resourceble;
 import UIHelper.SlideMenu.interfaces.ScreenShotable;
 import UIHelper.SlideMenu.model.SlideMenuItem;
 import UIHelper.SlideMenu.util.ViewAnimator;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 import namtran.helperutil.mFragment.SlideMenu_ContentFragment;
 
@@ -40,6 +40,11 @@ public class SlideMenuActivity extends BaseActivity implements ViewAnimator.View
     @Override
     protected View initContentView() {
         return getView(R.layout.activity_slide_menu);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
     }
 
     private DrawerLayout drawerLayout;
@@ -180,6 +185,7 @@ public class SlideMenuActivity extends BaseActivity implements ViewAnimator.View
     public ScreenShotable onSwitch(Resourceble slideMenuItem, ScreenShotable screenShotable, int position) {
         switch (slideMenuItem.getName()) {
             case SlideMenu_ContentFragment.CLOSE:
+                finish();
                 return screenShotable;
             default:
                 return replaceFragment(screenShotable, position);

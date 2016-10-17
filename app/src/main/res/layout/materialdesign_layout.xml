@@ -3,12 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.suleiman.material.activities.MainActivity">
+    tools:context=".ActivityExample.MaterialDesign">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/home_recyclerview"
@@ -17,8 +16,6 @@
             android:clipToPadding="false" />
 
     </FrameLayout>
-
-    <include layout="@layout/toolbar_w_shadow" />
 
 
 </FrameLayout>

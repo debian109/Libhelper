@@ -1,9 +1,9 @@
 package namtran.helperutil.ActivityExample;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,15 +24,15 @@ import namtran.helperutil.ActivityExample.MaterialActivity.PagerActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.QuickReturnActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.TabAnimationActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.ToolbarOverlayActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 import namtran.helperutil.Util.Utils;
 
 /**
  * Created by Nam Tran on 04-Apr-16.
  */
-public class MaterialDesign extends AppCompatActivity {
+public class MaterialDesign extends BaseActivity {
 
-    Toolbar toolbar;
     RecyclerView recyclerView;
     SimpleRecyclerAdapter adapter;
     RecyclerView mainRecyclerView;
@@ -50,18 +50,26 @@ public class MaterialDesign extends AppCompatActivity {
     }
 
     @Override
+    protected Fragment initFragment() {
+        return null;
+    }
+
+    @Override
+    protected View initContentView() {
+        return getView(R.layout.materialdesign_layout);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
         isUserFirstTime = Boolean.valueOf(Utils.readSharedSetting(MaterialDesign.this, PREF_USER_FIRST_TIME, "true"));
-        setContentView(R.layout.materialdesign_layout);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar_elevated);
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-        }
-        getSupportActionBar().setTitle("Material Design Samples");
 
         mainRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         listItem = (CardView) findViewById(R.id.cardlist_item);

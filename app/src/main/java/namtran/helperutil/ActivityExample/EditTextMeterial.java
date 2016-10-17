@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 import UIHelper.MaterialEditText;
 import UIHelper.Validation.RegexpValidator;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 
 /**
@@ -23,6 +23,11 @@ public class EditTextMeterial extends BaseActivity {
     @Override
     protected View initContentView() {
         return getView(R.layout.edittextmeterial_layout);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
     }
 
     @Override

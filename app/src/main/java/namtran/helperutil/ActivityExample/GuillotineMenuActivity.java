@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import UIHelper.Guillotine.animation.GuillotineAnimation;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 
 /**
@@ -30,6 +30,11 @@ public class GuillotineMenuActivity extends BaseActivity {
     @Override
     protected View initContentView() {
         return getView(R.layout.activity_guillotine_menu);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
     }
 
     @Override

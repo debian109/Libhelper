@@ -7,16 +7,16 @@ import android.view.ViewGroup;
 public interface IPagerAdapter
 {
 	
-	public void destroyItem(ViewGroup container, int position, Object object);
+	void destroyItem(ViewGroup container, int position, Object object);
 	
-	public int getCount();
+	int getCount();
 	
-	public Object instantiateItem(ViewGroup view, final int position);
+	Object instantiateItem(ViewGroup view, final int position);
 	
-	public boolean isViewFromObject(View view, Object object);
+	boolean isViewFromObject(View view, Object object);
 	
-	public void restoreState(Parcelable state, ClassLoader loader);
+	void restoreState(Parcelable state, ClassLoader loader);
 	
-	public Parcelable saveState();
+	Parcelable saveState();
 	
 }

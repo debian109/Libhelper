@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import SystemUtil.TelephonyInfo;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 
 /**
@@ -23,6 +23,11 @@ public class GetImeiPhone extends BaseActivity {
     @Override
     protected View initContentView() {
         return getView(R.layout.getimei_layout);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
     }
 
     TextView txtGetImei1;

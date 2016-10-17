@@ -3,6 +3,7 @@ package namtran.helperutil.BasicActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Fragment;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -32,13 +33,14 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 
 
 /**
  * Choose Image from Gallery or pick Camera and show ImageView
  */
-public class ImageSelectBaseActivity extends Activity {
+public abstract class ImageSelectBaseActivity extends BaseActivity {
 	/** Buttons for selector dialog */
 	private View mBtnGallery = null, mBtnCamera = null, mBtnCancel = null;
 

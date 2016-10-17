@@ -20,8 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityExample.DisplayimageViewActivity"/>
-        <activity android:name=".ActivityExample.LocationDemo"/>
         <activity android:name=".ActivityExample.EditTextMeterial"/>
         <activity android:name=".ActivityExample.ImageSelector"/>
         <activity android:name=".ActivityExample.TextViewWithAnimation"/>
@@ -30,9 +28,6 @@
         <activity android:name=".ActivityExample.UseRunnable"/>
         <activity android:name=".ActivityExample.AutoScrollView"/>
         <activity android:name=".ActivityExample.TouchItemListVieAndGridView"/>
-        <activity android:name=".ActivityExample.NavigationTransparent"/>
-        <activity android:name=".ActivityExample.RecycleViewQuickScroll"/>
-        <activity android:name=".ActivityExample.ScrollAnimationListviewAndRecyclerView"/>
         <activity android:name=".ActivityExample.MaterialDesign"/>
         <!-- Material Design -->
         <activity
@@ -78,12 +73,6 @@
         <activity android:name=".ActivityExample.SlideMenuActivity"/>
         <activity android:name=".ActivityExample.FlowingDrawerActivity"/>
 
-        <!-- Fancy Button -->
-        <activity android:name=".ActivityExample.FancyButtonActivityExample.FancyButtonActivity"/>
-        <activity android:name=".ActivityExample.FancyButtonActivityExample.XmlButtons"/>
-        <activity android:name=".ActivityExample.FancyButtonActivityExample.ProgramButtons"/>
-        <!-- -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- -->
-        <activity android:name=".ActivityExample.SlidingUpActivity"/>
         <activity android:name=".ActivityExample.FrameStrimmerActivity"/>
     </application>
 

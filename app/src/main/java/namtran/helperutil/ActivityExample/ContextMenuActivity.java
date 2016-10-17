@@ -23,7 +23,7 @@ import UIHelper.ContextMenu.MenuObject;
 import UIHelper.ContextMenu.MenuParams;
 import UIHelper.ContextMenu.interfaces.OnMenuItemClickListener;
 import UIHelper.ContextMenu.interfaces.OnMenuItemLongClickListener;
-import namtran.helperutil.BasicActivity.BaseActivity;
+import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 import namtran.helperutil.mFragment.Context_menu_mainFragment;
 
@@ -46,11 +46,14 @@ public class ContextMenuActivity extends BaseActivity implements OnMenuItemClick
     }
 
     @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        hideToolbar();
         fragmentManager = getSupportFragmentManager();
-        initToolbar();
         initMenuFragment();
         addFragment(new Context_menu_mainFragment(), true, R.id.container);
     }
@@ -112,25 +115,6 @@ public class ContextMenuActivity extends BaseActivity implements OnMenuItemClick
         menuObjects.add(addFav);
         menuObjects.add(block);
         return menuObjects;
-    }
-
-    private void initToolbar() {
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView mToolBarTextView = (TextView) findViewById(R.id.text_view_toolbar_title);
-        setSupportActionBar(mToolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-        }
-        mToolbar.setNavigationIcon(R.drawable.btn_back);
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-        mToolBarTextView.setText("Samantha");
     }
 
     protected void addFragment(android.support.v4.app.Fragment fragment, boolean addToBackStack, int containerId) {

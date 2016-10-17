@@ -8,35 +8,26 @@ import android.widget.Button;
 
 import namtran.helperutil.ActivityExample.AutoScrollView;
 import namtran.helperutil.ActivityExample.ContextMenuActivity;
-import namtran.helperutil.ActivityExample.DisplayimageViewActivity;
 import namtran.helperutil.ActivityExample.EditTextMeterial;
-import namtran.helperutil.ActivityExample.FancyButtonActivityExample.FancyButtonActivity;
 import namtran.helperutil.ActivityExample.FlowingDrawerActivity;
 import namtran.helperutil.ActivityExample.FrameStrimmerActivity;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.ImageSelector;
-import namtran.helperutil.ActivityExample.LocationDemo;
 import namtran.helperutil.ActivityExample.MaterialDesign;
-import namtran.helperutil.ActivityExample.NavigationTransparent;
-import namtran.helperutil.ActivityExample.RecycleViewQuickScroll;
-import namtran.helperutil.ActivityExample.ScrollAnimationListviewAndRecyclerView;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
-import namtran.helperutil.ActivityExample.SlidingUpActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
 import namtran.helperutil.ActivityExample.TextViewWithAnimation;
 import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
 import namtran.helperutil.ActivityExample.UseRunnable;
-import namtran.helperutil.BasicActivity.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
-    Button testDisplayimageView,testLocation,testEdittext,testImageSelector
+    Button testEdittext,testImageSelector
             ,testTextViewAnimation,testSwipeListView,testGetImeiPhone,testUseRunnable
-            ,testAutoScrollView,testTouchItemListVieAndGridView,testNavigationTransparent
-            ,testRecycleViewQuickScroll,testScrollAnimationListviewandRecyclerView
+            ,testAutoScrollView,testTouchItemListVieAndGridView
             ,testMaterialDesign,testContextMenu,testGuillotine,testSlideMenu
-            ,testFlowingDrawer,testFancyButton,testSlidingUp,testFramStremmer;
+            ,testFlowingDrawer,testFramStremmer;
 
 
     @Override
@@ -50,10 +41,18 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    protected String title() {
+        return "Example Activity";
+    }
+
+    @Override
+    protected boolean isShowBackButton() {
+        return false;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        testDisplayimageView = (Button) findViewById(R.id.testDisplayimageView);
-        testLocation = (Button) findViewById(R.id.testLocation);
         testEdittext = (Button) findViewById(R.id.testEdittext);
         testImageSelector = (Button) findViewById(R.id.testImageSelector);
         testTextViewAnimation = (Button) findViewById(R.id.testTextView);
@@ -61,32 +60,14 @@ public class MainActivity extends BaseActivity {
         testGetImeiPhone = (Button) findViewById(R.id.testGetImeiPhone);
         testUseRunnable = (Button) findViewById(R.id.testUseRunnable);
         testAutoScrollView = (Button) findViewById(R.id.testAutoScrollView);
-        testNavigationTransparent = (Button) findViewById(R.id.testNavigationTransparent);
         testTouchItemListVieAndGridView = (Button) findViewById(R.id.testTouchItemListVieAndGridView);
-        testRecycleViewQuickScroll = (Button) findViewById(R.id.testRecycleViewQuickScroll);
-        testScrollAnimationListviewandRecyclerView = (Button) findViewById(R.id.testScrollAnimationListviewandRecyclerView);
         testMaterialDesign = (Button) findViewById(R.id.testMaterialDesign);
         testContextMenu = (Button) findViewById(R.id.testContextMenu);
         testGuillotine = (Button) findViewById(R.id.testGuillotine);
         testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
         testFlowingDrawer = (Button) findViewById(R.id.testFlowingDrawer);
-        testFancyButton = (Button) findViewById(R.id.testFancyButton);
-        testSlidingUp = (Button) findViewById(R.id.testSlidingUp);
         testFramStremmer = (Button) findViewById(R.id.testFramStremmer);
-        testDisplayimageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,DisplayimageViewActivity.class);
-                startActivity(intent);
-            }
-        });
-        testLocation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,LocationDemo.class);
-                startActivity(intent);
-            }
-        });
+
         testEdittext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,27 +124,6 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-        testNavigationTransparent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,NavigationTransparent.class);
-                startActivity(intent);
-            }
-        });
-        testRecycleViewQuickScroll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,RecycleViewQuickScroll.class);
-                startActivity(intent);
-            }
-        });
-        testScrollAnimationListviewandRecyclerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ScrollAnimationListviewAndRecyclerView.class);
-                startActivity(intent);
-            }
-        });
         testMaterialDesign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,20 +156,6 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,FlowingDrawerActivity.class);
-                startActivity(intent);
-            }
-        });
-        testFancyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,FancyButtonActivity.class);
-                startActivity(intent);
-            }
-        });
-        testSlidingUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,SlidingUpActivity.class);
                 startActivity(intent);
             }
         });

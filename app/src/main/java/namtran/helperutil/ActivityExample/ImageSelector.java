@@ -1,5 +1,6 @@
 package namtran.helperutil.ActivityExample;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,10 +17,25 @@ import namtran.helperutil.R;
 public class ImageSelector extends ImageSelectBaseActivity {
 
     String URL = "https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s240-c/A%252520Photographer.jpg";
+
+    @Override
+    protected Fragment initFragment() {
+        return null;
+    }
+
+    @Override
+    protected View initContentView() {
+        return getView(R.layout.imageselector_layout);
+    }
+
+    @Override
+    protected String title() {
+        return this.getClass().getSimpleName();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.imageselector_layout);
         Picasso.with(this).load(URL).into((ImageView) findViewById(R.id.ivImageSelected));
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
