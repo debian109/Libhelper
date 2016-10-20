@@ -20,9 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityExample.EditTextMeterial"/>
         <activity android:name=".ActivityExample.ImageSelector"/>
-        <activity android:name=".ActivityExample.TextViewWithAnimation"/>
         <activity android:name=".ActivityExample.SwipeListView"/>
         <activity android:name=".ActivityExample.GetImeiPhone"/>
         <activity android:name=".ActivityExample.UseRunnable"/>
@@ -57,9 +55,6 @@
             android:configChanges="orientation|screenSize"
             android:label="@string/title_quick_return" />
         <activity
-            android:name=".ActivityExample.MaterialActivity.GmailStyleActivity"
-            android:label="@string/title_activity_gmail_style" />
-        <activity
             android:name=".ActivityExample.MaterialActivity.TabsHeaderActivity"
             android:label="@string/title_activity_tabs_header"
             android:theme="@style/MyTheme.Detail" />
@@ -71,9 +66,8 @@
         <activity android:name=".ActivityExample.ContextMenuActivity"/>
         <activity android:name=".ActivityExample.GuillotineMenuActivity"/>
         <activity android:name=".ActivityExample.SlideMenuActivity"/>
-        <activity android:name=".ActivityExample.FlowingDrawerActivity"/>
-
         <activity android:name=".ActivityExample.FrameStrimmerActivity"/>
+
     </application>
 
 </manifest>

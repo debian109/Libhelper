@@ -5,26 +5,6 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- Design EditText meterial -->
-    <dimen name="default_padding_top">8dp</dimen>
-    <dimen name="default_padding_bottom">8dp</dimen>
-    <dimen name="inner_padding_left">0dp</dimen>
-    <dimen name="inner_padding_right">0dp</dimen>
-    <dimen name="floating_label_text_size">12sp</dimen>
-    <dimen name="bottom_text_size">12sp</dimen>
-    <dimen name="inner_components_spacing">8dp</dimen>
-    <dimen name="bottom_ellipsis_height">4dp</dimen>
-
-    <!-- SearchBox -->
-    <dimen name="min_height">55.5dp</dimen>
-    <dimen name="image_dimen">48dp</dimen>
-    <dimen name="image_top_margin">12dp</dimen>
-    <dimen name="image_side_margin">16dp</dimen>
-    <dimen name="text_margin">60dp</dimen>
-    <dimen name="text_margin_menu">65dp</dimen>
-
-    <!-- Dialog Util -->
-    <dimen name="default_center_margin">16dp</dimen>
 
     <!-- Material Menu-->
     <dimen name="mm_up_arrow_margin">-16dp</dimen>

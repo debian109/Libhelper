@@ -59,7 +59,7 @@ public class AutoScrollView extends BaseActivity {
         //mPosterView.setDisplayImageOptions(displayImageOptions);
         mPosterView.setScaleType(ImageView.ScaleType.FIT_XY);
         mPosterView.addItems(mListModel);
-        mPosterView.startAutoScroll(2 * 1000);
+        mPosterView.startAutoScroll(3 * 1000,0);
         indicator.setViewPager(mPosterView);
 
         mPosterView.setOnItemViewClickListener(new AutoScrollViewHelper.OnItemViewClickListener() {
@@ -98,15 +98,8 @@ public class AutoScrollView extends BaseActivity {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        mPosterView.resumeScroll();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
+    protected void onDestroy() {
+        super.onDestroy();
         mPosterView.stopScroll();
     }
-
 }

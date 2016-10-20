@@ -8,8 +8,6 @@ import android.widget.Button;
 
 import namtran.helperutil.ActivityExample.AutoScrollView;
 import namtran.helperutil.ActivityExample.ContextMenuActivity;
-import namtran.helperutil.ActivityExample.EditTextMeterial;
-import namtran.helperutil.ActivityExample.FlowingDrawerActivity;
 import namtran.helperutil.ActivityExample.FrameStrimmerActivity;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
@@ -17,17 +15,14 @@ import namtran.helperutil.ActivityExample.ImageSelector;
 import namtran.helperutil.ActivityExample.MaterialDesign;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
-import namtran.helperutil.ActivityExample.TextViewWithAnimation;
 import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
 import namtran.helperutil.ActivityExample.UseRunnable;
 
 public class MainActivity extends BaseActivity {
 
-    Button testEdittext,testImageSelector
-            ,testTextViewAnimation,testSwipeListView,testGetImeiPhone,testUseRunnable
-            ,testAutoScrollView,testTouchItemListVieAndGridView
-            ,testMaterialDesign,testContextMenu,testGuillotine,testSlideMenu
-            ,testFlowingDrawer,testFramStremmer;
+    Button testImageSelector,testSwipeListView,testGetImeiPhone,testUseRunnable
+            ,testAutoScrollView,testTouchItemListVieAndGridView,testMaterialDesign
+            ,testContextMenu,testGuillotine,testSlideMenu,testFramStremmer;
 
 
     @Override
@@ -53,9 +48,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        testEdittext = (Button) findViewById(R.id.testEdittext);
         testImageSelector = (Button) findViewById(R.id.testImageSelector);
-        testTextViewAnimation = (Button) findViewById(R.id.testTextView);
         testSwipeListView = (Button) findViewById(R.id.testSwipeListView);
         testGetImeiPhone = (Button) findViewById(R.id.testGetImeiPhone);
         testUseRunnable = (Button) findViewById(R.id.testUseRunnable);
@@ -65,27 +58,12 @@ public class MainActivity extends BaseActivity {
         testContextMenu = (Button) findViewById(R.id.testContextMenu);
         testGuillotine = (Button) findViewById(R.id.testGuillotine);
         testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
-        testFlowingDrawer = (Button) findViewById(R.id.testFlowingDrawer);
         testFramStremmer = (Button) findViewById(R.id.testFramStremmer);
 
-        testEdittext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,EditTextMeterial.class);
-                startActivity(intent);
-            }
-        });
         testImageSelector.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ImageSelector.class);
-                startActivity(intent);
-            }
-        });
-        testTextViewAnimation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TextViewWithAnimation.class);
                 startActivity(intent);
             }
         });
@@ -149,13 +127,6 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SlideMenuActivity.class);
-                startActivity(intent);
-            }
-        });
-        testFlowingDrawer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,FlowingDrawerActivity.class);
                 startActivity(intent);
             }
         });

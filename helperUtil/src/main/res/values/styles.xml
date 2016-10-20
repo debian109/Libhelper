@@ -36,13 +36,6 @@
         <attr name="mm_rtlEnabled" format="boolean"/>
     </declare-styleable>
 
-    <!-- CheckBox -->
-    <declare-styleable name="AnimCheckBox">
-        <attr name="stroke_width" format="dimension"/>
-        <attr name="stroke_color" format="color"/>
-        <attr name="circle_color" format="color"/>
-    </declare-styleable>
-
     <!-- Context Menu -->
     <style name="MenuFragmentStyle" parent="AppTheme">
         <item name="android:background">@android:color/transparent</item>

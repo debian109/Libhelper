@@ -12,15 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Edittext Meterial"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:id="@+id/testEdittext"
-            android:layout_marginBottom="5dp"/>
+
 
         <Button
             android:layout_width="match_parent"
@@ -29,19 +21,7 @@
             android:text="Selector Image"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:layout_below="@+id/testEdittext"
             android:id="@+id/testImageSelector"
-            android:layout_marginBottom="5dp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="TextView Animation"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testImageSelector"
-            android:id="@+id/testTextView"
             android:layout_marginBottom="5dp"/>
 
         <Button
@@ -51,7 +31,7 @@
             android:text="Swipe ListView"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:layout_below="@+id/testTextView"
+            android:layout_below="@+id/testImageSelector"
             android:id="@+id/testSwipeListView"
             android:layout_marginBottom="5dp"/>
 
@@ -143,16 +123,6 @@
             android:id="@+id/testSlideMenu"
             android:layout_marginBottom="5dp"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Flowing Drawer"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@+id/testSlideMenu"
-            android:id="@+id/testFlowingDrawer"
-            android:layout_marginBottom="5dp"/>
 
         <Button
             android:layout_width="match_parent"
@@ -161,7 +131,7 @@
             android:text="Frame Stremmer"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:layout_below="@+id/testFlowingDrawer"
+            android:layout_below="@+id/testGuillotine"
             android:id="@+id/testFramStremmer"
             android:layout_marginBottom="5dp"/>
 

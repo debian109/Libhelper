@@ -11,6 +11,7 @@ import android.support.annotation.AnimatorRes;
 import android.support.annotation.DrawableRes;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Interpolator;
@@ -229,22 +230,43 @@ public class CircleIndicator extends LinearLayout {
 
     private final OnPageChangeListener mInternalPageCompatChangeListener = new OnPageChangeListener() {
 
-        private int positionPage = 0;
+        private int positionPage = -1;
+        private int positionCurrent = 0;
+        private boolean isCurrent = true;
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
         }
 
         @Override public void onPageSelected(int position) {
 
-            if (mViewPagerCompat.getAdapter() == null || mViewPagerCompat.getAdapter().getCount() <= 0) {
+            if (mViewPagerCompat.getAdapter() == null || mViewPagerCompat.getItemList().size() <= 0) {
                 return;
             }
 
-            if (positionPage > mViewPagerCompat.getItemList().size())
-                positionPage = 0;
-            positionPage ++;
+            if (isCurrent){
+                positionCurrent = position;
+                isCurrent = false;
+            }
 
+            Log.d("Position",mViewPagerCompat.getItemList().size() + "");
+
+            if (positionCurrent > position){
+                positionCurrent = position;
+                positionPage --;
+            } else if (positionCurrent == position) {
+                positionPage ++;
+            }
+
+            if (positionPage > mViewPagerCompat.getItemList().size() - 1 )
+                positionPage = 0;
+            else if (positionPage < 0)
+                positionPage = mViewPagerCompat.getItemList().size() - 1;
+
+            positionCurrent++;
+
+            Log.d("Position",position +" / " + positionCurrent + " / " + positionPage);
 
             if (mAnimatorIn.isRunning()) {
                 mAnimatorIn.end();
@@ -257,19 +279,21 @@ public class CircleIndicator extends LinearLayout {
             }
 
             View currentIndicator;
-            if (mLastPosition >= 0 && (currentIndicator = getChildAt(mLastPosition)) != null) {
+            if (mLastPosition > -1 && (currentIndicator = getChildAt(mLastPosition)) != null) {
                 currentIndicator.setBackgroundResource(mIndicatorUnselectedBackgroundResId);
                 mAnimatorIn.setTarget(currentIndicator);
                 mAnimatorIn.start();
             }
 
-            View selectedIndicator = getChildAt(position);
+            View selectedIndicator = getChildAt(positionPage);
             if (selectedIndicator != null) {
                 selectedIndicator.setBackgroundResource(mIndicatorBackgroundResId);
                 mAnimatorOut.setTarget(selectedIndicator);
                 mAnimatorOut.start();
             }
+
             mLastPosition = positionPage;
+
         }
 
         @Override public void onPageScrollStateChanged(int state) {

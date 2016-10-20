@@ -11,6 +11,4 @@
     <string name="http_err_resp_content_error">Lỗi máy chủ, mã lỗi: 888</string>
     <string name="dialog_error_system">Lỗi hệ thống.</string>
 
-    <!-- SearchBox -->
-    <string name="speak_now">Speak now</string>
 </resources>

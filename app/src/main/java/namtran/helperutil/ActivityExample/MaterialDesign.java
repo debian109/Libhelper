@@ -8,7 +8,6 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.widget.Toast;
 import namtran.helperutil.Adapter.SimpleRecyclerAdapter;
 import namtran.helperutil.ActivityExample.MaterialActivity.AnimateToolbar;
 import namtran.helperutil.ActivityExample.MaterialActivity.FabHideActivity;
-import namtran.helperutil.ActivityExample.MaterialActivity.GmailStyleActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.NavDrawerActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.NestedToolbarActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.PagerActivity;
@@ -112,9 +110,6 @@ public class MaterialDesign extends BaseActivity {
                         intent = new Intent(MaterialDesign.this, QuickReturnActivity.class);
                         break;
                     case 7:
-                        intent = new Intent(MaterialDesign.this, GmailStyleActivity.class);
-                        break;
-                    case 8:
                         intent = new Intent(MaterialDesign.this, PagerActivity.class);
                         break;
 
