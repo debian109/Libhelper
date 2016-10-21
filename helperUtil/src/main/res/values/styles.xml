@@ -52,4 +52,28 @@
     <item name="android:textColor">@android:color/white</item>
     <item name="android:textSize">@dimen/menu_text_size</item>
     </style>
+
+    <!-- SwipeBack Normal -->
+    <style name="Theme.Swipe.Back" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.No.ActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- SwipeBack Transition -->
+    <style name="ActivityTransitions" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/swipeback_transition_open_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/swipeback_transition_open_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/swipeback_transition_close_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/swipeback_transition_close_exit</item>
+    </style>
+    <style name="SlideAppTheme" parent="Theme.No.ActionBar">
+        <item name="android:windowAnimationStyle">@style/ActivityTransitions</item>
+    </style>
 </resources>

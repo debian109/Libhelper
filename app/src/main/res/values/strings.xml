@@ -510,4 +510,11 @@
 
     <!-- Sliding Menu -->
     <string name="cover_hint">Sliding up to open</string>
+
+    <!-- SwipeBack Normal -->
+
+    <string name="title_activity_common">CommonActivity</string>
+    <string name="title_activity_list_view">ListViewActivity</string>
+    <string name="title_activity_viewpager">ViewPagerActivity</string>
+    <string name="title_activity_webview">WebViewActivity</string>
 </resources>

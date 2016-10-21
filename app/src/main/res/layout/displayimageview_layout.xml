@@ -27,7 +27,8 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center"
-                android:id="@+id/displayLargeImage"/>
+                android:id="@+id/displayLargeImage"
+                android:src="@drawable/vietnam"/>
         </LinearLayout>
 
         <LinearLayout
@@ -53,39 +54,6 @@
         </LinearLayout>
 
         </LinearLayout>
-
-       <!-- <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Display Processing Image From Resource"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:gravity="center"
-                android:layout_marginBottom="2.5dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical">
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:id="@+id/listView"/>
-                <GridView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:id="@+id/gridView"
-                    android:columnWidth="1dp"
-                    android:numColumns="2"/>
-            </LinearLayout>
-        </LinearLayout>-->
     </LinearLayout>
 
 </LinearLayout>

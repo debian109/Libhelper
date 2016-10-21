@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import namtran.helperutil.ActivityExample.MaterialDesign;
 import namtran.helperutil.R;
 
 public class LaunchScreenActivity extends AppCompatActivity {

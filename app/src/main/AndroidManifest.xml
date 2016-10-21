@@ -26,7 +26,7 @@
         <activity android:name=".ActivityExample.UseRunnable"/>
         <activity android:name=".ActivityExample.AutoScrollView"/>
         <activity android:name=".ActivityExample.TouchItemListVieAndGridView"/>
-        <activity android:name=".ActivityExample.MaterialDesign"/>
+        <activity android:name=".ActivityExample.MaterialActivity.MaterialDesign"/>
         <!-- Material Design -->
         <activity
             android:name=".ActivityExample.MaterialActivity.FabHideActivity"
@@ -67,6 +67,38 @@
         <activity android:name=".ActivityExample.GuillotineMenuActivity"/>
         <activity android:name=".ActivityExample.SlideMenuActivity"/>
         <activity android:name=".ActivityExample.FrameStrimmerActivity"/>
+
+
+        <activity android:name=".ActivityExample.SwipeBack.SwipeBackActivity"/>
+        <activity android:name=".ActivityExample.SwipeBack.SwipeBackNormal.SwipeBackNormalActivity"/>
+
+        <activity
+            android:name=".ActivityExample.SwipeBack.SwipeBackNormal.DemoActivity"
+            android:theme="@style/Theme.No.ActionBar" />
+        <activity
+            android:name=".ActivityExample.SwipeBack.SwipeBackNormal.CommonActivity"
+            android:label="@string/title_activity_common"
+            android:theme="@style/ThemeSwipeBack" />
+        <activity
+            android:name=".ActivityExample.SwipeBack.SwipeBackNormal.ListViewActivity"
+            android:label="@string/title_activity_list_view"
+            android:theme="@style/ThemeSwipeBack" />
+        <activity
+            android:name=".ActivityExample.SwipeBack.SwipeBackNormal.ViewPagerActivity"
+            android:label="@string/title_activity_viewpager"
+            android:theme="@style/ThemeSwipeBack" />
+        <activity
+            android:name=".ActivityExample.SwipeBack.SwipeBackNormal.WebViewActivity"
+            android:label="@string/title_activity_viewpager"
+            android:theme="@style/ThemeSwipeBack" />
+
+        <activity android:name=".ActivityExample.SwipeBack.SwipeBackTransition.SwipeBackTransitionActivity"
+            android:theme="@style/SlideAppTheme"/>
+        <activity
+            android:name=".ActivityExample.SwipeBack.SwipeBackTransition.DetailActivity"
+            android:theme="@style/SlideAppTheme"/>
+        <activity android:name=".ActivityExample.SwipeBack.SwipeBackTransition.ImageActivity"
+            android:theme="@style/SlideAppTheme"/>
 
     </application>
 

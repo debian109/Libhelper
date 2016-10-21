@@ -1,39 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-   <RelativeLayout
+   <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="200dp">
-       <namtran.helperutil.Adapter.AutoScrollViewHelper
-           android:id="@+id/viewPager"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <RelativeLayout
            android:layout_width="match_parent"
-           android:layout_height="200dp" />
-       <UIHelper.Indicator.CircleIndicator
-           android:id="@+id/indicator"
+           android:layout_height="200dp">
+           <namtran.helperutil.Adapter.AutoScrollViewHelper
+               android:id="@+id/viewPager"
+               android:layout_width="match_parent"
+               android:layout_height="200dp" />
+           <UIHelper.Indicator.CircleIndicator
+               android:id="@+id/indicator"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:layout_centerHorizontal="true"
+               android:layout_alignParentBottom="true" />
+       </RelativeLayout>
+
+       <RadioGroup
            android:layout_width="match_parent"
-           android:layout_height="40dp"
-           android:layout_centerHorizontal="true"
-           android:layout_alignParentBottom="true" />
-   </RelativeLayout>
+           android:layout_height="match_parent"
+           android:id="@+id/rag">
+           <RadioButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Animation"
+               android:id="@+id/rabAnimation"></RadioButton>
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rag">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Animation"
-            android:id="@+id/rabAnimation"></RadioButton>
+           <RadioButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="No Animation"
+               android:id="@+id/rabNoAnimation"></RadioButton>
+       </RadioGroup>
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No Animation"
-            android:id="@+id/rabNoAnimation"></RadioButton>
-    </RadioGroup>
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" /><Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+   </LinearLayout>
 
-</LinearLayout>
+
+
+</ScrollView>

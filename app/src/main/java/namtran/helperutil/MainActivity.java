@@ -12,8 +12,9 @@ import namtran.helperutil.ActivityExample.FrameStrimmerActivity;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.ImageSelector;
-import namtran.helperutil.ActivityExample.MaterialDesign;
+import namtran.helperutil.ActivityExample.MaterialActivity.MaterialDesign;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
+import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
 import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
 import namtran.helperutil.ActivityExample.UseRunnable;
@@ -22,7 +23,7 @@ public class MainActivity extends BaseActivity {
 
     Button testImageSelector,testSwipeListView,testGetImeiPhone,testUseRunnable
             ,testAutoScrollView,testTouchItemListVieAndGridView,testMaterialDesign
-            ,testContextMenu,testGuillotine,testSlideMenu,testFramStremmer;
+            ,testContextMenu,testGuillotine,testSlideMenu,testFramStremmer,testSwipeBackLayout;
 
 
     @Override
@@ -59,6 +60,7 @@ public class MainActivity extends BaseActivity {
         testGuillotine = (Button) findViewById(R.id.testGuillotine);
         testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
         testFramStremmer = (Button) findViewById(R.id.testFramStremmer);
+        testSwipeBackLayout = (Button) findViewById(R.id.testSwipeBackLayout);
 
         testImageSelector.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,6 +136,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,FrameStrimmerActivity.class);
+                startActivity(intent);
+            }
+        });
+        testSwipeBackLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SwipeBackActivity.class);
                 startActivity(intent);
             }
         });

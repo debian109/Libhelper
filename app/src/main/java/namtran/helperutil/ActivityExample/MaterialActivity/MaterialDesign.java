@@ -1,4 +1,4 @@
-package namtran.helperutil.ActivityExample;
+package namtran.helperutil.ActivityExample.MaterialActivity;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -14,14 +14,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import namtran.helperutil.Adapter.SimpleRecyclerAdapter;
-import namtran.helperutil.ActivityExample.MaterialActivity.AnimateToolbar;
-import namtran.helperutil.ActivityExample.MaterialActivity.FabHideActivity;
-import namtran.helperutil.ActivityExample.MaterialActivity.NavDrawerActivity;
-import namtran.helperutil.ActivityExample.MaterialActivity.NestedToolbarActivity;
-import namtran.helperutil.ActivityExample.MaterialActivity.PagerActivity;
-import namtran.helperutil.ActivityExample.MaterialActivity.QuickReturnActivity;
-import namtran.helperutil.ActivityExample.MaterialActivity.TabAnimationActivity;
-import namtran.helperutil.ActivityExample.MaterialActivity.ToolbarOverlayActivity;
 import namtran.helperutil.BaseActivity;
 import namtran.helperutil.R;
 import namtran.helperutil.Util.Utils;
@@ -39,13 +31,6 @@ public class MaterialDesign extends BaseActivity {
 
     public static final String PREF_USER_FIRST_TIME = "user_first_time";
     boolean isUserFirstTime;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-
-    }
 
     @Override
     protected Fragment initFragment() {

@@ -21,7 +21,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import namtran.helperutil.ActivityExample.MaterialDesign;
 import namtran.helperutil.R;
 import namtran.helperutil.Util.Utils;
 

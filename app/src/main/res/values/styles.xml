@@ -121,4 +121,12 @@
         <item name="android:layout_height">48dp</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
+
+    <!-- SwipeBack Normal -->
+    <!-- Base application theme. -->
+
+    <style name="ThemeSwipeBack" parent="Theme.Swipe.Back">
+        <item name="colorPrimary">#db4336</item>
+        <item name="colorPrimaryDark">#b63120</item>
+    </style>
 </resources>
