@@ -20,7 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityExample.ImageSelector"/>
         <activity android:name=".ActivityExample.SwipeListView"/>
         <activity android:name=".ActivityExample.GetImeiPhone"/>
         <activity android:name=".ActivityExample.UseRunnable"/>
@@ -100,6 +99,7 @@
         <activity android:name=".ActivityExample.SwipeBack.SwipeBackTransition.ImageActivity"
             android:theme="@style/SlideAppTheme"/>
 
+        <activity android:name=".ActivityExample.CardPageActivity"/>
     </application>
 
 </manifest>

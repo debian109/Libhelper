@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 import namtran.helperutil.ActivityExample.AutoScrollView;
+import namtran.helperutil.ActivityExample.CardPageActivity;
 import namtran.helperutil.ActivityExample.ContextMenuActivity;
 import namtran.helperutil.ActivityExample.FrameStrimmerActivity;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
-import namtran.helperutil.ActivityExample.ImageSelector;
 import namtran.helperutil.ActivityExample.MaterialActivity.MaterialDesign;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
 import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
@@ -21,9 +21,9 @@ import namtran.helperutil.ActivityExample.UseRunnable;
 
 public class MainActivity extends BaseActivity {
 
-    Button testImageSelector,testSwipeListView,testGetImeiPhone,testUseRunnable
-            ,testAutoScrollView,testTouchItemListVieAndGridView,testMaterialDesign
-            ,testContextMenu,testGuillotine,testSlideMenu,testFramStremmer,testSwipeBackLayout;
+    Button testSwipeListView,testGetImeiPhone,testUseRunnable,testAutoScrollView
+            ,testTouchItemListVieAndGridView,testMaterialDesign,testContextMenu,testGuillotine
+            ,testSlideMenu,testFramStremmer,testSwipeBackLayout,testCardPage;
 
 
     @Override
@@ -49,7 +49,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        testImageSelector = (Button) findViewById(R.id.testImageSelector);
         testSwipeListView = (Button) findViewById(R.id.testSwipeListView);
         testGetImeiPhone = (Button) findViewById(R.id.testGetImeiPhone);
         testUseRunnable = (Button) findViewById(R.id.testUseRunnable);
@@ -61,14 +60,8 @@ public class MainActivity extends BaseActivity {
         testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
         testFramStremmer = (Button) findViewById(R.id.testFramStremmer);
         testSwipeBackLayout = (Button) findViewById(R.id.testSwipeBackLayout);
+        testCardPage = (Button) findViewById(R.id.testCardPage);
 
-        testImageSelector.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ImageSelector.class);
-                startActivity(intent);
-            }
-        });
         testSwipeListView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,6 +136,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SwipeBackActivity.class);
+                startActivity(intent);
+            }
+        });
+        testCardPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,CardPageActivity.class);
                 startActivity(intent);
             }
         });

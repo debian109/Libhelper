@@ -12,18 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/amber"
-            android:text="Selector Image"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:id="@+id/testImageSelector"
-            android:layout_marginBottom="5dp"/>
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +19,6 @@
             android:text="Swipe ListView"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:layout_below="@+id/testImageSelector"
             android:id="@+id/testSwipeListView"
             android:layout_marginBottom="5dp"/>
 
@@ -144,6 +131,17 @@
             android:textStyle="bold"
             android:layout_below="@+id/testFramStremmer"
             android:id="@+id/testSwipeBackLayout"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:text="Card Page"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/testSwipeBackLayout"
+            android:id="@+id/testCardPage"
             android:layout_marginBottom="5dp"/>
 
     </RelativeLayout>
