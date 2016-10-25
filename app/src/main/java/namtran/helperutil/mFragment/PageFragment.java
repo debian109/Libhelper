@@ -21,16 +21,22 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import namtran.helperutil.ActivityExample.CardPageActivity;
 import namtran.helperutil.R;
 
-public class PageFragment extends Fragment {
+public class PageFragment extends Fragment implements CardPageActivity.ViewPagerOnPageChangeListener {
 
     private static final String ARG_PAGE_NUMBER = "pageNumber";
+    private TextView txtTest;
 
     public static PageFragment create(int pageNumber) {
         PageFragment fragment = new PageFragment();
@@ -44,31 +50,47 @@ public class PageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_page, container, false);
-        Button btItem = (Button) rootView.findViewById(R.id.bt_item);
+        txtTest = (TextView) rootView.findViewById(R.id.txtTest);
         final Bundle arguments = getArguments();
         if (arguments != null) {
-            btItem.setText(
-                    getString(R.string.page_number_1d,
-                            arguments.getInt(ARG_PAGE_NUMBER) + 1));
-            btItem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new AlertDialog.Builder(getActivity())
-                            .setMessage(getString(R.string.page_number_1d,
-                                    arguments.getInt(ARG_PAGE_NUMBER) + 1))
-                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                }
-                            })
-                            .show();
-                }
-            });
-        } else {
-            btItem.setVisibility(View.GONE);
+            txtTest.setText("There is position : " + (arguments.getInt(ARG_PAGE_NUMBER) + 1));
         }
         return rootView;
     }
 
+    @Override
+    public void onPageScrolled(float positionOffset, int positionOffsetPixels) {
+        Log.d("Interface","Position Center");
+        if (txtTest != null){
+            Log.d("Interface","OK");
+        }else {
+            Log.d("Interface","Null");
+        }
+    }
+
+    @Override
+    public void onPageScrolled(boolean isNext, float positionOffset, int positionOffsetPixels) {
+        if (isNext){
+            Log.d("Interface","Position next");
+            if (txtTest != null){
+                txtTest.setText("There is position : " + positionOffset);
+            }else {
+                Log.d("Interface","Null");
+            }
+        }else {
+            Log.d("Interface","Position previous");
+            if (txtTest != null){
+                txtTest.setText("There is position : " + positionOffset);
+            }else {
+                Log.d("Interface","Null");
+            }
+        }
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        if (txtTest != null){
+            txtTest.setText("There is position : " + position);
+        }
+    }
 }

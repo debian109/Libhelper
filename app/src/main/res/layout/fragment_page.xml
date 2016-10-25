@@ -25,12 +25,12 @@
         android:layout_centerInParent="true"
         tools:ignore="UselessParent">
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/bt_item"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            tools:text="Page ##"/>
+            android:id="@+id/txtTest"
+            android:text="abcdefg"
+            android:textSize="100sp"/>
 
     </RelativeLayout>
 
