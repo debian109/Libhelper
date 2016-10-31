@@ -8,4 +8,6 @@
 
     <!-- Flowing Drawer -->
     <color name="paint_color">#ffffff</color>
+
+    <color name="material_intro_transparent">@android:color/transparent</color>
 </resources>

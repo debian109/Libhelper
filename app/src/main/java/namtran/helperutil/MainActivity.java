@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import namtran.helperutil.ActivityExample.AutoScrollView;
-import namtran.helperutil.ActivityExample.CardPageActivity;
 import namtran.helperutil.ActivityExample.ContextMenuActivity;
 import namtran.helperutil.ActivityExample.FrameStrimmerActivity;
 import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.MaterialDesign;
+import namtran.helperutil.ActivityExample.MaterialIntroActivity;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
 import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity {
 
     Button testSwipeListView,testGetImeiPhone,testUseRunnable,testAutoScrollView
             ,testTouchItemListVieAndGridView,testMaterialDesign,testContextMenu,testGuillotine
-            ,testSlideMenu,testFramStremmer,testSwipeBackLayout,testCardPage;
+            ,testSlideMenu,testFramStremmer,testSwipeBackLayout,testMaterialIntro;
 
 
     @Override
@@ -60,7 +60,7 @@ public class MainActivity extends BaseActivity {
         testSlideMenu = (Button) findViewById(R.id.testSlideMenu);
         testFramStremmer = (Button) findViewById(R.id.testFramStremmer);
         testSwipeBackLayout = (Button) findViewById(R.id.testSwipeBackLayout);
-        testCardPage = (Button) findViewById(R.id.testCardPage);
+        testMaterialIntro = (Button) findViewById(R.id.testMaterialIntro);
 
         testSwipeListView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,10 +139,10 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-        testCardPage.setOnClickListener(new View.OnClickListener() {
+        testMaterialIntro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,CardPageActivity.class);
+                Intent intent = new Intent(MainActivity.this,MaterialIntroActivity.class);
                 startActivity(intent);
             }
         });

@@ -76,4 +76,15 @@
     <style name="SlideAppTheme" parent="Theme.No.ActionBar">
         <item name="android:windowAnimationStyle">@style/ActivityTransitions</item>
     </style>
+
+    <!-- Material Intro -->
+    <style name="Theme.Intro" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="MaterialIntroColoredButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
 </resources>

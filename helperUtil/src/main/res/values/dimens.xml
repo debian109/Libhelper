@@ -17,4 +17,7 @@
     <dimen name="divider_height">1dp</dimen>
     <dimen name="menu_text_size">15sp</dimen>
 
+    <!-- Material Intro -->
+    <dimen name="material_intro_y_offset">72dp</dimen>
+
 </resources>

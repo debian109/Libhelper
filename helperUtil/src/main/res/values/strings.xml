@@ -11,4 +11,9 @@
     <string name="http_err_resp_content_error">Lỗi máy chủ, mã lỗi: 888</string>
     <string name="dialog_error_system">Lỗi hệ thống.</string>
 
+    <!-- Material Intro -->
+    <string name="material_intro_grant_permissions">Grant permissions</string>
+    <string name="material_intro_please_grant_permissions">Please grant needed permissions</string>
+    <string name="material_intro_impassable_slide">Can\'t pass this slide.</string>
+
 </resources>

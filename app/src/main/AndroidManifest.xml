@@ -99,7 +99,7 @@
         <activity android:name=".ActivityExample.SwipeBack.SwipeBackTransition.ImageActivity"
             android:theme="@style/SlideAppTheme"/>
 
-        <activity android:name=".ActivityExample.CardPageActivity"/>
+        <activity android:name=".ActivityExample.MaterialIntroActivity"/>
     </application>
 
 </manifest>

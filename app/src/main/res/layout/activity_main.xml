@@ -137,11 +137,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/amber"
-            android:text="Card Page"
+            android:text="Material Intro"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:layout_below="@+id/testSwipeBackLayout"
-            android:id="@+id/testCardPage"
+            android:id="@+id/testMaterialIntro"
             android:layout_marginBottom="5dp"/>
 
     </RelativeLayout>
