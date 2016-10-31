@@ -144,5 +144,16 @@
             android:id="@+id/testMaterialIntro"
             android:layout_marginBottom="5dp"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amber"
+            android:text="WoWo Viewpager"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/testMaterialIntro"
+            android:id="@+id/testWoWoViewpager"
+            android:layout_marginBottom="5dp"/>
+
     </RelativeLayout>
 </ScrollView>

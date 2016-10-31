@@ -98,4 +98,13 @@
     <attr name="layout_parallaxFactor" format="float" />
   </declare-styleable>
 
+  <!-- WoWo Viewpager -->
+  <declare-styleable name="WoWoPathView">
+    <attr name="pathColor" format="color"/>
+    <attr name="pathWidth" format="float"/>
+    <attr name="headImageId" format="integer"/>
+    <attr name="headImageWidth" format="float"/>
+    <attr name="headImageHeight" format="float"/>
+  </declare-styleable>
+
 </resources>

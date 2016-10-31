@@ -549,4 +549,53 @@
         trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage
         from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no
         annoying consequences, or one who avoids a pain that produces no resultant pleasure</string>
+
+    <!-- WoWo Viewpager -->
+    <string name="basic_animations">Basic Animations</string>
+    <string name="wowo_translation_animation">Translation Animation</string>
+    <string name="wowo_scale_animation">Scale Animation</string>
+    <string name="wowo_alpha_animation">Alpha Animation</string>
+    <string name="wowo_rotation_animation">Rotation Animation</string>
+
+    <string name="font_size_animations">Font Size Animations</string>
+    <string name="wowo_textview_textsize_animation">TextView TextSize Animation</string>
+
+    <string name="color_animations">Color Animations</string>
+    <string name="wowo_drawable_color_animation">Shape Color Animation</string>
+    <string name="wowo_drawable_color_animation_rgb">RGB Change Type</string>
+    <string name="wowo_drawable_color_animation_hsv">HSV Change Type</string>
+    <string name="wowo_textview_color_animation">TextView Color Animation</string>
+    <string name="wowo_background_color_animation">Background Color Animation</string>
+    <string name="wowo_layer_list_color_animation">Layer-List Color Animation</string>
+    <string name="wowo_state_list_color_animation">State-List Color Animation</string>
+
+    <string name="path_animations">Path Animations</string>
+    <string name="wowo_path_animation">Path Animation</string>
+
+    <string name="example">Examples</string>
+    <string name="app_intro_example">APP Intro Example</string>
+    <string name="cv_example">CV Example</string>
+
+    <string name="use_same_ease_type_back">Use same ease type when swiping back</string>
+
+    <string name="nightonke">NIGHTONKE</string>
+    <string name="presents">presents</string>
+    <string name="wowo">WoWo</string>
+    <string name="viewpager">ViewPager</string>
+    <string name="optimized">Optimized for scrolling app intros.</string>
+    <string name="free">Free and open source.</string>
+
+    <string name="cv">CV</string>
+    <string name="for_android_developer">4 Android Developer</string>
+    <string name="name">Weiping HUANG</string>
+    <string name="university_text">Full-time the junior in SYSU</string>
+    <string name="mail_text">Nightonke@outlook.com</string>
+    <string name="projects">Projects:</string>
+    <string name="braeco">BraecoWaiter</string>
+    <string name="braeco_more">Intelligent Restaurant Management Platform</string>
+    <string name="cocoin">CoCoin</string>
+    <string name="cocoin_more">Multi-view Accounting Application</string>
+    <string name="leeco">LeeCo</string>
+    <string name="leeco_more">Awesome App for Problems, Solutions, Discuss(from Leetcode) and Comments.</string>
+    <string name="for_more">For more:</string>
 </resources>

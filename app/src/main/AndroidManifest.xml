@@ -100,6 +100,22 @@
             android:theme="@style/SlideAppTheme"/>
 
         <activity android:name=".ActivityExample.MaterialIntroActivity"/>
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoViewPagerActivityExample"/>
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoTranslationAnimationActivity"/>
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.SetEaseTypeActivity"/>
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoScaleAnimationActivity"/>
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoAlphaAnimationActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoShapeColorAnimationActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoTextViewColorAnimationActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoBackgroundColorAnimationActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoLayerListColorAnimationActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoStateListColorAnimationActivity"/>
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoRotationAnimationActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoPathAnimationActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.AppIntroExampleActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.CVExampleActivity" />
+        <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoTextViewTextSizeAnimationActivity" />
+
     </application>
 
 </manifest>

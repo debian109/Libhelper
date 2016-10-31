@@ -107,4 +107,13 @@
 
     <!--Splash Screen-->
     <item name="splash_background" type="color">@color/colorPrimary</item>
+
+    <!-- WoWo ViewPager -->
+    <color name="blue_1">#fff</color>
+    <color name="blue_2">#c4caeb</color>
+    <color name="blue_3">#929dd9</color>
+
+    <color name="my_pink">#E91E63</color>
+
+    <color name="black_background">#2C2D2E</color>
 </resources>

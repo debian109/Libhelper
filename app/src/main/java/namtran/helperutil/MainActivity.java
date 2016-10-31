@@ -18,12 +18,13 @@ import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
 import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
 import namtran.helperutil.ActivityExample.UseRunnable;
+import namtran.helperutil.ActivityExample.WoWoViewPagerExample.WoWoViewPagerActivityExample;
 
 public class MainActivity extends BaseActivity {
 
     Button testSwipeListView,testGetImeiPhone,testUseRunnable,testAutoScrollView
             ,testTouchItemListVieAndGridView,testMaterialDesign,testContextMenu,testGuillotine
-            ,testSlideMenu,testFramStremmer,testSwipeBackLayout,testMaterialIntro;
+            ,testSlideMenu,testFramStremmer,testSwipeBackLayout,testMaterialIntro,testWoWoViewpager;
 
 
     @Override
@@ -61,6 +62,7 @@ public class MainActivity extends BaseActivity {
         testFramStremmer = (Button) findViewById(R.id.testFramStremmer);
         testSwipeBackLayout = (Button) findViewById(R.id.testSwipeBackLayout);
         testMaterialIntro = (Button) findViewById(R.id.testMaterialIntro);
+        testWoWoViewpager = (Button) findViewById(R.id.testWoWoViewpager);
 
         testSwipeListView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +145,14 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,MaterialIntroActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        testWoWoViewpager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,WoWoViewPagerActivityExample.class);
                 startActivity(intent);
             }
         });
