@@ -598,4 +598,9 @@
     <string name="leeco">LeeCo</string>
     <string name="leeco_more">Awesome App for Problems, Solutions, Discuss(from Leetcode) and Comments.</string>
     <string name="for_more">For more:</string>
+
+    <!-- Viewpager Helper -->
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="black">Black</string>
 </resources>

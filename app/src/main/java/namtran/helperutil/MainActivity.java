@@ -18,13 +18,15 @@ import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
 import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
 import namtran.helperutil.ActivityExample.UseRunnable;
+import namtran.helperutil.ActivityExample.ViewPagerHelperActivity;
 import namtran.helperutil.ActivityExample.WoWoViewPagerExample.WoWoViewPagerActivityExample;
 
 public class MainActivity extends BaseActivity {
 
     Button testSwipeListView,testGetImeiPhone,testUseRunnable,testAutoScrollView
             ,testTouchItemListVieAndGridView,testMaterialDesign,testContextMenu,testGuillotine
-            ,testSlideMenu,testFramStremmer,testSwipeBackLayout,testMaterialIntro,testWoWoViewpager;
+            ,testSlideMenu,testFramStremmer,testSwipeBackLayout,testMaterialIntro,testWoWoViewpager
+            ,testViewpagerHelper;
 
 
     @Override
@@ -44,7 +46,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected boolean isShowBackButton() {
-        return false;
+        return true;
     }
 
     @Override
@@ -63,6 +65,7 @@ public class MainActivity extends BaseActivity {
         testSwipeBackLayout = (Button) findViewById(R.id.testSwipeBackLayout);
         testMaterialIntro = (Button) findViewById(R.id.testMaterialIntro);
         testWoWoViewpager = (Button) findViewById(R.id.testWoWoViewpager);
+        testViewpagerHelper = (Button) findViewById(R.id.testViewpagerHelper);
 
         testSwipeListView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,6 +156,14 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,WoWoViewPagerActivityExample.class);
+                startActivity(intent);
+            }
+        });
+
+        testViewpagerHelper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ViewPagerHelperActivity.class);
                 startActivity(intent);
             }
         });
