@@ -1,6 +1,6 @@
 package namtran.helperutil.ActivityExample;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import UIHelper.ViewPagerHelper.InfinitePagerAdapter;
 import UIHelper.ViewPagerHelper.InfiniteViewPager;
+import UIHelper.ViewPagerHelper.transform.AccordionTransformer;
 import UIHelper.ViewPagerHelper.transform.CubeInTransformer;
 import UIHelper.ViewPagerHelper.transform.FlipHorizontalTransformer;
 import namtran.helperutil.BaseActivity;
@@ -78,8 +79,8 @@ public class ViewPagerHelperActivity extends BaseActivity {
         });
 
         view.setAdapter(pagerAdapter);
-        view.setPageTransformer(true,new FlipHorizontalTransformer());
-        view.setScrollDurationFactor(5d);
+        view.setPageTransformer(true,new AccordionTransformer());
+        view.setScrollDurationFactor(10d);
 
     }
 

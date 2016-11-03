@@ -1,7 +1,7 @@
 package namtran.helperutil;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -55,7 +55,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if(!justCallSuper()) {
             setContentView(R.layout.baseactivity);
 
-            mFragmentManager = getFragmentManager();
+            mFragmentManager = getSupportFragmentManager();
 
             Fragment currentFragment = initFragment();
             if (currentFragment != null)

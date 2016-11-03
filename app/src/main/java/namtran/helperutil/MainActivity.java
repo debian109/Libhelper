@@ -1,6 +1,6 @@
 package namtran.helperutil;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +13,7 @@ import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.MaterialDesign;
 import namtran.helperutil.ActivityExample.MaterialIntroActivity;
+import namtran.helperutil.ActivityExample.RecyclerViewExample.RecyclerViewActivity;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
 import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
@@ -26,7 +27,7 @@ public class MainActivity extends BaseActivity {
     Button testSwipeListView,testGetImeiPhone,testUseRunnable,testAutoScrollView
             ,testTouchItemListVieAndGridView,testMaterialDesign,testContextMenu,testGuillotine
             ,testSlideMenu,testFramStremmer,testSwipeBackLayout,testMaterialIntro,testWoWoViewpager
-            ,testViewpagerHelper;
+            ,testViewpagerHelper,testRecyclerViewHelper;
 
 
     @Override
@@ -66,6 +67,7 @@ public class MainActivity extends BaseActivity {
         testMaterialIntro = (Button) findViewById(R.id.testMaterialIntro);
         testWoWoViewpager = (Button) findViewById(R.id.testWoWoViewpager);
         testViewpagerHelper = (Button) findViewById(R.id.testViewpagerHelper);
+        testRecyclerViewHelper = (Button) findViewById(R.id.testRecyclerViewHelper);
 
         testSwipeListView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,6 +166,14 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ViewPagerHelperActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        testRecyclerViewHelper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,RecyclerViewActivity.class);
                 startActivity(intent);
             }
         });

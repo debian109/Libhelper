@@ -1,6 +1,6 @@
 package namtran.helperutil.ActivityExample;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;

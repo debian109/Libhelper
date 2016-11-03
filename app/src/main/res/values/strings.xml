@@ -603,4 +603,6 @@
     <string name="red">Red</string>
     <string name="blue">Blue</string>
     <string name="black">Black</string>
+
+    <string name="image_name">image_name%d</string>
 </resources>

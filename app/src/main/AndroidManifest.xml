@@ -116,6 +116,7 @@
         <activity android:name=".ActivityExample.WoWoViewPagerExample.CVExampleActivity" />
         <activity android:name=".ActivityExample.WoWoViewPagerExample.WoWoTextViewTextSizeAnimationActivity" />
         <activity android:name=".ActivityExample.ViewPagerHelperActivity" />
+        <activity android:name=".ActivityExample.RecyclerViewExample.RecyclerViewActivity" />
 
     </application>
 

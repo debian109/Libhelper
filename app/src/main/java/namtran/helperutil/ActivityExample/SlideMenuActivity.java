@@ -1,7 +1,7 @@
 package namtran.helperutil.ActivityExample;
 
 import android.animation.Animator;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
