@@ -116,4 +116,7 @@
     <color name="my_pink">#E91E63</color>
 
     <color name="black_background">#2C2D2E</color>
+
+    <color name="colorPrimaryMulti">#689F38</color>
+    <color name="colorPrimaryDarkMulti">#436724</color>
 </resources>

@@ -605,4 +605,9 @@
     <string name="black">Black</string>
 
     <string name="image_name">image_name%d</string>
+
+    <string name="select_all">Select All</string>
+    <string name="deselect_all">Deselect All</string>
+    <string name="select_third_item">Select Third Item</string>
+    <string name="single_click_mode">Single Click Mode</string>
 </resources>

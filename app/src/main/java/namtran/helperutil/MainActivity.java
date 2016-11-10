@@ -13,7 +13,7 @@ import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.MaterialDesign;
 import namtran.helperutil.ActivityExample.MaterialIntroActivity;
-import namtran.helperutil.ActivityExample.RecyclerViewExample.RecyclerViewActivity;
+import namtran.helperutil.ActivityExample.RecyclerViewHelperActivity;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
 import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected boolean isShowBackButton() {
-        return true;
+        return false;
     }
 
     @Override
@@ -173,7 +173,7 @@ public class MainActivity extends BaseActivity {
         testRecyclerViewHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,RecyclerViewActivity.class);
+                Intent intent = new Intent(MainActivity.this,RecyclerViewHelperActivity.class);
                 startActivity(intent);
             }
         });

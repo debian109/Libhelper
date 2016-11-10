@@ -37,7 +37,7 @@ public class CVExampleActivity extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity__wowo_viewpager_cvexample);
+        setContentView(R.layout.activity_wowo_viewpager_cvexample);
 
         wowo = (WoWoViewPager)findViewById(R.id.wowo_viewpager);
         adapter = new WoWoViewPagerAdapter(getSupportFragmentManager());
