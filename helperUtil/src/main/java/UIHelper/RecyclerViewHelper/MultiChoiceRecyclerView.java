@@ -18,31 +18,19 @@
 package UIHelper.RecyclerViewHelper;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-
-import java.lang.reflect.Constructor;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import UIHelper.RecyclerViewHelper.LayoutManagerHelper.TwoWayLayoutManager;
-import vn.namtran.basichelper.R;
-
 
 public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoiceAdapterListener {
-
-    private static final Class<?>[] sConstructorSignature = new Class[] {
-            Context.class, AttributeSet.class};
-
-    final Object[] sConstructorArgs = new Object[2];
 
     private StaggeredGridLayoutManager mStaggeredGridLayoutManager;
     private final HashMap<Integer, View> mSelectedList = new HashMap<>();
@@ -55,71 +43,11 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
     private MultiChoiceToolbarHelper mMultiChoiceToolbarHelper;
 
     public MultiChoiceRecyclerView(Context context) {
-        this(context, null);
+        super(context);
     }
 
-    public MultiChoiceRecyclerView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    public MultiChoiceRecyclerView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-
-        final TypedArray a =
-                context.obtainStyledAttributes(attrs, R.styleable.twowayview_TwoWayView, defStyle, 0);
-
-        final String name = a.getString(R.styleable.twowayview_TwoWayView_twowayview_layoutManager);
-        if (!TextUtils.isEmpty(name)) {
-            loadLayoutManagerFromName(context, attrs, name);
-        }
-
-        a.recycle();
-    }
-
-    private void loadLayoutManagerFromName(Context context, AttributeSet attrs, String name) {
-        try {
-            final int dotIndex = name.indexOf('.');
-            if (dotIndex == -1) {
-                name = "UIHelper.RecyclerViewHelper.LayoutManagerHelper." + name;
-            } else if (dotIndex == 0) {
-                final String packageName = context.getPackageName();
-                name = packageName + "." + name;
-            }
-
-            Class<? extends TwoWayLayoutManager> clazz =
-                    context.getClassLoader().loadClass(name).asSubclass(TwoWayLayoutManager.class);
-
-            Constructor<? extends TwoWayLayoutManager> constructor =
-                    clazz.getConstructor(sConstructorSignature);
-
-            sConstructorArgs[0] = context;
-            sConstructorArgs[1] = attrs;
-
-            setLayoutManager(constructor.newInstance(sConstructorArgs));
-        } catch (Exception e) {
-            throw new IllegalStateException("Could not load TwoWayLayoutManager from " +
-                    "class: " + name, e);
-        }
-    }
-
-    public TwoWayLayoutManager.Orientation getOrientation() {
-        TwoWayLayoutManager layout = (TwoWayLayoutManager) getLayoutManager();
-        return layout.getOrientation();
-    }
-
-    public void setOrientation(TwoWayLayoutManager.Orientation orientation) {
-        TwoWayLayoutManager layout = (TwoWayLayoutManager) getLayoutManager();
-        layout.setOrientation(orientation);
-    }
-
-    public int getFirstVisiblePosition() {
-        TwoWayLayoutManager layout = (TwoWayLayoutManager) getLayoutManager();
-        return layout.getFirstVisiblePosition();
-    }
-
-    public int getLastVisiblePosition() {
-        TwoWayLayoutManager layout = (TwoWayLayoutManager) getLayoutManager();
-        return layout.getLastVisiblePosition();
+    public MultiChoiceRecyclerView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
     }
 
     @Override

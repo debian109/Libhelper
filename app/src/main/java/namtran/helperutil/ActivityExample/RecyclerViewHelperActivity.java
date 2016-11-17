@@ -17,7 +17,6 @@ import java.util.List;
 import UIHelper.RecyclerViewHelper.MultiChoiceRecyclerView;
 import UIHelper.RecyclerViewHelper.MultiChoiceToolbar;
 import UIHelper.RecyclerViewHelper.SectionedRecyclerViewAdapter;
-import UIHelper.RecyclerViewHelper.SpannedGridLayoutManager;
 import namtran.helperutil.Adapter.ExpandableMovieSection;
 import namtran.helperutil.BaseActivity;
 import namtran.helperutil.Model.Movie;
@@ -27,6 +26,8 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
     MultiChoiceRecyclerView recycler;
     SectionedRecyclerViewAdapter adapter;
+    private int column = 3;
+    private List<Integer> listFirstPostion = new ArrayList<>();
 
     @Override
     protected Fragment initFragment() {
@@ -100,7 +101,7 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
         recycler.setMultiChoiceToolbar(multiChoiceToolbar);
 
-        /*GridLayoutManager glm = new GridLayoutManager(this, column);
+        GridLayoutManager glm = new GridLayoutManager(this, column);
         glm.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
 
             @Override
@@ -117,26 +118,9 @@ public class RecyclerViewHelperActivity extends BaseActivity {
                             return 1;
                 }
             }
-        });*/
+        });
 
-        /*SpannedGridLayoutManager glm = new SpannedGridLayoutManager(new SpannedGridLayoutManager.GridSpanLookup() {
-            @Override
-            public SpannedGridLayoutManager.SpanInfo getSpanInfo(int position) {
-                switch(adapter.getSectionItemViewType(position)) {
-                    case SectionedRecyclerViewAdapter.VIEW_TYPE_HEADER:
-                        if (!listFirstPostion.contains(position + 1))
-                            listFirstPostion.add(position + 1);
-                        return new SpannedGridLayoutManager.SpanInfo(column,1);
-                    default:
-                        if (listFirstPostion.contains(position))
-                            return new SpannedGridLayoutManager.SpanInfo(2,2);
-                        else
-                            return new SpannedGridLayoutManager.SpanInfo(1,1);
-                }
-            }
-        },column,1f);*/
-
-        //recycler.setLayoutManager(glm);
+        recycler.setLayoutManager(glm);
         recycler.setAdapter(adapter);
 
     }

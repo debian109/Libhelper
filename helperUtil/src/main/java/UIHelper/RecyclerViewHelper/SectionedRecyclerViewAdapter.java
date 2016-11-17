@@ -13,7 +13,6 @@ import java.util.Map;
 import java.util.UUID;
 
 import Logger.Log;
-import UIHelper.RecyclerViewHelper.LayoutManagerHelper.SpannableGridLayoutManager;
 
 /**
  * A custom RecyclerView with Sections with custom Titles.
@@ -43,16 +42,10 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
     private final static int VIEW_TYPE_QTY = 5;
     private SingleChooseListener singleChooseListener;
     private MultiChooseListener multiChooseListener;
-    private int row = 3;
-    private List<Integer> listFirstPosition = new ArrayList<>();
 
     public SectionedRecyclerViewAdapter() {
         sections = new LinkedHashMap<>();
         sectionViewTypeNumbers = new HashMap<>();
-    }
-
-    public void setRowLayout(int row){
-        this.row = row;
     }
 
     @Override
@@ -175,9 +168,6 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        final SpannableGridLayoutManager.LayoutParams lp =
-                (SpannableGridLayoutManager.LayoutParams) holder.itemView.getLayoutParams();
-
         int currentPos = 0;
 
         for (Map.Entry<String, Section> entry : sections.entrySet()) {
@@ -194,14 +184,6 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
                 if (section.hasHeader()) {
                     if (position == currentPos) {
                         // delegate the binding to the section header
-
-                        final int colSpan = row;
-
-                        if (lp.colSpan != colSpan) {
-                            lp.colSpan = colSpan;
-                            holder.itemView.setLayoutParams(lp);
-                        }
-                        listFirstPosition.add(position + 1);
                         getSectionForPosition(position).onBindHeaderViewHolder(holder);
                         return;
                     }else {
@@ -218,25 +200,6 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
                 }
 
                 super.onBindViewHolder(holder,position);
-                if (listFirstPosition.contains(position)){
-                    final int colSpan = 2;
-                    final int rowSpan = 2;
-
-                    if (lp.rowSpan != rowSpan || lp.colSpan != colSpan) {
-                        lp.rowSpan = rowSpan;
-                        lp.colSpan = colSpan;
-                        holder.itemView.setLayoutParams(lp);
-                    }
-                }else {
-                    final int colSpan = 1;
-                    final int rowSpan = 1;
-
-                    if (lp.rowSpan != rowSpan || lp.colSpan != colSpan) {
-                        lp.rowSpan = rowSpan;
-                        lp.colSpan = colSpan;
-                        holder.itemView.setLayoutParams(lp);
-                    }
-                }
 
                 // delegate the binding to the section content
                 getSectionForPosition(position).onBindContentViewHolder(holder, getSectionPosition(position));
