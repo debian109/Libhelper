@@ -1,12 +1,16 @@
 package namtran.helperutil.ActivityExample;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -16,6 +20,7 @@ import java.util.List;
 
 import UIHelper.RecyclerViewHelper.MultiChoiceRecyclerView;
 import UIHelper.RecyclerViewHelper.MultiChoiceToolbar;
+import UIHelper.RecyclerViewHelper.OnSwipeTouchListener;
 import UIHelper.RecyclerViewHelper.SectionedRecyclerViewAdapter;
 import namtran.helperutil.Adapter.ExpandableMovieSection;
 import namtran.helperutil.BaseActivity;
@@ -28,6 +33,7 @@ public class RecyclerViewHelperActivity extends BaseActivity {
     SectionedRecyclerViewAdapter adapter;
     private int column = 3;
     private List<Integer> listFirstPostion = new ArrayList<>();
+    GridLayoutManager glm;
 
     @Override
     protected Fragment initFragment() {
@@ -101,7 +107,7 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
         recycler.setMultiChoiceToolbar(multiChoiceToolbar);
 
-        GridLayoutManager glm = new GridLayoutManager(this, column);
+        glm = new GridLayoutManager(this, column);
         glm.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
 
             @Override
@@ -113,7 +119,10 @@ public class RecyclerViewHelperActivity extends BaseActivity {
                         return column;
                     default:
                         if (listFirstPostion.contains(position))
-                            return column - 1;
+                            if (column > 1)
+                                return column - 1;
+                            else
+                                return 1;
                         else
                             return 1;
                 }
@@ -122,7 +131,13 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
         recycler.setLayoutManager(glm);
         recycler.setAdapter(adapter);
+        recycler.setOnTouchListener(new MyOnSwipeTouchListener(this));
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 
     private List<Movie> MovieAction(){
@@ -179,4 +194,40 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
         return false;
     }
+
+    private class MyOnSwipeTouchListener extends OnSwipeTouchListener {
+        public MyOnSwipeTouchListener(Context c) {
+            super(c);
+        }
+
+        @Override
+        public void onSwipeDown() {
+
+        }
+
+        @Override
+        public void onSwipeLeft() {
+            Toast.makeText(RecyclerViewHelperActivity.this,"Left",Toast.LENGTH_SHORT).show();
+            if (column < 8)
+                column ++;
+            glm.setSpanCount(column);
+            recycler.setLayoutManager(glm);
+            adapter.notifyDataSetChanged();
+        }
+
+        @Override
+        public void onSwipeRight() {
+            Toast.makeText(RecyclerViewHelperActivity.this,"Right",Toast.LENGTH_SHORT).show();
+            if (column > 1)
+                column --;
+            glm.setSpanCount(column);
+            recycler.setLayoutManager(glm);
+            adapter.notifyDataSetChanged();
+        }
+
+        @Override
+        public void onSwipeUp() {
+
+        }
+    };
 }
