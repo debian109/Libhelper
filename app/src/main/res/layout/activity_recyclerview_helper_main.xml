@@ -5,4 +5,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/recycler"
-    android:numColumns="auto_fit" />
+    android:numColumns="auto_fit"
+    android:layoutAnimation="@anim/gridview_layout_animation"/>

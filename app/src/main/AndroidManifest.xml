@@ -26,7 +26,7 @@
         <activity android:name=".ActivityExample.GetImeiPhone"/>
         <activity android:name=".ActivityExample.UseRunnable"/>
         <activity android:name=".ActivityExample.AutoScrollView"/>
-        <activity android:name=".ActivityExample.TouchItemListVieAndGridView"/>
+        <activity android:name=".ActivityExample.TouchItemListViewAndGridView"/>
         <activity android:name=".ActivityExample.MaterialActivity.MaterialDesign"/>
         <!-- Material Design -->
         <activity

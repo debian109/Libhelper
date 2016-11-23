@@ -17,7 +17,7 @@ import namtran.helperutil.ActivityExample.RecyclerViewHelperActivity;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
 import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;
-import namtran.helperutil.ActivityExample.TouchItemListVieAndGridView;
+import namtran.helperutil.ActivityExample.TouchItemListViewAndGridView;
 import namtran.helperutil.ActivityExample.UseRunnable;
 import namtran.helperutil.ActivityExample.ViewPagerHelperActivity;
 import namtran.helperutil.ActivityExample.WoWoViewPagerExample.WoWoViewPagerActivityExample;
@@ -100,7 +100,7 @@ public class MainActivity extends BaseActivity {
         testTouchItemListVieAndGridView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TouchItemListVieAndGridView.class);
+                Intent intent = new Intent(MainActivity.this,TouchItemListViewAndGridView.class);
                 startActivity(intent);
             }
         });

@@ -31,8 +31,8 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
 
     public interface SingleChooseListener{
         void SingleChoose(RecyclerView.ViewHolder holder, int position);
-        void SingleSwipeLeft();
-        void SingleSwipeRight();
+        void SingleSwipeLeft(RecyclerView.ViewHolder holder);
+        void SingleSwipeRight(RecyclerView.ViewHolder holder);
     }
 
     public interface MultiChooseListener{
@@ -373,15 +373,15 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
     }
 
     @Override
-    protected void ItemViewSwipeLeft() {
+    protected void ItemViewSwipeLeft(RecyclerView.ViewHolder holder) {
         if (singleChooseListener != null)
-            singleChooseListener.SingleSwipeLeft();
+            singleChooseListener.SingleSwipeLeft(holder);
     }
 
     @Override
-    protected void ItemViewSwipeRight() {
+    protected void ItemViewSwipeRight(RecyclerView.ViewHolder holder) {
         if (singleChooseListener != null)
-            singleChooseListener.SingleSwipeRight();
+            singleChooseListener.SingleSwipeRight(holder);
     }
 
     public void setMultiChooseListener(MultiChooseListener multiChooseListener){

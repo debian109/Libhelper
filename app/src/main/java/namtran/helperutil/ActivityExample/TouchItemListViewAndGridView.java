@@ -14,7 +14,7 @@ import namtran.helperutil.mFragment.ListViewTouchItemFragment;
 /**
  * Created by Nam Tran on 25-Mar-16.
  */
-public class TouchItemListVieAndGridView extends BaseActivity implements View.OnClickListener {
+public class TouchItemListViewAndGridView extends BaseActivity implements View.OnClickListener {
     @Override
     protected Fragment initFragment() {
         return null;

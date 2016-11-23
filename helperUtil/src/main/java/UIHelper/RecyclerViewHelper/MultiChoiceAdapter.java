@@ -8,6 +8,10 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+import vn.namtran.basichelper.R;
 
 
 public abstract class MultiChoiceAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
@@ -31,6 +35,7 @@ public abstract class MultiChoiceAdapter<VH extends RecyclerView.ViewHolder> ext
 
         if (mMultiChoiceListener != null) {
 
+            //http://stackoverflow.com/questions/19538747/how-to-use-both-ontouch-and-onclick-for-an-imagebutton
             mCurrentView.setOnTouchListener(new OnSwipeTouchListener(mContext){
                 @Override
                 public void onClick() {
@@ -44,13 +49,15 @@ public abstract class MultiChoiceAdapter<VH extends RecyclerView.ViewHolder> ext
                 @Override
                 public void onSwipeLeft() {
                     super.onSwipeLeft();
-                    ItemViewSwipeLeft();
+                    ItemViewSwipeLeft(holder);
+                    notifyDataSetChanged();
                 }
 
                 @Override
                 public void onSwipeRight() {
                     super.onSwipeRight();
-                    ItemViewSwipeRight();
+                    ItemViewSwipeRight(holder);
+                    notifyDataSetChanged();
                 }
 
                 @Override
@@ -105,12 +112,12 @@ public abstract class MultiChoiceAdapter<VH extends RecyclerView.ViewHolder> ext
      *
      * @return the onClick action to perform when multi choice selection is off
      */
-    protected abstract void ItemViewSwipeLeft();
+    protected abstract void ItemViewSwipeLeft(RecyclerView.ViewHolder holder);
 
     /**
      * Provide the default behaviour for the item swipe right with multi choice mode disabled
      *
      * @return the onClick action to perform when multi choice selection is off
      */
-    protected abstract void ItemViewSwipeRight();
+    protected abstract void ItemViewSwipeRight(RecyclerView.ViewHolder holder);
 }

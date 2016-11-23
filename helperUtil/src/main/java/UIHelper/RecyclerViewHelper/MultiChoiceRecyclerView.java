@@ -20,11 +20,15 @@ package UIHelper.RecyclerViewHelper;
 import android.content.Context;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.GridLayoutAnimationController;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -180,29 +184,43 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
         return false;
     }
 
-    /**
-     * Set the number of column with a VERTICAL layout.
-     * If you call this method, it will override the setRowNumber()
-     *
-     * @param columnNumber number of column
-     */
-    public MultiChoiceRecyclerView setRecyclerColumnNumber(int columnNumber) {
-        mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(columnNumber, StaggeredGridLayoutManager.VERTICAL);
-        setLayoutManager(mStaggeredGridLayoutManager);
-        return this;
+    @Override
+    public void setLayoutManager(LayoutManager layout) {
+        if (!isInEditMode())
+            if (layout instanceof GridLayoutManager) {
+                super.setLayoutManager(layout);
+            } else {
+                throw new ClassCastException("You should only use a GridLayoutManager with GridRecyclerView.");
+            }
     }
 
+    @Override
+    protected void attachLayoutAnimationParameters(View child, ViewGroup.LayoutParams params, int index, int count) {
+        if (!isInEditMode())
+            if (getAdapter() != null && getLayoutManager() instanceof GridLayoutManager) {
 
-    /**
-     * Set the number of row with a HORIZONTAL layout
-     * If you call this method, it will override the setColumnNumber()
-     *
-     * @param rowNumber number of row
-     */
-    public MultiChoiceRecyclerView setRecyclerRowNumber(int rowNumber) {
-        mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(rowNumber, StaggeredGridLayoutManager.HORIZONTAL);
-        setLayoutManager(mStaggeredGridLayoutManager);
-        return this;
+                GridLayoutAnimationController.AnimationParameters animationParams =
+                        (GridLayoutAnimationController.AnimationParameters) params.layoutAnimationParameters;
+
+                if (animationParams == null) {
+                    animationParams = new GridLayoutAnimationController.AnimationParameters();
+                    params.layoutAnimationParameters = animationParams;
+                }
+
+                int columns = ((GridLayoutManager) getLayoutManager()).getSpanCount();
+
+                animationParams.count = count;
+                animationParams.index = index;
+                animationParams.columnsCount = columns;
+                animationParams.rowsCount = count / columns;
+
+                final int invertedIndex = count - 1 - index;
+                animationParams.column = columns - 1 - (invertedIndex % columns);
+                animationParams.row = animationParams.rowsCount - 1 - invertedIndex / columns;
+
+            } else {
+                super.attachLayoutAnimationParameters(child, params, index, count);
+            }
     }
 
 
@@ -335,37 +353,4 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
     }
     //endregion
 
-    private float radius = 0.5f;
-    private float downX;
-    private float downY;
-
-
-    interface MyClickListener {
-        void onClicked(View v);
-    }
-
-    MyClickListener listener;
-
-    @Override
-    public boolean onTouchEvent(MotionEvent e) {
-        if(e.getAction() == MotionEvent.ACTION_DOWN) {
-            downX = e.getX();
-            downY = e.getY();
-        } else if(e.getAction() == MotionEvent.ACTION_UP) {
-            float upX = e.getX();
-            float upY = e.getY();
-
-
-
-
-            // compare downX downY with upX upY
-            // radius?
-            boolean isClickedCondition = true;
-            if(listener != null && isClickedCondition) {
-                listener.onClicked(this);
-            }
-
-        }
-        return super.onTouchEvent(e);
-    }
 }

@@ -74,23 +74,19 @@ public class RecyclerViewHelperActivity extends BaseActivity {
             }
 
             @Override
-            public void SingleSwipeLeft() {
-                Toast.makeText(RecyclerViewHelperActivity.this,"Left",Toast.LENGTH_SHORT).show();
+            public void SingleSwipeLeft(RecyclerView.ViewHolder holder) {
                 if (column < 8)
                     column ++;
                 glm.setSpanCount(column);
-                recycler.setLayoutManager(glm);
-                adapter.notifyDataSetChanged();
+                delayedNotify(holder.getAdapterPosition(), calculateRange());
             }
 
             @Override
-            public void SingleSwipeRight() {
-                Toast.makeText(RecyclerViewHelperActivity.this,"Right",Toast.LENGTH_SHORT).show();
+            public void SingleSwipeRight(RecyclerView.ViewHolder holder) {
                 if (column > 1)
                     column --;
                 glm.setSpanCount(column);
-                recycler.setLayoutManager(glm);
-                adapter.notifyDataSetChanged();
+                delayedNotify(holder.getAdapterPosition(), calculateRange());
             }
         });
 
@@ -231,5 +227,24 @@ public class RecyclerViewHelperActivity extends BaseActivity {
             recycler.setLayoutManager(glm);
             adapter.notifyDataSetChanged();
         }
-    };
+    }
+
+    public void delayedNotify(final int pos, final int range) {
+        recycler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                adapter.notifyItemRangeChanged(pos - range > 0 ? pos - range : 0, range * 2 < adapter.getItemCount() ? range * 2 : range);
+            }
+        }, 100);
+    }
+
+    public int calculateRange() {
+        int start = ((GridLayoutManager) recycler.getLayoutManager()).findFirstVisibleItemPosition();
+        int end = ((GridLayoutManager) recycler.getLayoutManager()).findLastVisibleItemPosition();
+        if (start < 0)
+            start = 0;
+        if (end < 0)
+            end = 0;
+        return end - start;
+    }
 }
