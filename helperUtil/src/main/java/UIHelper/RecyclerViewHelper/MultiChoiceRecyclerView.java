@@ -23,6 +23,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import java.util.Collection;
 import java.util.HashMap;
@@ -84,6 +85,10 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
     @Override
     public void onSingleItemLongClickListener(View view, int position) {
         if (mSelectedList.size() == 0) {
+
+            if (mMultiChoiceAdapter != null)
+                mMultiChoiceAdapter.notifyDataSetChanged();
+
             performVibrate();
 
             performSingleClick(view, position);
@@ -330,4 +335,37 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
     }
     //endregion
 
+    private float radius = 0.5f;
+    private float downX;
+    private float downY;
+
+
+    interface MyClickListener {
+        void onClicked(View v);
+    }
+
+    MyClickListener listener;
+
+    @Override
+    public boolean onTouchEvent(MotionEvent e) {
+        if(e.getAction() == MotionEvent.ACTION_DOWN) {
+            downX = e.getX();
+            downY = e.getY();
+        } else if(e.getAction() == MotionEvent.ACTION_UP) {
+            float upX = e.getX();
+            float upY = e.getY();
+
+
+
+
+            // compare downX downY with upX upY
+            // radius?
+            boolean isClickedCondition = true;
+            if(listener != null && isClickedCondition) {
+                listener.onClicked(this);
+            }
+
+        }
+        return super.onTouchEvent(e);
+    }
 }

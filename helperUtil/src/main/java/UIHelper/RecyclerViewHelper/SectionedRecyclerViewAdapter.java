@@ -1,5 +1,6 @@
 package UIHelper.RecyclerViewHelper;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +30,9 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
     public final static int VIEW_TYPE_FAILED = 4;
 
     public interface SingleChooseListener{
-        View.OnClickListener SingleChoose(RecyclerView.ViewHolder holder, int position);
+        void SingleChoose(RecyclerView.ViewHolder holder, int position);
+        void SingleSwipeLeft();
+        void SingleSwipeRight();
     }
 
     public interface MultiChooseListener{
@@ -43,7 +46,8 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
     private SingleChooseListener singleChooseListener;
     private MultiChooseListener multiChooseListener;
 
-    public SectionedRecyclerViewAdapter() {
+    public SectionedRecyclerViewAdapter(Context context) {
+        super(context);
         sections = new LinkedHashMap<>();
         sectionViewTypeNumbers = new HashMap<>();
     }
@@ -363,10 +367,21 @@ public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
     }
 
     @Override
-    protected View.OnClickListener defaultItemViewClickListener(RecyclerView.ViewHolder holder, int position) {
+    protected void ItemViewClickListener(RecyclerView.ViewHolder holder, int position) {
         if (singleChooseListener != null)
-            return singleChooseListener.SingleChoose(holder,position);
-        return super.defaultItemViewClickListener(holder,position);
+            singleChooseListener.SingleChoose(holder,position);
+    }
+
+    @Override
+    protected void ItemViewSwipeLeft() {
+        if (singleChooseListener != null)
+            singleChooseListener.SingleSwipeLeft();
+    }
+
+    @Override
+    protected void ItemViewSwipeRight() {
+        if (singleChooseListener != null)
+            singleChooseListener.SingleSwipeRight();
     }
 
     public void setMultiChooseListener(MultiChooseListener multiChooseListener){

@@ -1,8 +1,11 @@
 package UIHelper.RecyclerViewHelper;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,30 +19,44 @@ public abstract class MultiChoiceAdapter<VH extends RecyclerView.ViewHolder> ext
 
     private MultiChoiceAdapterListener mMultiChoiceListener;
 
+    private Context mContext;
+
+    public MultiChoiceAdapter(Context mContext) {
+        this.mContext = mContext;
+    }
+
     @Override
     public void onBindViewHolder(final VH holder, final int position) {
         final View mCurrentView = holder.itemView;
 
         if (mMultiChoiceListener != null) {
 
-            if (isInMultiChoiceMode || isInSingleClickMode) {
-                mCurrentView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mMultiChoiceListener.onSingleItemClickListener(mCurrentView, holder.getAdapterPosition());
-                    }
-                });
-            } else {
-                if (defaultItemViewClickListener(holder, position) != null) {
-                    mCurrentView.setOnClickListener(defaultItemViewClickListener(holder, position));
-                }
-            }
-
-            mCurrentView.setOnLongClickListener(new View.OnLongClickListener() {
+            mCurrentView.setOnTouchListener(new OnSwipeTouchListener(mContext){
                 @Override
-                public boolean onLongClick(View v) {
+                public void onClick() {
+                    super.onClick();
+                    if (isInMultiChoiceMode || isInSingleClickMode)
+                        mMultiChoiceListener.onSingleItemClickListener(mCurrentView, holder.getAdapterPosition());
+                    else
+                        ItemViewClickListener(holder,position);
+                }
+
+                @Override
+                public void onSwipeLeft() {
+                    super.onSwipeLeft();
+                    ItemViewSwipeLeft();
+                }
+
+                @Override
+                public void onSwipeRight() {
+                    super.onSwipeRight();
+                    ItemViewSwipeRight();
+                }
+
+                @Override
+                public void onLongClick() {
+                    super.onLongClick();
                     mMultiChoiceListener.onSingleItemLongClickListener(mCurrentView, holder.getAdapterPosition());
-                    return true;
                 }
             });
 
@@ -81,7 +98,19 @@ public abstract class MultiChoiceAdapter<VH extends RecyclerView.ViewHolder> ext
      *
      * @return the onClick action to perform when multi choice selection is off
      */
-    protected View.OnClickListener defaultItemViewClickListener(VH holder, int position) {
-        return null;
-    }
+    protected abstract void ItemViewClickListener(VH holder, int position);
+
+    /**
+     * Provide the default behaviour for the item swipe left with multi choice mode disabled
+     *
+     * @return the onClick action to perform when multi choice selection is off
+     */
+    protected abstract void ItemViewSwipeLeft();
+
+    /**
+     * Provide the default behaviour for the item swipe right with multi choice mode disabled
+     *
+     * @return the onClick action to perform when multi choice selection is off
+     */
+    protected abstract void ItemViewSwipeRight();
 }

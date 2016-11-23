@@ -60,20 +60,37 @@ public class RecyclerViewHelperActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         recycler = (MultiChoiceRecyclerView) findViewById(R.id.recycler);
 
-        adapter = new SectionedRecyclerViewAdapter();
+        adapter = new SectionedRecyclerViewAdapter(this);
         adapter.addSection(new ExpandableMovieSection(this,"Action",MovieAction()));
         adapter.addSection(new ExpandableMovieSection(this,"Cartoon",MovieCartoon()));
         adapter.addSection(new ExpandableMovieSection(this,"Horries",MovieHorries()));
 
+        final MyOnSwipeTouchListener swipeTouchListener = new MyOnSwipeTouchListener(this);
+
         adapter.setSingleChooseListener(new SectionedRecyclerViewAdapter.SingleChooseListener() {
             @Override
-            public View.OnClickListener SingleChoose(RecyclerView.ViewHolder holder, final int position) {
-                return new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(RecyclerViewHelperActivity.this,"" + position,Toast.LENGTH_SHORT).show();
-                    }
-                };
+            public void SingleChoose(RecyclerView.ViewHolder holder, final int position) {
+                Toast.makeText(RecyclerViewHelperActivity.this,"" + position,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void SingleSwipeLeft() {
+                Toast.makeText(RecyclerViewHelperActivity.this,"Left",Toast.LENGTH_SHORT).show();
+                if (column < 8)
+                    column ++;
+                glm.setSpanCount(column);
+                recycler.setLayoutManager(glm);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void SingleSwipeRight() {
+                Toast.makeText(RecyclerViewHelperActivity.this,"Right",Toast.LENGTH_SHORT).show();
+                if (column > 1)
+                    column --;
+                glm.setSpanCount(column);
+                recycler.setLayoutManager(glm);
+                adapter.notifyDataSetChanged();
             }
         });
 
@@ -131,13 +148,8 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
         recycler.setLayoutManager(glm);
         recycler.setAdapter(adapter);
-        recycler.setOnTouchListener(new MyOnSwipeTouchListener(this));
+        recycler.setOnTouchListener(swipeTouchListener);
 
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
     }
 
     private List<Movie> MovieAction(){
@@ -201,11 +213,6 @@ public class RecyclerViewHelperActivity extends BaseActivity {
         }
 
         @Override
-        public void onSwipeDown() {
-
-        }
-
-        @Override
         public void onSwipeLeft() {
             Toast.makeText(RecyclerViewHelperActivity.this,"Left",Toast.LENGTH_SHORT).show();
             if (column < 8)
@@ -223,11 +230,6 @@ public class RecyclerViewHelperActivity extends BaseActivity {
             glm.setSpanCount(column);
             recycler.setLayoutManager(glm);
             adapter.notifyDataSetChanged();
-        }
-
-        @Override
-        public void onSwipeUp() {
-
         }
     };
 }
