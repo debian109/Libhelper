@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<UIHelper.RecyclerViewHelper.MultiChoiceRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<UIHelper.RecyclerViewHelper.widget.MultiChoiceRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tool="http://schemas.android.com/tools"
     tool:context=".ActivityExample.RecyclerViewHelperActivity"
     android:layout_width="match_parent"

@@ -3,14 +3,11 @@ package namtran.helperutil.ActivityExample;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,10 +15,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import UIHelper.RecyclerViewHelper.MultiChoiceRecyclerView;
-import UIHelper.RecyclerViewHelper.MultiChoiceToolbar;
-import UIHelper.RecyclerViewHelper.OnSwipeTouchListener;
-import UIHelper.RecyclerViewHelper.SectionedRecyclerViewAdapter;
+import UIHelper.RecyclerViewHelper.ScaleInItemAnimator;
+import UIHelper.RecyclerViewHelper.animator.SlideInLeftAnimator;
+import UIHelper.RecyclerViewHelper.animator.SlideInRightAnimator;
+import UIHelper.RecyclerViewHelper.widget.MultiChoiceRecyclerView;
+import UIHelper.RecyclerViewHelper.widget.MultiChoiceToolbar;
+import UIHelper.RecyclerViewHelper.Listener.OnSwipeTouchListener;
+import UIHelper.RecyclerViewHelper.adapter.SectionedRecyclerViewAdapter;
 import namtran.helperutil.Adapter.ExpandableMovieSection;
 import namtran.helperutil.BaseActivity;
 import namtran.helperutil.Model.Movie;
@@ -33,7 +33,8 @@ public class RecyclerViewHelperActivity extends BaseActivity {
     SectionedRecyclerViewAdapter adapter;
     private int column = 3;
     private List<Integer> listFirstPostion = new ArrayList<>();
-    GridLayoutManager glm;
+    SlideInLeftAnimator slideInLeftAnimator;
+    SlideInRightAnimator slideInRightAnimator;
 
     @Override
     protected Fragment initFragment() {
@@ -67,26 +68,30 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
         final MyOnSwipeTouchListener swipeTouchListener = new MyOnSwipeTouchListener(this);
 
+        slideInLeftAnimator = new SlideInLeftAnimator();
+        slideInRightAnimator = new SlideInRightAnimator();
+
         adapter.setSingleChooseListener(new SectionedRecyclerViewAdapter.SingleChooseListener() {
             @Override
             public void SingleChoose(RecyclerView.ViewHolder holder, final int position) {
                 Toast.makeText(RecyclerViewHelperActivity.this,"" + position,Toast.LENGTH_SHORT).show();
+                adapter.notifyItemRemoved(position);
             }
 
             @Override
             public void SingleSwipeLeft(RecyclerView.ViewHolder holder) {
-                if (column < 8)
+                if (column < 8){
                     column ++;
-                glm.setSpanCount(column);
-                delayedNotify(holder.getAdapterPosition(), calculateRange());
+                    swipeLayout(true,recycler,column);
+                }
             }
 
             @Override
             public void SingleSwipeRight(RecyclerView.ViewHolder holder) {
-                if (column > 1)
+                if (column > 2){
                     column --;
-                glm.setSpanCount(column);
-                delayedNotify(holder.getAdapterPosition(), calculateRange());
+                    swipeLayout(false,recycler,column);
+                }
             }
         });
 
@@ -120,7 +125,7 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
         recycler.setMultiChoiceToolbar(multiChoiceToolbar);
 
-        glm = new GridLayoutManager(this, column);
+        GridLayoutManager glm = new GridLayoutManager(this, column);
         glm.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
 
             @Override
@@ -132,10 +137,7 @@ public class RecyclerViewHelperActivity extends BaseActivity {
                         return column;
                     default:
                         if (listFirstPostion.contains(position))
-                            if (column > 1)
-                                return column - 1;
-                            else
-                                return 1;
+                            return 2;
                         else
                             return 1;
                 }
@@ -143,7 +145,12 @@ public class RecyclerViewHelperActivity extends BaseActivity {
         });
 
         recycler.setLayoutManager(glm);
+        recycler.setItemAnimator(new ScaleInItemAnimator());
         recycler.setAdapter(adapter);
+        //setHasFixedSize() is used to let the RecyclerView that its size will keep the same. This information will be used to optimize itself.
+        //recycler.setHasFixedSize(true);
+        //recycler.addItemDecoration(new SampleItemDecoration());
+        recycler.setItemAnimator(new DefaultItemAnimator());
         recycler.setOnTouchListener(swipeTouchListener);
 
     }
@@ -210,41 +217,38 @@ public class RecyclerViewHelperActivity extends BaseActivity {
 
         @Override
         public void onSwipeLeft() {
-            Toast.makeText(RecyclerViewHelperActivity.this,"Left",Toast.LENGTH_SHORT).show();
-            if (column < 8)
+            if (column < 8){
                 column ++;
-            glm.setSpanCount(column);
-            recycler.setLayoutManager(glm);
-            adapter.notifyDataSetChanged();
+                swipeLayout(true,recycler,column);
+            }
         }
 
         @Override
         public void onSwipeRight() {
-            Toast.makeText(RecyclerViewHelperActivity.this,"Right",Toast.LENGTH_SHORT).show();
-            if (column > 1)
+            if (column > 2){
                 column --;
-            glm.setSpanCount(column);
-            recycler.setLayoutManager(glm);
-            adapter.notifyDataSetChanged();
+                swipeLayout(false,recycler,column);
+            }
         }
     }
 
-    public void delayedNotify(final int pos, final int range) {
-        recycler.postDelayed(new Runnable() {
+    private void swipeLayout(boolean isLeft , RecyclerView recyclerView, int column){
+
+        final SectionedRecyclerViewAdapter adapter = (SectionedRecyclerViewAdapter) recyclerView.getAdapter();
+        GridLayoutManager layoutManager = (GridLayoutManager) recyclerView.getLayoutManager();
+        layoutManager.setSpanCount(column);
+
+        /*if (isLeft)
+            recyclerView.setItemAnimator(slideInLeftAnimator);
+        else
+            recyclerView.setItemAnimator(slideInRightAnimator);*/
+
+        recyclerView.postDelayed(new Runnable() {
             @Override
             public void run() {
-                adapter.notifyItemRangeChanged(pos - range > 0 ? pos - range : 0, range * 2 < adapter.getItemCount() ? range * 2 : range);
+                adapter.notifyItemRangeChanged(0,adapter.getItemCount());
             }
         }, 100);
-    }
 
-    public int calculateRange() {
-        int start = ((GridLayoutManager) recycler.getLayoutManager()).findFirstVisibleItemPosition();
-        int end = ((GridLayoutManager) recycler.getLayoutManager()).findLastVisibleItemPosition();
-        if (start < 0)
-            start = 0;
-        if (end < 0)
-            end = 0;
-        return end - start;
     }
 }
