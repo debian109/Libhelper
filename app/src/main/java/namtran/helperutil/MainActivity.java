@@ -13,7 +13,7 @@ import namtran.helperutil.ActivityExample.GetImeiPhone;
 import namtran.helperutil.ActivityExample.GuillotineMenuActivity;
 import namtran.helperutil.ActivityExample.MaterialActivity.MaterialDesign;
 import namtran.helperutil.ActivityExample.MaterialIntroActivity;
-import namtran.helperutil.ActivityExample.RecyclerViewHelperActivity;
+import namtran.helperutil.ActivityExample.RecyclerViewHelperExample.RecyclerViewHelperActivity;
 import namtran.helperutil.ActivityExample.SlideMenuActivity;
 import namtran.helperutil.ActivityExample.SwipeBack.SwipeBackActivity;
 import namtran.helperutil.ActivityExample.SwipeListView;

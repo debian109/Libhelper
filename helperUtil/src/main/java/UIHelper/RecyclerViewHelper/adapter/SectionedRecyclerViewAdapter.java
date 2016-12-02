@@ -1,412 +1,126 @@
 package UIHelper.RecyclerViewHelper.adapter;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
+import android.support.v4.util.ArrayMap;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.UUID;
-
-import Logger.Log;
-import UIHelper.RecyclerViewHelper.ViewUtil.Section;
+import java.util.List;
 
 /**
- * A custom RecyclerView with Sections with custom Titles.
- * Sections are displayed in the same order they were added.
- *
- * @author Gustavo Pagani
+ * @author Aidan Follestad (afollestad)
  */
-public class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
+public abstract class SectionedRecyclerViewAdapter extends MultiChoiceAdapter {
 
-    public final static int VIEW_TYPE_HEADER = 0;
-    public final static int VIEW_TYPE_FOOTER = 1;
-    public final static int VIEW_TYPE_ITEM_LOADED = 2;
-    public final static int VIEW_TYPE_LOADING = 3;
-    public final static int VIEW_TYPE_FAILED = 4;
+    private final static int VIEW_TYPE_HEADER = 0;
+    private final static int VIEW_TYPE_ITEM = 1;
 
-    public interface SingleChooseListener{
-        void SingleChoose(RecyclerView.ViewHolder holder, int position);
-        void SingleSwipeLeft(RecyclerView.ViewHolder holder);
-        void SingleSwipeRight(RecyclerView.ViewHolder holder);
-    }
-
-    public interface MultiChooseListener{
-        void MultiChoose(View view, boolean state);
-    }
-
-    private LinkedHashMap<String, Section> sections;
-    private HashMap<String, Integer> sectionViewTypeNumbers;
-    private int viewTypeCount = 0;
-    private final static int VIEW_TYPE_QTY = 5;
-    private SingleChooseListener singleChooseListener;
-    private MultiChooseListener multiChooseListener;
+    private final ArrayMap<Integer, Integer> mHeaderLocationMap;
 
     public SectionedRecyclerViewAdapter(Context context) {
         super(context);
-        sections = new LinkedHashMap<>();
-        sectionViewTypeNumbers = new HashMap<>();
+        mHeaderLocationMap = new ArrayMap<>();
     }
 
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        RecyclerView.ViewHolder viewHolder = null;
-        View view = null;
+    public abstract int getSectionCount();
 
-        for (Map.Entry<String, Integer> entry : sectionViewTypeNumbers.entrySet()) {
-            if (viewType >= entry.getValue() && viewType < entry.getValue() + VIEW_TYPE_QTY) {
+    public abstract int getItemCount(int section);
 
-                Section section = sections.get(entry.getKey());
-                int sectionViewType = viewType - entry.getValue();
+    public abstract RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, boolean header);
 
-                switch (sectionViewType) {
-                    case VIEW_TYPE_HEADER: {
-                        Integer resId = section.getHeaderResourceId();
+    public abstract void onBindHeaderViewHolder(RecyclerView.ViewHolder holder, int section);
 
-                        if (resId == null)
-                            throw new NullPointerException("Missing 'header' resource id");
+    public abstract void onBindViewHolder(RecyclerView.ViewHolder holder, int section, int position, int absolutePosition);
 
-                        view = LayoutInflater.from(parent.getContext()).inflate(resId, parent, false);
-                        // get the header viewholder from the section
-                        viewHolder = section.getHeaderViewHolder(view);
-                        break;
-                    }
-                    case VIEW_TYPE_FOOTER: {
-                        Integer resId = section.getFooterResourceId();
+    public abstract void onMultiChooseListener(View view, boolean state);
 
-                        if (resId == null)
-                            throw new NullPointerException("Missing 'footer' resource id");
+    public final boolean isHeader(int position) {
+        return mHeaderLocationMap.get(position) != null;
+    }
 
-                        view = LayoutInflater.from(parent.getContext()).inflate(resId, parent, false);
-                        // get the footer viewholder from the section
-                        viewHolder = section.getFooterViewHolder(view);
-                        break;
-                    }
-                    case VIEW_TYPE_ITEM_LOADED: {
-                        view = LayoutInflater.from(parent.getContext()).inflate(section.getItemResourceId(), parent, false);
-                        // get the item viewholder from the section
-                        viewHolder = section.getItemViewHolder(view);
-                        break;
-                    }
-                    case VIEW_TYPE_LOADING: {
-                        Integer resId = section.getLoadingResourceId();
-
-                        if (resId == null) throw new NullPointerException("Missing 'loading state' resource id");
-
-                        view = LayoutInflater.from(parent.getContext()).inflate(resId, parent, false);
-                        // get the loading viewholder from the section
-                        viewHolder = section.getLoadingViewHolder(view);
-                        break;
-                    }
-                    case VIEW_TYPE_FAILED: {
-                        Integer resId = section.getFailedResourceId();
-
-                        if (resId == null) throw new NullPointerException("Missing 'failed state' resource id");
-
-                        view = LayoutInflater.from(parent.getContext()).inflate(resId, parent, false);
-                        // get the failed load viewholder from the section
-                        viewHolder = section.getFailedViewHolder(view);
-                        break;
-                    }
-                    default:
-                        throw new IllegalArgumentException("Invalid viewType");
+    // returns section along with offsetted position
+    protected int[] getSectionIndexAndRelativePosition(int itemPosition) {
+        synchronized (mHeaderLocationMap) {
+            Integer lastSectionIndex = -1;
+            for (final Integer sectionIndex : mHeaderLocationMap.keySet()) {
+                if (itemPosition > sectionIndex) {
+                    lastSectionIndex = sectionIndex;
+                } else {
+                    break;
                 }
+                lastSectionIndex = sectionIndex;
             }
+            return new int[]{mHeaderLocationMap.get(lastSectionIndex), itemPosition - lastSectionIndex - 1};
         }
-
-        return viewHolder;
     }
 
-    /**
-     * Add a section to this recyclerview.
-     * @param tag unique identifier of the section
-     * @param section section to be added
-     */
-    public void addSection(String tag, Section section) {
-        this.sections.put(tag, section);
-        this.sectionViewTypeNumbers.put(tag, viewTypeCount);
-        viewTypeCount += VIEW_TYPE_QTY;
+    protected int getSection(int position){
+        return getSectionIndexAndRelativePosition(position)[0];
     }
 
-    /**
-     * Add a section to this recyclerview with a random tag;
-     * @param section section to be added
-     * @return generated tag
-     */
-    public String addSection(Section section) {
-        String tag = UUID.randomUUID().toString();
-
-        addSection(tag, section);
-
-        return tag;
-    }
-
-    /**
-     * Return the section with the tag provided
-     * @param tag unique identifier of the section
-     * @return section
-     */
-    public Section getSection(String tag) {
-        return this.sections.get(tag);
-    }
-
-    /**
-     * Remove section from this recyclerview.
-     * @param tag unique identifier of the section
-     */
-    public void removeSection(String tag) {
-        this.sections.remove(tag);
-    }
-
-    /**
-     * Remove all sections from this recyclerview.
-     */
-    public void removeAllSections() {
-        this.sections.clear();
+    protected int getPosition(int position){
+        return getSectionIndexAndRelativePosition(position)[1];
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-        int currentPos = 0;
-
-        for (Map.Entry<String, Section> entry : sections.entrySet()) {
-            Section section = entry.getValue();
-
-            // ignore invisible sections
-            if (!section.isVisible()) continue;
-
-            int sectionTotal = section.getSectionItemsTotal();
-
-            // check if position is in this section
-            if (position >= currentPos && position <= (currentPos + sectionTotal - 1)) {
-
-                if (section.hasHeader()) {
-                    if (position == currentPos) {
-                        // delegate the binding to the section header
-                        getSectionForPosition(position).onBindHeaderViewHolder(holder);
-                        return;
-                    }else {
-                        Log.d("test","true 2");
-                    }
-                }
-
-                if (section.hasFooter()) {
-                    if (position == (currentPos + sectionTotal - 1)) {
-                        // delegate the binding to the section header
-                        getSectionForPosition(position).onBindFooterViewHolder(holder);
-                        return;
-                    }
-                }
-
-                super.onBindViewHolder(holder,position);
-
-                // delegate the binding to the section content
-                getSectionForPosition(position).onBindContentViewHolder(holder, getSectionPosition(position));
-                return;
-            }
-
-            currentPos += sectionTotal;
-        }
-
-        throw new IndexOutOfBoundsException("Invalid position");
-    }
-
-    @Override
-    public int getItemCount() {
+    public final int getItemCount() {
         int count = 0;
-
-        for (Map.Entry<String, Section> entry : sections.entrySet()) {
-            Section section = entry.getValue();
-
-            // ignore invisible sections
-            if (!section.isVisible()) continue;
-
-            count += section.getSectionItemsTotal();
+        mHeaderLocationMap.clear();
+        for (int s = 0; s < getSectionCount(); s++) {
+            mHeaderLocationMap.put(count, s);
+            count += getItemCount(s) + 1;
         }
-
         return count;
     }
 
+    /**
+     * @hide
+     * @deprecated
+     */
     @Override
-    public int getItemViewType(int position) {
-        /*
-         Each Section has 5 "viewtypes":
-         1) header
-         2) footer
-         3) items
-         4) loading
-         5) load failed
-         */
-        int currentPos = 0;
-
-        for (Map.Entry<String, Section> entry : sections.entrySet()) {
-            Section section = entry.getValue();
-
-            // ignore invisible sections
-            if (!section.isVisible()) continue;
-
-            int sectionTotal = section.getSectionItemsTotal();
-
-            // check if position is in this section
-            if (position >= currentPos && position <= (currentPos + sectionTotal - 1)) {
-
-                int viewType = sectionViewTypeNumbers.get(entry.getKey());
-
-                if (section.hasHeader()) {
-                    if (position == currentPos) {
-                        return viewType;
-                    }
-                }
-
-                if (section.hasFooter()) {
-                    if (position == (currentPos + sectionTotal - 1)) {
-                        return viewType + 1;
-                    }
-                }
-
-                switch (section.getState()) {
-                    case LOADED:
-                        return viewType + 2;
-                    case LOADING:
-                        return viewType + 3;
-                    case FAILED:
-                        return viewType + 4;
-                    default:
-                        throw new IllegalStateException("Invalid state");
-                }
-
-            }
-
-            currentPos += sectionTotal;
-        }
-
-        throw new IndexOutOfBoundsException("Invalid position");
+    @Deprecated
+    public final RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return onCreateViewHolder(parent, viewType == VIEW_TYPE_HEADER);
     }
 
     /**
-     * Returns the Section ViewType of an item based on the position in the adapter:
-     * - SectionedRecyclerViewAdapter.VIEW_TYPE_HEADER
-     * - SectionedRecyclerViewAdapter.VIEW_TYPE_FOOTER
-     * - SectionedRecyclerViewAdapter.VIEW_TYPE_ITEM_LOADED
-     * - SectionedRecyclerViewAdapter.VIEW_TYPE_LOADING
-     * - SectionedRecyclerViewAdapter.VIEW_TYPE_FAILED
-     * @param position position in the adapter
-     * @return SectionedRecyclerViewAdapter.VIEW_TYPE_HEADER, VIEW_TYPE_FOOTER,
-     * VIEW_TYPE_ITEM_LOADED, VIEW_TYPE_LOADING or VIEW_TYPE_FAILED
+     * @hide
+     * @deprecated
      */
-    public int getSectionItemViewType(int position) {
-        int viewType = getItemViewType(position);
-
-        return viewType % VIEW_TYPE_QTY;
+    @Deprecated
+    @Override
+    public final int getItemViewType(int position) {
+        if (isHeader(position)) {
+            return VIEW_TYPE_HEADER;
+        } else {
+            return VIEW_TYPE_ITEM;
+        }
     }
 
     /**
-     * Returns the Section object for a position in the adapter
-     * @param position position in the adapter
-     * @return Section object for that position
+     * @hide
+     * @deprecated
      */
-    public Section getSectionForPosition(int position) {
-
-        int currentPos = 0;
-
-        for (Map.Entry<String, Section> entry : sections.entrySet()) {
-            Section section = entry.getValue();
-
-            // ignore invisible sections
-            if (!section.isVisible()) continue;
-
-            int sectionTotal = section.getSectionItemsTotal();
-
-            // check if position is in this section
-            if (position >= currentPos && position <= (currentPos + sectionTotal - 1)) {
-                return section;
-            }
-
-            currentPos += sectionTotal;
+    @Override
+    @Deprecated
+    public final void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        super.onBindViewHolder(holder,position);
+        if (isHeader(position)) {
+            onBindHeaderViewHolder(holder, mHeaderLocationMap.get(position));
+        } else {
+            onBindViewHolder(holder, getSection(position),
+                    // offset section view positions
+                    getPosition(position),
+                    position - (getSection(position) + 1));
         }
-
-        throw new IndexOutOfBoundsException("Invalid position");
-    }
-
-    /**
-     * Return the item position relative to the section.
-     * @param position position of the item in the adapter
-     * @return position of the item in the section
-     */
-    public int getSectionPosition(int position) {
-        int currentPos = 0;
-
-        for (Map.Entry<String, Section> entry : sections.entrySet()) {
-            Section section = entry.getValue();
-
-            // ignore invisible sections
-            if (!section.isVisible()) continue;
-
-            int sectionTotal = section.getSectionItemsTotal();
-
-            // check if position is in this section
-            if (position >= currentPos && position <= (currentPos + sectionTotal - 1)) {
-                return position - currentPos - (section.hasHeader() ? 1 : 0);
-            }
-
-            currentPos += sectionTotal;
-        }
-
-        throw new IndexOutOfBoundsException("Invalid position");
     }
 
     @Override
     public void setActive(View view, boolean state) {
-        if (multiChooseListener != null)
-            multiChooseListener.MultiChoose(view,state);
-    }
-
-    @Override
-    protected void ItemViewClickListener(RecyclerView.ViewHolder holder, int position) {
-        if (singleChooseListener != null)
-            singleChooseListener.SingleChoose(holder,position);
-    }
-
-    @Override
-    protected void ItemViewSwipeLeft(RecyclerView.ViewHolder holder) {
-        if (singleChooseListener != null)
-            singleChooseListener.SingleSwipeLeft(holder);
-    }
-
-    @Override
-    protected void ItemViewSwipeRight(RecyclerView.ViewHolder holder) {
-        if (singleChooseListener != null)
-            singleChooseListener.SingleSwipeRight(holder);
-    }
-
-    public void setMultiChooseListener(MultiChooseListener multiChooseListener){
-        this.multiChooseListener = multiChooseListener;
-    }
-
-    public void setSingleChooseListener(SingleChooseListener singleChooseListener){
-        this.singleChooseListener = singleChooseListener;
-    }
-
-    /**
-     * Return a map with all sections of this adapter
-     * @return a map with all sections
-     */
-    public LinkedHashMap<String, Section> getSectionsMap() {
-        return sections;
-    }
-
-    /**
-     * A concrete class of an empty ViewHolder.
-     * Should be used to avoid the boilerplate of creating a ViewHolder class for simple case
-     * scenarios.
-     */
-    public static class EmptyViewHolder extends RecyclerView.ViewHolder {
-        public EmptyViewHolder(View itemView) {
-            super(itemView);
-        }
+        onMultiChooseListener(view,state);
     }
 }

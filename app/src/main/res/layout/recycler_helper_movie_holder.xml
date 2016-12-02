@@ -16,49 +16,30 @@
   ~     Come on, don't tell me you read that.
   -->
 
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
+<RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    card_view:cardElevation="5dp"
-    card_view:cardUseCompatPadding="true">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/get_started_relative_layout">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/get_started_relative_layout">
+    <UIHelper.SquareImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/img_movie"
+        android:scaleType="centerCrop"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/img_movie"
-            android:scaleType="centerCrop"/>
+    <ImageView
+        android:id="@+id/tick_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/img_movie"
+        android:layout_alignStart="@+id/img_movie"
+        android:layout_alignTop="@+id/img_movie"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ticked_image"
+        android:src="@drawable/ic_check_white_24dp"
+        android:visibility="invisible"/>
 
-        <ImageView
-            android:id="@+id/tick_image"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignLeft="@+id/img_movie"
-            android:layout_alignStart="@+id/img_movie"
-            android:layout_alignTop="@+id/img_movie"
-            android:layout_marginLeft="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/ticked_image"
-            android:src="@drawable/ic_check_white_24dp"
-            android:visibility="invisible"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/txt_name_movie"
-            android:gravity="center"
-            android:textSize="20sp"/>
-
-    </RelativeLayout>
-
-</android.support.v7.widget.CardView>
+</RelativeLayout>

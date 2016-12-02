@@ -20,22 +20,19 @@ package UIHelper.RecyclerViewHelper.widget;
 import android.content.Context;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.GridLayoutAnimationController;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import UIHelper.RecyclerViewHelper.Listener.MultiChoiceAdapterListener;
-import UIHelper.RecyclerViewHelper.Listener.MultiChoiceSelectionListener;
-import UIHelper.RecyclerViewHelper.ViewUtil.MultiChoiceAdapterNotFoundException;
+import UIHelper.RecyclerViewHelper.listener.MultiChoiceAdapterListener;
+import UIHelper.RecyclerViewHelper.listener.MultiChoiceSelectionListener;
+import UIHelper.RecyclerViewHelper.viewUtil.MultiChoiceAdapterNotFoundException;
 import UIHelper.RecyclerViewHelper.adapter.MultiChoiceAdapter;
 import UIHelper.RecyclerViewHelper.adapter.SectionedRecyclerViewAdapter;
 
@@ -107,8 +104,6 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
 
     @Override
     public void onUpdateItemListener(View view, int position) {
-        if (mMultiChoiceAdapter.getSectionItemViewType(position) == SectionedRecyclerViewAdapter.VIEW_TYPE_HEADER)
-            return;
         if (mMultiChoiceAdapter != null && isInMultiChoiceMode) {
             if (mSelectedList.containsKey(position))
                 performSelect(view, position, false);
@@ -188,46 +183,6 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
         }
         return false;
     }
-
-    @Override
-    public void setLayoutManager(LayoutManager layout) {
-        if (!isInEditMode())
-            if (layout instanceof GridLayoutManager) {
-                super.setLayoutManager(layout);
-            } else {
-                throw new ClassCastException("You should only use a GridLayoutManager with GridRecyclerView.");
-            }
-    }
-
-    @Override
-    protected void attachLayoutAnimationParameters(View child, ViewGroup.LayoutParams params, int index, int count) {
-        if (!isInEditMode())
-            if (getAdapter() != null && getLayoutManager() instanceof GridLayoutManager) {
-
-                GridLayoutAnimationController.AnimationParameters animationParams =
-                        (GridLayoutAnimationController.AnimationParameters) params.layoutAnimationParameters;
-
-                if (animationParams == null) {
-                    animationParams = new GridLayoutAnimationController.AnimationParameters();
-                    params.layoutAnimationParameters = animationParams;
-                }
-
-                int columns = ((GridLayoutManager) getLayoutManager()).getSpanCount();
-
-                animationParams.count = count;
-                animationParams.index = index;
-                animationParams.columnsCount = columns;
-                animationParams.rowsCount = count / columns;
-
-                final int invertedIndex = count - 1 - index;
-                animationParams.column = columns - 1 - (invertedIndex % columns);
-                animationParams.row = animationParams.rowsCount - 1 - invertedIndex / columns;
-
-            } else {
-                super.attachLayoutAnimationParameters(child, params, index, count);
-            }
-    }
-
 
     /**
      * Set the selection of the RecyclerView to always single click (instead of first long click and then single click)
@@ -332,8 +287,6 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
     }
 
     private void performSelect(View v, int position, boolean withCallback) {
-        if (mMultiChoiceAdapter.getSectionItemViewType(position) == SectionedRecyclerViewAdapter.VIEW_TYPE_HEADER)
-            return;
         mMultiChoiceAdapter.performActivation(v, true);
         mSelectedList.put(position, v);
 

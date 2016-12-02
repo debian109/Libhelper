@@ -6,8 +6,8 @@ import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import UIHelper.RecyclerViewHelper.Listener.MultiChoiceAdapterListener;
-import UIHelper.RecyclerViewHelper.Listener.OnSwipeTouchListener;
+import UIHelper.RecyclerViewHelper.listener.MultiChoiceAdapterListener;
+import UIHelper.RecyclerViewHelper.listener.OnSwipeTouchListener;
 
 
 public abstract class MultiChoiceAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {

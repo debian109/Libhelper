@@ -82,7 +82,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @return
      */
     protected View getView(int idLayout){
-        return getLayoutInflater().inflate(idLayout, null);
+        return getLayoutInflater().inflate(idLayout, null,true);
     }
 
     private void initView() {
