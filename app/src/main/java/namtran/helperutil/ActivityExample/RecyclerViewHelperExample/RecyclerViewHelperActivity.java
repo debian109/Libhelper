@@ -3,6 +3,7 @@ package namtran.helperutil.ActivityExample.RecyclerViewHelperExample;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -13,7 +14,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import UIHelper.GestureView.transition.ViewsTransitionAnimator;
@@ -25,7 +28,7 @@ import namtran.helperutil.BaseActivity;
 import namtran.helperutil.Model.Movie;
 import namtran.helperutil.R;
 
-public class RecyclerViewHelperActivity extends BaseActivity {
+public class RecyclerViewHelperActivity extends BaseActivity implements UpdateScreenListener {
 
     MultiChoiceRecyclerView recycler;
 //    SectionedRecyclerViewAdapter1 adapter;
@@ -128,6 +131,10 @@ public class RecyclerViewHelperActivity extends BaseActivity {
                 if (movie != null){
                     Toast.makeText(RecyclerViewHelperActivity.this,movie.getName() +"",Toast.LENGTH_SHORT).show();
                 }
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                DialogShowImage dialog = DialogShowImage.newInstance((ArrayList<DataMovie>) adapter.getListMovie(),position + 1);
+                dialog.show(ft, "dialog");
             }
 
             @Override
@@ -323,6 +330,11 @@ public class RecyclerViewHelperActivity extends BaseActivity {
                 adapter.notifyItemRangeChanged(0,adapter.getItemCount());
             }
         }, 100);
+
+    }
+
+    @Override
+    public void onUpdate(int position) {
 
     }
 }

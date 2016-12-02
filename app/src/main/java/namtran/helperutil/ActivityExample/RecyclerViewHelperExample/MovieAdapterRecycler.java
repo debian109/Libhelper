@@ -39,7 +39,9 @@ public class MovieAdapterRecycler extends SectionedRecyclerViewAdapter {
         mContext = context;
     }
 
-
+    public List<DataMovie> getListMovie(){
+        return allData;
+    }
 
     public void setTouchItemHolderListener(TouchItemHolder touchItemHolder){
         this.touchItemHolder = touchItemHolder;
