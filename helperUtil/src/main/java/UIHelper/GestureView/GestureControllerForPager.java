@@ -11,7 +11,7 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-import com.alexvasilkov.gestures.internal.detectors.RotationGestureDetector;
+import UIHelper.GestureView.internal.detectors.RotationGestureDetector;
 
 /**
  * Allows cross movement between view controlled by this {@link GestureController} and it's parent

@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator;
-import com.alexvasilkov.gestures.transition.ViewsCoordinator;
-import com.alexvasilkov.gestures.transition.ViewsTracker;
-import com.alexvasilkov.gestures.transition.ViewsTransitionAnimator;
+import UIHelper.GestureView.animation.ViewPositionAnimator;
+import UIHelper.GestureView.transition.ViewsCoordinator;
+import UIHelper.GestureView.transition.ViewsTracker;
+import UIHelper.GestureView.transition.ViewsTransitionAnimator;
 
 public class FromListViewListener<ID> implements ViewsCoordinator.OnRequestViewListener<ID> {
 

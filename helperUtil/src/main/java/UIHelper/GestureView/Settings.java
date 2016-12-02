@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import android.util.TypedValue;
 import android.view.Gravity;
 
-import com.alexvasilkov.gestures.views.interfaces.GestureView;
+import UIHelper.GestureView.views.interfaces.GestureView;
 
 /**
  * Various settings needed for {@link GestureController} and for {@link StateController}.

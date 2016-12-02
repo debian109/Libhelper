@@ -10,15 +10,14 @@ import android.graphics.RectF;
 import android.util.TypedValue;
 import android.view.View;
 
-import com.alexvasilkov.gestures.GestureController;
-import com.alexvasilkov.gestures.GestureController.StateSource;
-import com.alexvasilkov.gestures.Settings;
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator;
-import com.alexvasilkov.gestures.utils.GravityUtils;
-import com.alexvasilkov.gestures.views.interfaces.AnimatorView;
-import com.alexvasilkov.gestures.views.interfaces.GestureView;
-
 import java.lang.reflect.Field;
+
+import UIHelper.GestureView.GestureController;
+import UIHelper.GestureView.Settings;
+import UIHelper.GestureView.animation.ViewPositionAnimator;
+import UIHelper.GestureView.utils.GravityUtils;
+import UIHelper.GestureView.views.interfaces.AnimatorView;
+import UIHelper.GestureView.views.interfaces.GestureView;
 
 public class DebugOverlay {
 
@@ -82,10 +81,10 @@ public class DebugOverlay {
             float dx = settings.getViewportW() * 0.5f + left;
             float dy = settings.getViewportH() * 0.5f + top;
 
-            StateSource source = getStateSource(controller);
+            GestureController.StateSource source = getStateSource(controller);
             canvas.drawText(source.name(), dx, dy, paint);
 
-            if (source != StateSource.NONE) {
+            if (source != GestureController.StateSource.NONE) {
                 view.invalidate();
             }
         }
@@ -105,7 +104,7 @@ public class DebugOverlay {
     }
 
 
-    private static StateSource getStateSource(GestureController controller) {
+    private static GestureController.StateSource getStateSource(GestureController controller) {
         // We can't have public API for state source in GestureController,
         // since it is only make sense to get it through corresponding listener.
         // Getting field through reflection for debug purpose does not seem to be very bad.
@@ -119,12 +118,12 @@ public class DebugOverlay {
 
         if (stateSourceField != null) {
             try {
-                return (StateSource) stateSourceField.get(controller);
+                return (GestureController.StateSource) stateSourceField.get(controller);
             } catch (Exception ignored) {
             }
         }
 
-        return StateSource.NONE;
+        return GestureController.StateSource.NONE;
     }
 
 }

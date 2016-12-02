@@ -5,12 +5,12 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator;
-import com.alexvasilkov.gestures.commons.RecyclePagerAdapter;
-import com.alexvasilkov.gestures.transition.ViewsCoordinator;
-import com.alexvasilkov.gestures.transition.ViewsTracker;
-import com.alexvasilkov.gestures.transition.ViewsTransitionAnimator;
-import com.alexvasilkov.gestures.views.interfaces.AnimatorView;
+import UIHelper.GestureView.animation.ViewPositionAnimator;
+import UIHelper.GestureView.commons.RecyclePagerAdapter;
+import UIHelper.GestureView.transition.ViewsCoordinator;
+import UIHelper.GestureView.transition.ViewsTracker;
+import UIHelper.GestureView.transition.ViewsTransitionAnimator;
+import UIHelper.GestureView.views.interfaces.AnimatorView;
 
 /**
  * Helper class to animate transitions into ViewPager with GestureView-driven pages.

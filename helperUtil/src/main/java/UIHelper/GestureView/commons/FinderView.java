@@ -13,12 +13,12 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
-import com.alexvasilkov.gestures.Settings;
-import com.alexvasilkov.gestures.internal.AnimationEngine;
-import com.alexvasilkov.gestures.utils.FloatScroller;
-import com.alexvasilkov.gestures.utils.GravityUtils;
-import com.alexvasilkov.gestures.utils.MathUtils;
-import com.alexvasilkov.gestures.views.GestureImageView;
+import UIHelper.GestureView.Settings;
+import UIHelper.GestureView.internal.AnimationEngine;
+import UIHelper.GestureView.utils.FloatScroller;
+import UIHelper.GestureView.utils.GravityUtils;
+import UIHelper.GestureView.utils.MathUtils;
+import UIHelper.GestureView.views.GestureImageView;
 
 /**
  * View to draw movement area above {@link GestureImageView}, useful when implementing cropping.

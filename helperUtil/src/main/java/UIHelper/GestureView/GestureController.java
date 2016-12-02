@@ -11,15 +11,15 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 
-import com.alexvasilkov.gestures.internal.AnimationEngine;
-import com.alexvasilkov.gestures.internal.MovementBounds;
-import com.alexvasilkov.gestures.internal.detectors.RotationGestureDetector;
-import com.alexvasilkov.gestures.internal.detectors.ScaleGestureDetectorFixed;
-import com.alexvasilkov.gestures.utils.FloatScroller;
-import com.alexvasilkov.gestures.utils.MathUtils;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import UIHelper.GestureView.internal.AnimationEngine;
+import UIHelper.GestureView.internal.MovementBounds;
+import UIHelper.GestureView.internal.detectors.RotationGestureDetector;
+import UIHelper.GestureView.internal.detectors.ScaleGestureDetectorFixed;
+import UIHelper.GestureView.utils.FloatScroller;
+import UIHelper.GestureView.utils.MathUtils;
 
 /**
  * Handles touch events to update view's position state ({@link State}) based on current

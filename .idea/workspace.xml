@@ -11,102 +11,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632aa347-8260-4d6b-bade-34f98d5a6522" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/DefaultItemAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/SampleItemDecoration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInItemAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/BaseItemAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInDownAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInLeftAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInRightAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInUpAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FlipInBottomXAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FlipInLeftYAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FlipInRightYAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FlipInTopXAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/LandingAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/OvershootInLeftAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/OvershootInRightAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInBottomAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInLeftAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInRightAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInTopAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/SlideInDownAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/SlideInLeftAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/SlideInRightAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/SlideInUpAnimator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/holder/AnimateViewHolder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/internal/ViewHelper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/MultiChoiceAdapter.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/adapter/MultiChoiceAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/MultiChoiceAdapterListener.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/Listener/MultiChoiceAdapterListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/MultiChoiceAdapterNotFoundException.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ViewUtil/MultiChoiceAdapterNotFoundException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/MultiChoiceRecyclerView.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/widget/MultiChoiceRecyclerView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/MultiChoiceSelectionListener.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/Listener/MultiChoiceSelectionListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/MultiChoiceToolbar.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/widget/MultiChoiceToolbar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/MultiChoiceToolbarHelper.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/widget/MultiChoiceToolbarHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/OnDoubleTapListener.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/Listener/OnDoubleTapListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/OnSwipeTouchListener.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/Listener/OnSwipeTouchListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/Section.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ViewUtil/Section.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/SectionedRecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/adapter/SectionedRecyclerViewAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/StatelessSection.java" afterPath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ViewUtil/StatelessSection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_23_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_23_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_2_0.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/GestureController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/GestureControllerForPager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/Settings.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/State.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/StateController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/animation/ImageViewHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/animation/ViewPosition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/animation/ViewPositionAnimator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/animation/ViewPositionHolder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/commons/DepthPageTransformer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/commons/FinderView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/commons/RecyclePagerAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/commons/circle/CircleGestureImageView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/commons/circle/CircleImageView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/internal/AnimationEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/internal/DebugOverlay.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/internal/Fps.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/internal/GestureDebug.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/internal/MovementBounds.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/internal/ZoomBounds.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/internal/detectors/RotationGestureDetector.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/internal/detectors/ScaleGestureDetectorFixed.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/transition/SimpleViewsTracker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/transition/ViewsCoordinator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/transition/ViewsTracker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/transition/ViewsTransitionAnimator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/transition/ViewsTransitionBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/transition/internal/FromListViewListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/transition/internal/FromRecyclerViewListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/transition/internal/IntoViewPagerListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/utils/ClipHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/utils/CropUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/utils/FloatScroller.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/utils/GravityUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/utils/MathUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/views/GestureFrameLayout.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/views/GestureImageView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/views/interfaces/AnimatorView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/views/interfaces/ClipView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/views/interfaces/GestureView.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_helperUtil_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_helperUtil_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_helperUtil_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_helperUtil_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_helperUtil_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_helperUtil_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_helperUtil_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_helperUtil_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/cardview_v7_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_23_1_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_23_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_23_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mediarouter_v7_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mediarouter_v7_22_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_instrumentation_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_instrumentation_1_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/palette_v7_23_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/palette_v7_23_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_ads_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_ads_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_analytics_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_analytics_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_appindexing_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_appindexing_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_appinvite_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_appinvite_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_appstate_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_appstate_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_auth_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_auth_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_base_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_base_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_basement_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_basement_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_cast_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_cast_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_drive_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_drive_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_fitness_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_fitness_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_games_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_games_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_gcm_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_gcm_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_identity_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_identity_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_location_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_location_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_maps_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_maps_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_measurement_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_measurement_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_nearby_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_nearby_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_panorama_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_panorama_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_plus_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_plus_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_safetynet_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_safetynet_8_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_vision_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_vision_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_wallet_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_wallet_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_wearable_8_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_wearable_8_3_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_23_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_23_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/namtran/helperutil/Adapter/ExpandableMovieSection.java" afterPath="$PROJECT_DIR$/app/src/main/java/namtran/helperutil/Adapter/ExpandableMovieSection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperExample/RecyclerViewHelperActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperExample/RecyclerViewHelperActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_recyclerview_helper_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_recyclerview_helper_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helperUtil/helperUtil.iml" afterPath="$PROJECT_DIR$/helperUtil/helperUtil.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <ignored path="Libhelper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -138,7 +117,20 @@
     <favorites_list name="Libhelper" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="RecyclerViewHelperActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperExample/RecyclerViewHelperActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -2741,6 +2733,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="C:\Users\User\Documents\GitHub\Libhelper" value="5920681585635" />
+        <entry key="I:\SourceCode\Libhelper" value="5912084719721" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -3175,6 +3168,9 @@
         <option value="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutRightItemAnimator.java" />
         <option value="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutTopItemAnimator.java" />
         <option value="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideScaleInOutRightItemAnimator.java" />
+        <option value="$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/animation/ViewPositionAnimator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperExample/RecyclerViewHelperActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_recyclerview_helper_main.xml" />
       </list>
     </option>
   </component>
@@ -3209,11 +3205,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane />
       </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3373,44 +3368,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="RecyclerViewHelper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Libhelper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Libhelper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helperUtil" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIHelper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RecyclerViewHelper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="animator2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3588,20 +3545,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libhelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libhelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helperutil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ActivityExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RecyclerViewHelperExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="YT9111T2JQ" />
+    <property name="device.picker.selection" value="B0A215430105428" />
     <property name="DEBUGGABLE_DEVICE" value="sony-d5803-YT9111T2JQ" />
     <property name="DEBUGGABLE_PROCESS" value="namtran.helperutil" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
+    <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -3942,32 +3939,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1612" height="876" extended-state="1" />
+    <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39972144" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39972144" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -4002,35 +4000,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/SlideInOutBottomItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="13005" column="9" selection-start-line="13005" selection-start-column="9" selection-end-line="13005" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/23.2.0/recyclerview-v7-23.2.0-sources.jar!/android/support/v7/widget/RecyclerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10362" column="21" selection-start-line="10362" selection-start-column="21" selection-end-line="10362" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/SlideInOutLeftItemAnimator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4038,7 +4011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4046,9 +4018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
           <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4060,262 +4029,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInDownAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInLeftAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInRightAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInUpAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FlipInBottomXAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FlipInLeftYAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FlipInRightYAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FlipInTopXAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/LandingAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/OvershootInLeftAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/OvershootInRightAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ViewHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/SlideInUpAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/SlideInRightAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInRightAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInLeftAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInBottomAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/AnimateViewHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/BaseItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="221" column="47" selection-start-line="221" selection-start-column="47" selection-end-line="221" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInDownAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInLeftAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInRightAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInUpAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FlipInBottomXAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FlipInLeftYAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FlipInRightYAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FlipInTopXAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/LandingAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/OvershootInLeftAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/OvershootInRightAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ViewHelper.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/SlideInUpAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/SlideInRightAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInRightAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInLeftAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInBottomAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/FadeInAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/AnimateViewHolder.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/BaseItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/ScaleInItemAnimator.java" />
     <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInOutItemAnimator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/DefaultItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="200" column="17" selection-start-line="200" selection-start-column="17" selection-end-line="200" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInLeftAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FlipInRightYAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInLeftAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInRightAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInBottomAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FlipInTopXAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInRightAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/holder/AnimateViewHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/DefaultItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInLeftAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FlipInRightYAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInLeftAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInRightAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/ScaleInBottomAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FlipInTopXAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInRightAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/holder/AnimateViewHolder.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/namtran/helperutil/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -4338,81 +4089,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="44" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInDownAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperActivity.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutBottomItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/ScaleInOutItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/BaseItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutLeftItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutRightItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutTopItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideScaleInOutRightItemAnimator.java" />
+    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/GestureView/animation/ViewPositionAnimator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_recyclerview_helper_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperExample/RecyclerViewHelperActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator/FadeInDownAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/namtran/helperutil/ActivityExample/RecyclerViewHelperActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="139" column="36" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutBottomItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/ScaleInOutItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/BaseItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutLeftItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutRightItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideInOutTopItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helperUtil/src/main/java/UIHelper/RecyclerViewHelper/animator2/SlideScaleInOutRightItemAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,6 @@
 package UIHelper.GestureView.views.interfaces;
 
-import com.alexvasilkov.gestures.GestureController;
+import UIHelper.GestureView.GestureController;
 
 /**
  * Common interface for all Gesture* views.

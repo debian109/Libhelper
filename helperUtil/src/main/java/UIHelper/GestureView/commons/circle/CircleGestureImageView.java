@@ -14,10 +14,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator.PositionUpdateListener;
-import com.alexvasilkov.gestures.internal.DebugOverlay;
-import com.alexvasilkov.gestures.internal.GestureDebug;
-import com.alexvasilkov.gestures.views.GestureImageView;
+import UIHelper.GestureView.animation.ViewPositionAnimator;
+import UIHelper.GestureView.internal.DebugOverlay;
+import UIHelper.GestureView.internal.GestureDebug;
+import UIHelper.GestureView.views.GestureImageView;
 
 public class CircleGestureImageView extends GestureImageView {
 
@@ -43,7 +43,7 @@ public class CircleGestureImageView extends GestureImageView {
     public CircleGestureImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        getPositionAnimator().addPositionUpdateListener(new PositionUpdateListener() {
+        getPositionAnimator().addPositionUpdateListener(new ViewPositionAnimator.PositionUpdateListener() {
             @Override
             public void onPositionUpdate(float state, boolean isLeaving) {
                 cornersState = state;

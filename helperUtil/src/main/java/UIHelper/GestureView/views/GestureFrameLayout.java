@@ -13,14 +13,14 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 
-import com.alexvasilkov.gestures.GestureController;
-import com.alexvasilkov.gestures.GestureControllerForPager;
-import com.alexvasilkov.gestures.State;
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator;
-import com.alexvasilkov.gestures.internal.DebugOverlay;
-import com.alexvasilkov.gestures.internal.GestureDebug;
-import com.alexvasilkov.gestures.views.interfaces.AnimatorView;
-import com.alexvasilkov.gestures.views.interfaces.GestureView;
+import UIHelper.GestureView.GestureController;
+import UIHelper.GestureView.GestureControllerForPager;
+import UIHelper.GestureView.State;
+import UIHelper.GestureView.animation.ViewPositionAnimator;
+import UIHelper.GestureView.internal.DebugOverlay;
+import UIHelper.GestureView.internal.GestureDebug;
+import UIHelper.GestureView.views.interfaces.AnimatorView;
+import UIHelper.GestureView.views.interfaces.GestureView;
 
 /**
  * {@link FrameLayout} implementation controlled by {@link GestureController}

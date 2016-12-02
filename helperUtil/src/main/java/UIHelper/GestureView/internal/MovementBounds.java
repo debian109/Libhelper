@@ -5,10 +5,10 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-import com.alexvasilkov.gestures.Settings;
-import com.alexvasilkov.gestures.State;
-import com.alexvasilkov.gestures.utils.GravityUtils;
-import com.alexvasilkov.gestures.utils.MathUtils;
+import UIHelper.GestureView.Settings;
+import UIHelper.GestureView.State;
+import UIHelper.GestureView.utils.GravityUtils;
+import UIHelper.GestureView.utils.MathUtils;
 
 /**
  * Encapsulates logic related to movement bounds restriction. It will also apply image gravity

@@ -4,18 +4,17 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 
-import com.alexvasilkov.gestures.animation.ViewPosition;
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator;
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator.PositionUpdateListener;
-import com.alexvasilkov.gestures.internal.GestureDebug;
-import com.alexvasilkov.gestures.views.interfaces.AnimatorView;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import UIHelper.GestureView.animation.ViewPosition;
+import UIHelper.GestureView.animation.ViewPositionAnimator;
+import UIHelper.GestureView.internal.GestureDebug;
+import UIHelper.GestureView.views.interfaces.AnimatorView;
+
 /**
  * Extension of {@link ViewsCoordinator} that allows requesting {@link #enter(Object, boolean)} or
- * {@link #exit(boolean)} animations, keeps track of {@link PositionUpdateListener} listeners
+ * {@link #exit(boolean)} animations, keeps track of {@link ViewPositionAnimator.PositionUpdateListener} listeners
  * and provides correct implementation of {@link #isLeaving()}.
  * <p/>
  * Usage of this class should be similar to {@link ViewPositionAnimator} class.
@@ -24,7 +23,7 @@ public class ViewsTransitionAnimator<ID> extends ViewsCoordinator<ID> {
 
     private static final String TAG = ViewsTransitionAnimator.class.getSimpleName();
 
-    private final List<PositionUpdateListener> listeners = new ArrayList<>();
+    private final List<ViewPositionAnimator.PositionUpdateListener> listeners = new ArrayList<>();
 
     private ID enterId;
     private boolean isReady;
@@ -35,7 +34,7 @@ public class ViewsTransitionAnimator<ID> extends ViewsCoordinator<ID> {
 
     @SuppressWarnings("WeakerAccess") // Public API
     public ViewsTransitionAnimator() {
-        addPositionUpdateListener(new PositionUpdateListener() {
+        addPositionUpdateListener(new ViewPositionAnimator.PositionUpdateListener() {
             @Override
             public void onPositionUpdate(float state, boolean isLeaving) {
                 if (state == 0f && isLeaving) {
@@ -190,9 +189,9 @@ public class ViewsTransitionAnimator<ID> extends ViewsCoordinator<ID> {
      * Adds listener to the set of position updates listeners that will be notified during
      * any position changes.
      *
-     * @see ViewPositionAnimator#addPositionUpdateListener(PositionUpdateListener)
+     * @see ViewPositionAnimator#addPositionUpdateListener(ViewPositionAnimator.PositionUpdateListener)
      */
-    public void addPositionUpdateListener(PositionUpdateListener listener) {
+    public void addPositionUpdateListener(ViewPositionAnimator.PositionUpdateListener listener) {
         listeners.add(listener);
         if (isReady) {
             getToView().getPositionAnimator().addPositionUpdateListener(listener);
@@ -200,12 +199,12 @@ public class ViewsTransitionAnimator<ID> extends ViewsCoordinator<ID> {
     }
 
     /**
-     * Removes listener added by {@link #addPositionUpdateListener(PositionUpdateListener)}.
+     * Removes listener added by {@link #addPositionUpdateListener(ViewPositionAnimator.PositionUpdateListener)}.
      *
-     * @see ViewPositionAnimator#removePositionUpdateListener(PositionUpdateListener)
+     * @see ViewPositionAnimator#removePositionUpdateListener(ViewPositionAnimator.PositionUpdateListener)
      */
     @SuppressWarnings("unused") // Public API
-    public void removePositionUpdateListener(PositionUpdateListener listener) {
+    public void removePositionUpdateListener(ViewPositionAnimator.PositionUpdateListener listener) {
         listeners.remove(listener);
         if (isReady) {
             getToView().getPositionAnimator().removePositionUpdateListener(listener);
@@ -213,13 +212,13 @@ public class ViewsTransitionAnimator<ID> extends ViewsCoordinator<ID> {
     }
 
     private void initAnimator(ViewPositionAnimator animator) {
-        for (PositionUpdateListener listener : listeners) {
+        for (ViewPositionAnimator.PositionUpdateListener listener : listeners) {
             animator.addPositionUpdateListener(listener);
         }
     }
 
     private void cleanupAnimator(ViewPositionAnimator animator) {
-        for (PositionUpdateListener listener : listeners) {
+        for (ViewPositionAnimator.PositionUpdateListener listener : listeners) {
             animator.removePositionUpdateListener(listener);
         }
 

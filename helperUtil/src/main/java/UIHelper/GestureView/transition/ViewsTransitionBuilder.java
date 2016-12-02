@@ -5,9 +5,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 
-import com.alexvasilkov.gestures.transition.internal.FromListViewListener;
-import com.alexvasilkov.gestures.transition.internal.FromRecyclerViewListener;
-import com.alexvasilkov.gestures.transition.internal.IntoViewPagerListener;
+import UIHelper.GestureView.transition.internal.FromListViewListener;
+import UIHelper.GestureView.transition.internal.FromRecyclerViewListener;
+import UIHelper.GestureView.transition.internal.IntoViewPagerListener;
 
 public class ViewsTransitionBuilder<ID> {
 

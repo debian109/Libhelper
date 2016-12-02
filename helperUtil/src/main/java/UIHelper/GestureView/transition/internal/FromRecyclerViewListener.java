@@ -5,10 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator;
-import com.alexvasilkov.gestures.transition.ViewsCoordinator;
-import com.alexvasilkov.gestures.transition.ViewsTracker;
-import com.alexvasilkov.gestures.transition.ViewsTransitionAnimator;
+import UIHelper.GestureView.animation.ViewPositionAnimator;
+import UIHelper.GestureView.transition.ViewsCoordinator;
+import UIHelper.GestureView.transition.ViewsTracker;
+import UIHelper.GestureView.transition.ViewsTransitionAnimator;
 
 public class FromRecyclerViewListener<ID> implements ViewsCoordinator.OnRequestViewListener<ID> {
 

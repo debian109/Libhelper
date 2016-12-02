@@ -1,6 +1,6 @@
 package UIHelper.GestureView.views.interfaces;
 
-import com.alexvasilkov.gestures.animation.ViewPositionAnimator;
+import UIHelper.GestureView.animation.ViewPositionAnimator;
 
 /**
  * Common interface for views supporting position animation.

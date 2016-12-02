@@ -2,7 +2,7 @@ package UIHelper.GestureView.utils;
 
 import android.graphics.RectF;
 
-import com.alexvasilkov.gestures.State;
+import UIHelper.GestureView.State;
 
 public class MathUtils {
 

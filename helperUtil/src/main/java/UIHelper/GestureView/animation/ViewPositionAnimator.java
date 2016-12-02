@@ -9,20 +9,21 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.alexvasilkov.gestures.GestureController;
-import com.alexvasilkov.gestures.GestureControllerForPager;
-import com.alexvasilkov.gestures.Settings;
-import com.alexvasilkov.gestures.State;
-import com.alexvasilkov.gestures.internal.AnimationEngine;
-import com.alexvasilkov.gestures.internal.GestureDebug;
-import com.alexvasilkov.gestures.utils.FloatScroller;
-import com.alexvasilkov.gestures.utils.MathUtils;
-import com.alexvasilkov.gestures.views.GestureImageView;
-import com.alexvasilkov.gestures.views.interfaces.ClipView;
-import com.alexvasilkov.gestures.views.interfaces.GestureView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import UIHelper.GestureView.GestureController;
+import UIHelper.GestureView.GestureControllerForPager;
+import UIHelper.GestureView.Settings;
+import UIHelper.GestureView.State;
+import UIHelper.GestureView.internal.AnimationEngine;
+import UIHelper.GestureView.internal.GestureDebug;
+import UIHelper.GestureView.utils.FloatScroller;
+import UIHelper.GestureView.utils.MathUtils;
+import UIHelper.GestureView.views.GestureImageView;
+import UIHelper.GestureView.views.interfaces.ClipView;
+import UIHelper.GestureView.views.interfaces.GestureView;
 
 /**
  * Helper class to animate views from one position on screen to another.

@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.alexvasilkov.gestures.views.interfaces.ClipView;
+import UIHelper.GestureView.views.interfaces.ClipView;
 
 /**
  * Helper class to implement view clipping (with {@link ClipView} interface).

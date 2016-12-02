@@ -6,8 +6,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.Gravity;
 
-import com.alexvasilkov.gestures.Settings;
-import com.alexvasilkov.gestures.State;
+import UIHelper.GestureView.Settings;
+import UIHelper.GestureView.State;
 
 public class GravityUtils {
 

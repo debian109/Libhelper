@@ -6,10 +6,10 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 
-import com.alexvasilkov.gestures.internal.MovementBounds;
-import com.alexvasilkov.gestures.internal.ZoomBounds;
-import com.alexvasilkov.gestures.utils.GravityUtils;
-import com.alexvasilkov.gestures.utils.MathUtils;
+import UIHelper.GestureView.internal.MovementBounds;
+import UIHelper.GestureView.internal.ZoomBounds;
+import UIHelper.GestureView.utils.GravityUtils;
+import UIHelper.GestureView.utils.MathUtils;
 
 /**
  * Helper class that holds reference to {@link Settings} object and controls some aspects of view

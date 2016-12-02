@@ -7,9 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-import com.alexvasilkov.gestures.animation.ViewPosition;
-import com.alexvasilkov.gestures.internal.GestureDebug;
-import com.alexvasilkov.gestures.views.interfaces.AnimatorView;
+import UIHelper.GestureView.animation.ViewPosition;
+import UIHelper.GestureView.internal.GestureDebug;
+import UIHelper.GestureView.views.interfaces.AnimatorView;
 
 /**
  * Main purpose of this class is to synchronize views of same item in two different sources

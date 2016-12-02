@@ -18,8 +18,6 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import UIHelper.GestureView.transition.ViewsTransitionAnimator;
 import UIHelper.RecyclerViewHelper.adapter.SectionedRecyclerViewAdapter;
 import UIHelper.RecyclerViewHelper.widget.MultiChoiceRecyclerView;
 import UIHelper.RecyclerViewHelper.widget.MultiChoiceToolbar;
@@ -34,10 +32,7 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
 //    SectionedRecyclerViewAdapter1 adapter;
     MovieAdapterRecycler adapter;
     private int column = 3;
-    private ViewPager pager;
     private List<Integer> listFirstPostion = new ArrayList<>();
-    private ViewsTransitionAnimator<Integer> animator;
-    private ViewPager.OnPageChangeListener pagerListener;
 
     @Override
     protected Fragment initFragment() {
@@ -63,7 +58,6 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         recycler = (MultiChoiceRecyclerView) findViewById(R.id.recycler);
-        pager = (ViewPager) findViewById(R.id.advanced_pager);
 
         final MyOnSwipeTouchListener swipeTouchListener = new MyOnSwipeTouchListener(this);
 
