@@ -10,14 +10,14 @@ import android.view.ViewGroup;
 /**
  * @author Aidan Follestad (afollestad)
  */
-public abstract class SectionedViewpagerAdapter extends PagerAdapter {
+public abstract class SectionedViewpagerPageAdapter extends PagerAdapter {
 
     private final static int VIEW_TYPE_HEADER = 0;
     private final static int VIEW_TYPE_ITEM = 1;
 
     private final ArrayMap<Integer, Integer> mHeaderLocationMap;
 
-    public SectionedViewpagerAdapter() {
+    public SectionedViewpagerPageAdapter() {
         mHeaderLocationMap = new ArrayMap<>();
     }
 

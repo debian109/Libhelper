@@ -5,13 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import UIHelper.RecyclerViewHelper.adapter.SectionedRecyclerViewAdapter;
+import namtran.helperutil.Model.DataMovie;
 import namtran.helperutil.Model.Movie;
 import namtran.helperutil.R;
 
@@ -23,7 +23,7 @@ public class MovieAdapterRecycler extends SectionedRecyclerViewAdapter {
     private MultiChooseListener multiChooseListener;
 
     public interface TouchItemHolder{
-        void SingleChoose(RecyclerView.ViewHolder holder, int section ,int position);
+        void SingleChoose(RecyclerView.ViewHolder holder,int section,int position);
         void SingleSwipeLeft(RecyclerView.ViewHolder holder);
         void SingleSwipeRight(RecyclerView.ViewHolder holder);
         void SingleClickHeader(List<Movie> movieList);
@@ -94,16 +94,11 @@ public class MovieAdapterRecycler extends SectionedRecyclerViewAdapter {
         List<Movie> listMovie = allData.get(section).getAllItemsInSection();
 
         final MovieHolder itemHolder = (MovieHolder) holder;
+
+        itemHolder.mImageView.setTag(allData.get(section).getAllItemsInSection().get(position).getImage());
+
         String image = listMovie.get(position).getImage();
         Picasso.with(mContext).load(image).placeholder(R.drawable.empty_photo).into(itemHolder.mImageView);
-    }
-
-    public static ImageView getImage(RecyclerView.ViewHolder holder) {
-        if (holder instanceof MovieHolder) {
-            return ((MovieHolder) holder).mImageView;
-        } else {
-            return null;
-        }
     }
 
     @Override
@@ -114,8 +109,9 @@ public class MovieAdapterRecycler extends SectionedRecyclerViewAdapter {
 
     @Override
     protected void ItemViewClickListener(RecyclerView.ViewHolder holder, int position) {
+
         if (touchItemHolder != null)
-            touchItemHolder.SingleChoose(holder,getSection(position),getPosition(position));
+            touchItemHolder.SingleChoose(holder,getSection(position),position);
     }
 
     @Override

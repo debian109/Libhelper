@@ -104,6 +104,8 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
 
     @Override
     public void onUpdateItemListener(View view, int position) {
+        if (mMultiChoiceAdapter.isHeader(position))
+            return;
         if (mMultiChoiceAdapter != null && isInMultiChoiceMode) {
             if (mSelectedList.containsKey(position))
                 performSelect(view, position, false);
@@ -287,6 +289,8 @@ public class MultiChoiceRecyclerView extends RecyclerView implements MultiChoice
     }
 
     private void performSelect(View v, int position, boolean withCallback) {
+        if (mMultiChoiceAdapter.isHeader(position))
+            return;
         mMultiChoiceAdapter.performActivation(v, true);
         mSelectedList.put(position, v);
 

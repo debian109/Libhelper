@@ -1,10 +1,9 @@
 package namtran.helperutil.ActivityExample.RecyclerViewHelperExample;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,22 +13,25 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
 import UIHelper.RecyclerViewHelper.adapter.SectionedRecyclerViewAdapter;
 import UIHelper.RecyclerViewHelper.widget.MultiChoiceRecyclerView;
 import UIHelper.RecyclerViewHelper.widget.MultiChoiceToolbar;
 import UIHelper.RecyclerViewHelper.listener.OnSwipeTouchListener;
 import namtran.helperutil.BaseActivity;
+import namtran.helperutil.Model.DataMovie;
 import namtran.helperutil.Model.Movie;
 import namtran.helperutil.R;
 
-public class RecyclerViewHelperActivity extends BaseActivity implements UpdateScreenListener {
+public class RecyclerViewHelperActivity extends BaseActivity {
+
+    public static final String LISTMOVIE = "ListMovie";
+    public static final String POSITIONMOVIE = "position";
 
     MultiChoiceRecyclerView recycler;
-//    SectionedRecyclerViewAdapter1 adapter;
+    //    SectionedRecyclerViewAdapter1 adapter;
     MovieAdapterRecycler adapter;
     private int column = 3;
     private List<Integer> listFirstPostion = new ArrayList<>();
@@ -102,13 +104,13 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
             }
         });*/
 
-        adapter = new MovieAdapterRecycler(this,getDataMovies());
+        adapter = new MovieAdapterRecycler(this, getDataMovies());
 
         adapter.setMultiChooseListener(new MovieAdapterRecycler.MultiChooseListener() {
             @Override
             public void MultiChoose(View view, boolean state) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.tick_image);
-                if (imageView != null){
+                if (imageView != null) {
                     if (state)
                         imageView.setVisibility(View.VISIBLE);
                     else
@@ -120,37 +122,37 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
         adapter.setTouchItemHolderListener(new MovieAdapterRecycler.TouchItemHolder() {
 
             @Override
-            public void SingleChoose(RecyclerView.ViewHolder holder, int section ,int position) {
-                Movie movie = getDataMovies().get(section).getAllItemsInSection().get(position);
-                if (movie != null){
-                    Toast.makeText(RecyclerViewHelperActivity.this,movie.getName() +"",Toast.LENGTH_SHORT).show();
-                }
+            public void SingleChoose(RecyclerView.ViewHolder holder, int section, int position) {
 
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                DialogShowImage dialog = DialogShowImage.newInstance((ArrayList<DataMovie>) adapter.getListMovie(),position + 1);
-                dialog.show(ft, "dialog");
+                Intent intent = new Intent(RecyclerViewHelperActivity.this, ImageDisplayActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt(POSITIONMOVIE, position - (section + 1));
+                bundle.putParcelableArrayList(LISTMOVIE, (ArrayList<Movie>) listMovieRemoveHeader(adapter.getListMovie()));
+                intent.putExtras(bundle);
+                startActivity(intent);
+
             }
 
             @Override
             public void SingleSwipeLeft(RecyclerView.ViewHolder holder) {
-                if (column < 8){
-                    column ++;
-                    swipeLayout(recycler,column);
+                if (column < 8) {
+                    column++;
+                    swipeLayout(recycler, column);
                 }
             }
 
             @Override
             public void SingleSwipeRight(RecyclerView.ViewHolder holder) {
-                if (column > 1){
-                    column --;
-                    swipeLayout(recycler,column);
+                if (column > 1) {
+                    column--;
+                    swipeLayout(recycler, column);
                 }
             }
 
             @Override
             public void SingleClickHeader(List<Movie> movieList) {
                 if (movieList != null)
-                    Toast.makeText(RecyclerViewHelperActivity.this,movieList.size() +"",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RecyclerViewHelperActivity.this, movieList.size() + "", Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -191,11 +193,11 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
                         else
                             return 1;
                 }*/
-                if (adapter.isHeader(position)){
+                if (adapter.isHeader(position)) {
                     if (!listFirstPostion.contains(position + 1))
                         listFirstPostion.add(position + 1);
                     return column;
-                }else {
+                } else {
                     if (listFirstPostion.contains(position))
                         if (column > 2)
                             return 1;
@@ -216,17 +218,25 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
 
     }
 
-    private List<DataMovie> getDataMovies(){
+    private List<Movie> listMovieRemoveHeader(List<DataMovie> dataMovies){
+        List<Movie> movies = new ArrayList<>();
+        for (int i = 0 ; i<dataMovies.size();i++){
+            movies.addAll(dataMovies.get(i).getAllItemsInSection());
+        }
+        return movies;
+    }
+
+    private List<DataMovie> getDataMovies() {
         List<DataMovie> dataMovies = new ArrayList<>();
-        dataMovies.add(new DataMovie("Action",MovieAction()));
-        dataMovies.add(new DataMovie("Cartoon",MovieCartoon()));
-        dataMovies.add(new DataMovie("Horries",MovieHorries()));
+        dataMovies.add(new DataMovie("Action", MovieAction()));
+        dataMovies.add(new DataMovie("Cartoon", MovieCartoon()));
+        dataMovies.add(new DataMovie("Horries", MovieHorries()));
         return dataMovies;
     }
 
-    private List<Movie> MovieAction(){
+    private List<Movie> MovieAction() {
         List<Movie> movies = new ArrayList<>();
-        for (Movie movie : Movie.getMovie()){
+        for (Movie movie : Movie.getMovie()) {
             if (movie.getType().equals("Action"))
                 movies.add(movie);
         }
@@ -260,7 +270,7 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.select_all:
                 recycler.selectAll();
                 return true;
@@ -272,7 +282,7 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
                 return true;
             case R.id.single_click_mode:
                 recycler.setSingleClickMode(!recycler.isInSingleClickMode());
-                Toast.makeText(getApplicationContext(), "Always Single Click Mode ["+recycler.isInSingleClickMode()+"]", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Always Single Click Mode [" + recycler.isInSingleClickMode() + "]", Toast.LENGTH_SHORT).show();
                 return true;
         }
 
@@ -286,22 +296,22 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
 
         @Override
         public void onSwipeLeft() {
-            if (column < 8){
-                column ++;
-                swipeLayout(recycler,column);
+            if (column < 8) {
+                column++;
+                swipeLayout(recycler, column);
             }
         }
 
         @Override
         public void onSwipeRight() {
-            if (column > 1){
-                column --;
-                swipeLayout(recycler,column);
+            if (column > 1) {
+                column--;
+                swipeLayout(recycler, column);
             }
         }
     }
 
-    private void swipeLayout(RecyclerView recyclerView, int column){
+    private void swipeLayout(RecyclerView recyclerView, int column) {
 
         /*final SectionedRecyclerViewAdapter1 adapter = (SectionedRecyclerViewAdapter1) recyclerView.getAdapter();
         GridLayoutManager layoutManager = (GridLayoutManager) recyclerView.getLayoutManager();
@@ -321,14 +331,9 @@ public class RecyclerViewHelperActivity extends BaseActivity implements UpdateSc
         recyclerView.postDelayed(new Runnable() {
             @Override
             public void run() {
-                adapter.notifyItemRangeChanged(0,adapter.getItemCount());
+                adapter.notifyItemRangeChanged(0, adapter.getItemCount());
             }
         }, 100);
-
-    }
-
-    @Override
-    public void onUpdate(int position) {
 
     }
 }

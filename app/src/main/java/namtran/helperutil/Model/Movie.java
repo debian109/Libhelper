@@ -1,10 +1,13 @@
 package namtran.helperutil.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Movie implements Serializable {
+public class Movie implements Parcelable {
 
     String name;
     String type;
@@ -18,6 +21,40 @@ public class Movie implements Serializable {
         this.image = image;
         this.description = description;
         this.releaseDay = releaseDay;
+    }
+
+    protected Movie(Parcel in) {
+        name = in.readString();
+        type = in.readString();
+        image = in.readString();
+        description = in.readString();
+        releaseDay = in.readString();
+    }
+
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(type);
+        dest.writeString(image);
+        dest.writeString(description);
+        dest.writeString(releaseDay);
     }
 
     public String getName() {

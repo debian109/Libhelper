@@ -1,12 +1,9 @@
-package namtran.helperutil.ActivityExample.RecyclerViewHelperExample;
+package namtran.helperutil.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import namtran.helperutil.Model.Movie;
 
 /**
  * Created by pratap.kesaboyina on 30-11-2015.
@@ -16,9 +13,6 @@ public class DataMovie implements Parcelable {
     private String headerTitle;
     private List<Movie> allItemsInSection;
 
-
-    public DataMovie() {}
-
     public DataMovie(String headerTitle, List<Movie> allItemsInSection) {
         this.headerTitle = headerTitle;
         this.allItemsInSection = allItemsInSection;
@@ -27,6 +21,7 @@ public class DataMovie implements Parcelable {
 
     protected DataMovie(Parcel in) {
         headerTitle = in.readString();
+        allItemsInSection = in.readArrayList(Movie.class.getClassLoader());
     }
 
     public static final Creator<DataMovie> CREATOR = new Creator<DataMovie>() {
