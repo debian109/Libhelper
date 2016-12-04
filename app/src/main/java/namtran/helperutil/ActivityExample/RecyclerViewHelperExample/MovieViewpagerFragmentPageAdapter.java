@@ -16,10 +16,12 @@ public class MovieViewpagerFragmentPageAdapter extends FragmentStatePagerAdapter
 
     List<Movie> movies;
     GetFragment getFragment;
+    int positonReceive;
 
-    public MovieViewpagerFragmentPageAdapter(FragmentManager fm, List<Movie> movies, GetFragment getFragment) {
+    public MovieViewpagerFragmentPageAdapter(FragmentManager fm, List<Movie> movies,int positonReceive, GetFragment getFragment) {
         super(fm);
         this.movies = movies;
+        this.positonReceive = positonReceive;
         this.getFragment = getFragment;
     }
 
@@ -32,7 +34,7 @@ public class MovieViewpagerFragmentPageAdapter extends FragmentStatePagerAdapter
 
     @Override
     public Fragment getItem(int position) {
-        return FragmentImageShow.newInstance(movies.get(position));
+        return FragmentImageShow.newInstance(movies.get(position),positonReceive,position);
     }
 
     @Override

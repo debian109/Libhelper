@@ -1,6 +1,7 @@
 package namtran.helperutil.ActivityExample.RecyclerViewHelperExample;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,6 +96,9 @@ public class MovieAdapterRecycler extends SectionedRecyclerViewAdapter {
 
         final MovieHolder itemHolder = (MovieHolder) holder;
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            itemHolder.mImageView.setTransitionName(allData.get(section).getAllItemsInSection().get(position).getImage());
+        }
         itemHolder.mImageView.setTag(allData.get(section).getAllItemsInSection().get(position).getImage());
 
         String image = listMovie.get(position).getImage();

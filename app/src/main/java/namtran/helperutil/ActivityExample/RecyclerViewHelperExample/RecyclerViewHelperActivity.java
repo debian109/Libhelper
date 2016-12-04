@@ -1,20 +1,26 @@
 package namtran.helperutil.ActivityExample.RecyclerViewHelperExample;
 
+import android.annotation.TargetApi;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.SharedElementCallback;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import UIHelper.RecyclerViewHelper.adapter.SectionedRecyclerViewAdapter;
 import UIHelper.RecyclerViewHelper.widget.MultiChoiceRecyclerView;
@@ -28,13 +34,14 @@ import namtran.helperutil.R;
 public class RecyclerViewHelperActivity extends BaseActivity {
 
     public static final String LISTMOVIE = "ListMovie";
-    public static final String POSITIONMOVIE = "position";
+    public static final String POSITIONMOVIESEND = "position_sent";
 
     MultiChoiceRecyclerView recycler;
     //    SectionedRecyclerViewAdapter1 adapter;
     MovieAdapterRecycler adapter;
     private int column = 3;
     private List<Integer> listFirstPostion = new ArrayList<>();
+    private Bundle bundle;
 
     @Override
     protected Fragment initFragment() {
@@ -62,6 +69,46 @@ public class RecyclerViewHelperActivity extends BaseActivity {
         recycler = (MultiChoiceRecyclerView) findViewById(R.id.recycler);
 
         final MyOnSwipeTouchListener swipeTouchListener = new MyOnSwipeTouchListener(this);
+
+        setExitSharedElementCallback(new SharedElementCallback() {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onMapSharedElements(List<String> names, Map<String, View> sharedElements) {
+                if (bundle != null){
+                    int PositionSend = bundle.getInt(ImageDisplayActivity.POSITIONRECEIVEIMAGE);
+                    int PositionReceive = bundle.getInt(ImageDisplayActivity.POSITIONSENDIMAGE);
+                    int sectionReceive = getSectionReturn(adapter.getListMovie(),PositionReceive);
+                    int PositionReceiveReturn = getPositionInSection(adapter.getListMovie(),PositionReceive);
+                    if (PositionSend != PositionReceiveReturn) {
+                        // If startingPosition != currentPosition the user must have swiped to a
+                        // different page in the DetailsActivity. We must update the shared element
+                        // so that the correct one falls into place.
+                        String newTransitionName = adapter.getListMovie().get(sectionReceive).getAllItemsInSection().get(PositionReceiveReturn).getImage();
+                        View newSharedElement = recycler.findViewWithTag(newTransitionName);
+                        if (newSharedElement != null) {
+                            names.clear();
+                            names.add(newTransitionName);
+                            sharedElements.clear();
+                            sharedElements.put(newTransitionName, newSharedElement);
+                        }
+                    }
+
+                    bundle = null;
+                }else {
+                    // If mTmpReenterState is null, then the activity is exiting.
+                    View navigationBar = findViewById(android.R.id.navigationBarBackground);
+                    View statusBar = findViewById(android.R.id.statusBarBackground);
+                    if (navigationBar != null) {
+                        names.add(navigationBar.getTransitionName());
+                        sharedElements.put(navigationBar.getTransitionName(), navigationBar);
+                    }
+                    if (statusBar != null) {
+                        names.add(statusBar.getTransitionName());
+                        sharedElements.put(statusBar.getTransitionName(), statusBar);
+                    }
+                }
+            }
+        });
 
         /*adapter = new SectionedRecyclerViewAdapter1(this);
         adapter.addSection(new ExpandableMovieSection(this,"Action",MovieAction()));
@@ -124,12 +171,19 @@ public class RecyclerViewHelperActivity extends BaseActivity {
             @Override
             public void SingleChoose(RecyclerView.ViewHolder holder, int section, int position) {
 
+                ImageView imageView = ((MovieHolder)holder).mImageView;
+
                 Intent intent = new Intent(RecyclerViewHelperActivity.this, ImageDisplayActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt(POSITIONMOVIE, position - (section + 1));
+                bundle.putInt(POSITIONMOVIESEND, position - (section + 1));
                 bundle.putParcelableArrayList(LISTMOVIE, (ArrayList<Movie>) listMovieRemoveHeader(adapter.getListMovie()));
                 intent.putExtras(bundle);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(RecyclerViewHelperActivity.this,
+                            imageView, imageView.getTransitionName()).toBundle());
+                }else {
                 startActivity(intent);
+                }
 
             }
 
@@ -216,6 +270,72 @@ public class RecyclerViewHelperActivity extends BaseActivity {
         recycler.setItemAnimator(new DefaultItemAnimator());
         recycler.setOnTouchListener(swipeTouchListener);
 
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public void onActivityReenter(int requestCode, Intent data) {
+        super.onActivityReenter(requestCode, data);
+        bundle = new Bundle(data.getExtras());
+        int PositionSent = bundle.getInt(ImageDisplayActivity.POSITIONRECEIVEIMAGE);
+        int PositionReceive = bundle.getInt(ImageDisplayActivity.POSITIONSENDIMAGE);
+        int PositionReceiveWithSection = getPositionReturn(adapter.getListMovie(),PositionReceive);
+        if (PositionSent != PositionReceiveWithSection) {
+            recycler.scrollToPosition(PositionReceiveWithSection);
+        }
+        postponeEnterTransition();
+        recycler.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                recycler.getViewTreeObserver().removeOnPreDrawListener(this);
+                // TODO: figure out why it is necessary to request layout here in order to get a smooth transition.
+                recycler.requestLayout();
+                startPostponedEnterTransition();
+                return true;
+            }
+        });
+    }
+
+    private int getPositionReturn(List<DataMovie> dataMovies,int position){
+        int pos = 0;
+        int total = 0;
+        for (int i = 0 ; i < dataMovies.size();i++){
+            if ((total + dataMovies.get(i).getAllItemsInSection().size()) > position){
+                pos = position + i;
+                break;
+            }else {
+                total += dataMovies.get(i).getAllItemsInSection().size();
+            }
+        }
+        return pos;
+    }
+
+    private int getPositionInSection(List<DataMovie> dataMovies,int position){
+        int pos = 0;
+        int total = 0;
+        for (int i = 0 ; i < dataMovies.size();i++){
+            if ((total + dataMovies.get(i).getAllItemsInSection().size()) > position){
+                pos = position - total;
+                break;
+            }else {
+                total += dataMovies.get(i).getAllItemsInSection().size();
+            }
+        }
+        return pos;
+    }
+
+    private int getSectionReturn(List<DataMovie> dataMovies,int position){
+        int sec = 0;
+        int total = 0;
+        for (int i = 0;i<dataMovies.size();i++){
+            if ((total + dataMovies.get(i).getAllItemsInSection().size()) > position){
+                sec = i;
+                break;
+            }else {
+                total += dataMovies.get(i).getAllItemsInSection().size();
+            }
+        }
+        return sec;
     }
 
     private List<Movie> listMovieRemoveHeader(List<DataMovie> dataMovies){
