@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 
+import UIHelper.GestureView.Settings;
+import UIHelper.GestureView.views.GestureImageView;
 import namtran.helperutil.Model.Movie;
 import namtran.helperutil.R;
 
@@ -27,7 +30,7 @@ public class FragmentImageShow extends Fragment {
     private static final String POSITIONRECEIVE = "FragmentImageShow_position_receive";
     private static final String POSITIONCURRENT = "FragmentImageShow_position_current";
 
-    private ImageView image;
+    private GestureImageView image;
     private Movie movie;
     private int mPositionReceive;
     private int mPositionCurrent;
@@ -69,7 +72,21 @@ public class FragmentImageShow extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_display_image, container, false);
 
-        image = (ImageView) rootView.findViewById(R.id.image);
+        image = (GestureImageView) rootView.findViewById(R.id.image);
+
+        image.getController().getSettings()
+                .setPanEnabled(true)
+                .setZoomEnabled(true)
+                .setDoubleTapEnabled(true)
+                .setRotationEnabled(true)
+                .setRestrictRotation(true)
+                .setOverscrollDistance(getActivity(), 32f, 32f)
+                .setOverzoomFactor(2f)
+                /*.setExitEnabled(true)
+                .setFillViewport(true)*/
+                .setFitMethod(Settings.Fit.INSIDE)
+                .setGravity(Gravity.CENTER)
+                /*.setAnimationsDuration(Settings.ANIMATIONS_DURATION)*/;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             image.setTransitionName(movie.getImage());
