@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import UIHelper.PullToZoom.PullZoomView;
 import UIHelper.RecyclerViewHelper.adapter.SectionedRecyclerViewAdapter;
 import UIHelper.RecyclerViewHelper.widget.MultiChoiceRecyclerView;
 import UIHelper.RecyclerViewHelper.widget.MultiChoiceToolbar;
@@ -37,6 +38,7 @@ public class RecyclerViewHelperActivity extends BaseActivity {
     public static final String POSITIONMOVIESEND = "position_sent";
 
     MultiChoiceRecyclerView recycler;
+    PullZoomView pullZoomView;
     //    SectionedRecyclerViewAdapter1 adapter;
     MovieAdapterRecycler adapter;
     private int column = 3;
@@ -66,7 +68,40 @@ public class RecyclerViewHelperActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideToolbar();
+        pullZoomView = (PullZoomView) findViewById(R.id.pzv);
         recycler = (MultiChoiceRecyclerView) findViewById(R.id.recycler);
+
+        pullZoomView.setIsParallax(true);
+        pullZoomView.setIsZoomEnable(true);
+
+        pullZoomView.setOnScrollListener(new PullZoomView.OnScrollListener() {
+            @Override
+            public void onScroll(int l, int t, int oldl, int oldt) {
+                System.out.println("onScroll   t:" + t + "  oldt:" + oldt);
+            }
+
+            @Override
+            public void onHeaderScroll(int currentY, int maxY) {
+                System.out.println("onHeaderScroll   currentY:" + currentY + "  maxY:" + maxY);
+            }
+
+            @Override
+            public void onContentScroll(int l, int t, int oldl, int oldt) {
+                System.out.println("onContentScroll   t:" + t + "  oldt:" + oldt);
+            }
+        });
+        pullZoomView.setOnPullZoomListener(new PullZoomView.OnPullZoomListener() {
+            @Override
+            public void onPullZoom(int originHeight, int currentHeight) {
+                System.out.println("onPullZoom  originHeight:" + originHeight + "  currentHeight:" + currentHeight);
+            }
+
+            @Override
+            public void onZoomFinish() {
+                System.out.println("onZoomFinish");
+            }
+        });
 
         final MyOnSwipeTouchListener swipeTouchListener = new MyOnSwipeTouchListener(this);
 
